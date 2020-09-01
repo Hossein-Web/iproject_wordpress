@@ -91,16 +91,32 @@ function web_design_sec_shortcode($atts)
 
 add_shortcode('web_design_sec', 'web_design_sec_shortcode');
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+function design_effect_shortcode(){
+    ob_start();
+    ?>
+    <section class="design_effect">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-xl-12 col-md-12 col-24">
+                    <div class="design_effect__img">
+                        <img src="http://127.0.0.1:3020/wp-content/uploads/2020/09/design_effect.png" alt="design_effect">
+                    </div><!-- .img -->
+                </div><!-- .col-xl-12 -->
+                <div class="col-xl-12 col-md-12 col-24">
+                    <div class="design_effect__wrapper">
+                        <div class="content">
+                            <div class="title title--red">
+                                <h4><?php the_field( 'web_design_sec_title_fa' ); ?></h4>
+                                <p><?php the_field( 'web_design_sec_title_en' ); ?></p>
+                            </div><!-- .title -->
+                            <p><?php the_field( 'web_design_sec_description' ); ?></p>
+                        </div><!-- .content -->
+                    </div><!-- .design_effect__wrapper -->
+                </div>
+            </div><!-- .row -->
+        </div><!-- .container -->
+    </section><!-- .design_effect -->
+    <?php
+    return ob_get_clean();
+}
+add_shortcode( 'design_effect', 'design_effect_shortcode' );
