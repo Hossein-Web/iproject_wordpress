@@ -65,10 +65,10 @@ function design_effect_shortcode(){
                     <div class="design_effect__wrapper">
                         <div class="content">
                             <div class="title title--red">
-                                <h4><?php the_field( 'web_design_sec_title_fa' ); ?></h4>
-                                <p><?php the_field( 'web_design_sec_title_en' ); ?></p>
+                                <h4><?php the_field( 'design_effect_title_fa' ); ?></h4>
+                                <p><?php the_field( 'design_effect_title_en' ); ?></p>
                             </div><!-- .title -->
-                            <p><?php the_field( 'web_design_sec_description' ); ?></p>
+                            <p><?php the_field( 'design_effect_description' ); ?></p>
                         </div><!-- .content -->
                     </div><!-- .design_effect__wrapper -->
                 </div>
