@@ -91,6 +91,84 @@ function web_design_sec_shortcode($atts)
 
 add_shortcode('web_design_sec', 'web_design_sec_shortcode');
 
+//services
+function services_shortcode( $atts ) {
+    $attributes = shortcode_atts( array(
+            'post_ids' => ''
+    ), $atts );
+    $posts_ids_str = $attributes[ 'post_ids' ];
+    $post_ids_array = explode( ',', $posts_ids_str );
+
+    $post_ids = [];
+    foreach ( $post_ids_array as $post_id ){
+        $post_ids[] = trim( $post_id );
+    }
+
+    $args = [
+            'post__in'            => $post_ids,
+            'ignore_sticky_posts' => true
+                ];
+    $services_posts_query = new WP_Query( $args );
+    ob_start(); ?>
+    <section class="services">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-xl-12 col-lg-12 col-md-24">
+                    <div class="services__introduction">
+                        <div class="title">
+                            <h4><?php the_field( 'services_title_fa' ); ?></h4>
+                            <p><?php the_field( 'services_title_en' ); ?></p>
+                        </div><!-- .title -->
+                        <p><?php the_field( 'services_description' ); ?></p>
+                    </div><!-- .services_introduction -->
+                </div><!-- .col-xl-12 -->
+                <div class="col-xl-12 col-lg-12 col-md-24">
+                    <div class="services__list">
+                        <?php
+                        if ( $services_posts_query->have_posts() ):
+                            while ( $services_posts_query->have_posts() ):
+                                $services_posts_query->the_post();?>
+                                <div class="services__list__item">
+                                    <div class="item_title_wrapper">
+                                        <div class="icon">
+                                            <img src="http://127.0.0.1:3020/wp-content/uploads/2020/09/wordpress-Logo.png" alt="wordpress logo">
+                                        </div>
+                                        <div class="title">
+                                            <p><?php the_title() ?></p>
+                                                <?php
+                                                    $post_cats_id = wp_get_post_categories( get_the_ID() );
+                                                    for ( $i = 0; $i< count( $post_cats_id ); $i++ ) {
+                                                    ?>
+                                                        <a href="<?php echo get_category_link( $post_cats_id[$i] ); ?>"><?php echo get_the_category_by_ID( $post_cats_id[$i] ); ?></a>
+                                                        <?php
+                                                        if( ( count( $post_cats_id ) > 1 ) && ( $i < count( $post_cats_id )-1 ) ) {
+                                                            ?>
+                                                            <span> ,</span>
+                                                            <?php
+                                                        }
+                                                    }
+                                                ?>
+                                            </p>
+                                        </div>
+                                    </div><!-- .item_title_wrapper -->
+                                    <div class="content">
+                                        <?php the_excerpt(); ?>
+                                        <a href="<?php the_permalink();?>" class="read_more">اطلاعات بیشتر</a>
+                                    </div>
+                                </div><!-- .services__list__item -->
+                            <?php
+                            endwhile;
+                        endif;
+                        ?>
+                    </div><!-- .services__list -->
+                </div><!-- .col-xl-12-->
+            </div><!-- .row -->
+        </div><!-- .container -->
+    </section><!-- .services -->
+<?php return ob_get_clean();
+}
+add_shortcode( 'services', 'services_shortcode' );
+
 
 
 
