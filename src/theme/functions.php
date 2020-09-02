@@ -120,3 +120,31 @@ function design_effect_shortcode(){
     return ob_get_clean();
 }
 add_shortcode( 'design_effect', 'design_effect_shortcode' );
+
+function ivahid_difference_shortcode( $atts ){
+    ob_start();
+    ?>
+    <section class="ivahid_difference">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-9 col-lg-9 col-md-12">
+                    <div class="ivahid_difference__img">
+                        <img src="./assets/img/ivahid.png" alt="ivahid">
+                    </div><!-- .ivahid_difference__img -->
+                </div><!-- .col-xl-9 -->
+                <div class="col-xl-15 col-lg-15 col-md-12">
+                    <div class="ivahid_difference__content">
+                        <div class="title">
+                            <h4><?php the_field( 'ivahid_difference_title_fa' ); ?></h4>
+                            <p><?php the_field( 'ivahid_difference_title_en' ); ?></p>
+                        </div><!-- .title -->
+                        <p><?php the_field( 'ivahid_difference_description' ); ?></p>
+                    </div><!-- .ivahid_difference__content -->
+                </div><!-- .col-xl-15 -->
+            </div><!-- .row -->
+        </div><!-- .container -->
+    </section><!-- .ivahid_difference -->
+<?php
+    return ob_get_clean();
+}
+add_shortcode( 'ivahid_difference', 'ivahid_difference_shortcode' );
