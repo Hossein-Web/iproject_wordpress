@@ -197,3 +197,42 @@ function design_effect_shortcode(){
     return ob_get_clean();
 }
 add_shortcode( 'design_effect', 'design_effect_shortcode' );
+
+function select_team_shortcode(){
+    ob_start();
+    ?>
+    <section class="select_team">
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-xl-24">
+                    <div class="select_team__img">
+                        <img src="./assets/img/select_team2.jpg" alt="design_effect">
+                        <div class="select_team__img__lable">
+                            <div class="icon">
+                                <span class="icon-man"></span>
+                            </div>
+                            <div class="lable">
+                                <p>آی وحید</p>
+                                <p>لذت تفاوت</p>
+                            </div>
+                        </div><!-- .select_team__img__lable -->
+                    </div><!-- .select_team__img -->
+                    <div class="row align-items-center">
+                        <div class="col-lg-12 col-24 mr-auto">
+                            <div class="select_team__content">
+                                <div class="title">
+                                    <h4><?php the_field( 'select_team_title_fa' ); ?></h4>
+                                    <p><?php the_field( 'select_team_title_en' ); ?></p>
+                                </div><!-- .title -->
+                                <p><?php the_field( 'select_team_description' ); ?></p>
+                            </div><!-- .select_team__content -->
+                        </div><!-- .col-lg-12 -->
+                    </div><!-- .row -->
+                </div><!-- .col-xl-24 -->
+            </div><!-- .row -->
+        </div><!-- .container -->
+    </section><!-- .select_team -->
+<?php
+    return ob_get_clean();
+}
+add_shortcode( 'select_team', 'select_team_shortcode' );
