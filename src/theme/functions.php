@@ -124,40 +124,42 @@ function services_shortcode( $atts ) {
                 <div class="col-xl-12 col-lg-12 col-md-24">
                     <div class="services__list">
                         <?php
-                        if ( $services_posts_query->have_posts() ):
-                            while ( $services_posts_query->have_posts() ):
-                                $services_posts_query->the_post();?>
+                        if ( $services_posts_query->have_posts() ) {
+                            while ($services_posts_query->have_posts()) {
+                                $services_posts_query->the_post(); ?>
                                 <div class="services__list__item">
                                     <div class="item_title_wrapper">
                                         <div class="icon">
-                                            <img src="http://127.0.0.1:3020/wp-content/uploads/2020/09/wordpress-Logo.png" alt="wordpress logo">
+                                            <img src="http://127.0.0.1:3020/wp-content/uploads/2020/09/wordpress-Logo.png"
+                                                 alt="wordpress logo">
                                         </div>
                                         <div class="title">
                                             <p><?php the_title() ?></p>
-                                                <?php
-                                                    $post_cats_id = wp_get_post_categories( get_the_ID() );
-                                                    for ( $i = 0; $i< count( $post_cats_id ); $i++ ) {
-                                                    ?>
-                                                        <a href="<?php echo get_category_link( $post_cats_id[$i] ); ?>"><?php echo get_the_category_by_ID( $post_cats_id[$i] ); ?></a>
-                                                        <?php
-                                                        if( ( count( $post_cats_id ) > 1 ) && ( $i < count( $post_cats_id )-1 ) ) {
-                                                            ?>
-                                                            <span> ,</span>
-                                                            <?php
-                                                        }
-                                                    }
+                                            <?php
+                                            $post_cats_id = wp_get_post_categories(get_the_ID());
+                                            for ($i = 0; $i < count($post_cats_id); $i++) {
                                                 ?>
+                                                <a href="<?php echo get_category_link($post_cats_id[$i]); ?>"><?php echo get_the_category_by_ID($post_cats_id[$i]); ?></a>
+                                                <?php
+                                                if ((count($post_cats_id) > 1) && ($i < count($post_cats_id) - 1)) {
+                                                    ?>
+                                                    <span> ,</span>
+                                                    <?php
+                                                }
+                                            }
+                                            ?>
                                             </p>
                                         </div>
                                     </div><!-- .item_title_wrapper -->
                                     <div class="content">
                                         <?php the_excerpt(); ?>
-                                        <a href="<?php the_permalink();?>" class="read_more">اطلاعات بیشتر</a>
+                                        <a href="<?php the_permalink(); ?>" class="read_more">اطلاعات بیشتر</a>
                                     </div>
                                 </div><!-- .services__list__item -->
-                            <?php
-                            endwhile;
-                        endif;
+                                <?php
+                            }
+                            wp_reset_postdata();
+                        }
                         ?>
                     </div><!-- .services__list -->
                 </div><!-- .col-xl-12-->
@@ -206,7 +208,7 @@ function select_team_shortcode(){
             <div class="row justify-content-center align-items-center">
                 <div class="col-xl-24">
                     <div class="select_team__img">
-                        <img src="./assets/img/select_team2.jpg" alt="design_effect">
+                        <img src="http://127.0.0.1:3020/wp-content/uploads/2020/09/select_team2.jpg" alt="design_effect">
                         <div class="select_team__img__lable">
                             <div class="icon">
                                 <span class="icon-man"></span>
@@ -221,10 +223,10 @@ function select_team_shortcode(){
                         <div class="col-lg-12 col-24 mr-auto">
                             <div class="select_team__content">
                                 <div class="title">
-                                    <h4><?php the_field( 'select_team_title_fa' ); ?></h4>
-                                    <p><?php the_field( 'select_team_title_en' ); ?></p>
+                                    <h4><?php the_field( 'select_team_title_fa') ?></h4>
+                                    <p><?php the_field( 'select_team_title_en'); ?></p>
                                 </div><!-- .title -->
-                                <p><?php the_field( 'select_team_description' ); ?></p>
+                                <p><?php the_field( 'select_team_description'); ?></p>
                             </div><!-- .select_team__content -->
                         </div><!-- .col-lg-12 -->
                     </div><!-- .row -->
@@ -236,3 +238,4 @@ function select_team_shortcode(){
     return ob_get_clean();
 }
 add_shortcode( 'select_team', 'select_team_shortcode' );
+
