@@ -58,7 +58,7 @@ add_action('widgets_init', 'wordpressify_widgets');
 
 // shortcodes
 //web design sec
-function web_design_sec_shortcode( $atts )
+function web_design_sec_shortcode($atts)
 {
     ob_start(); ?>
     <section class="web_design_sec">
@@ -92,185 +92,91 @@ function web_design_sec_shortcode( $atts )
 add_shortcode('web_design_sec', 'web_design_sec_shortcode');
 
 // your position
-function your_position_shortcode( $atts ){
-ob_start(); ?>
+function your_position_shortcode()
+{
+    ob_start(); ?>
     <section class="your_position">
         <div class="outer_text_wrapper">
             <div class="container">
                 <div class="text">
                     <div class="title">
-                        <h4><span>موقعیت</span> شما</h4>
-                        <p>Your position</p>
+                        <h4><?php the_field('your_position_title_fa'); ?></h4>
+                        <p><?php the_field('your_position_title_en'); ?></p>
                     </div><!-- .title -->
-                    <p>اما این تنها شروع ماجراست و زمانی که تصمیم می‌گیرید طراحی سایت خود را به یک گروه بسپارید، تازه آن
-                        موقع است که متوجه خواهید شد چه انتخاب دشواری پیش رویتان است. صدها نام مختلف در این حوزه وجود دارد که
-                        همگی ادعا می‌کنند از بهترین طراحان کشور در تیم خود بهره می‌برند و بالاترین کیفیت را به شما ارائه
-                        خواهند داد. اما زمانی که سه فیلتر رضایت مشتریان، به‌کارگیری استانداردهای روز جهان و سابقه‌ی درخشان را
-                        بر روی گزینه‌های خود اعمال کنید، اینجاست که تنها نام‌های درخشانی همچون تیم طراحی آی وحید در صحنه باقی
-                        می‌مانند.</p>
+                    <p><?php the_field('your_position_description'); ?></p>
                 </div><!-- .text -->
             </div><!-- .container -->
         </div><!-- .outer_text_wrapper -->
         <div class="your_position__content_wrapper">
-            <img class="background" src="http://127.0.0.1:3020/wp-content/uploads/2020/09/your_position_back_2.png" alt="your position background">
+            <img class="background" src="http://127.0.0.1:3020/wp-content/uploads/2020/09/your_position_back_2.png"
+                 alt="your position background">
             <div class="your_position__container">
                 <div class="col-lg-21">
                     <div class="inner_text_wrapper">
                         <div class="text">
                             <div class="title">
-                                <h4><span>موقعیت</span> شما</h4>
-                                <p>Your position</p>
+                                <h4><?php the_field('your_position_title_fa'); ?></h4>
+                                <p><?php the_field('your_position_title_en'); ?></p>
                             </div><!-- .title -->
-                            <p>اما این تنها شروع ماجراست و زمانی که تصمیم می‌گیرید طراحی سایت خود را به یک گروه بسپارید، تازه آن
-                                موقع است که متوجه خواهید شد چه انتخاب دشواری پیش رویتان است. صدها نام مختلف در این حوزه وجود دارد که
-                                همگی ادعا می‌کنند از بهترین طراحان کشور در تیم خود بهره می‌برند و بالاترین کیفیت را به شما ارائه
-                                خواهند داد. اما زمانی که سه فیلتر رضایت مشتریان، به‌کارگیری استانداردهای روز جهان و سابقه‌ی درخشان را
-                                بر روی گزینه‌های خود اعمال کنید، اینجاست که تنها نام‌های درخشانی همچون تیم طراحی آی وحید در صحنه باقی
-                                می‌مانند.</p>
+                            <p><?php the_field('your_position_description'); ?></p>
                         </div><!-- .text -->
                     </div><!-- .inner_text_wrapper -->
                 </div><!-- .col-lg-21 -->
                 <div class="swiper-container categories_title_list">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="slide_info">
-                                <span>برند</span>
-                                <div>01</div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="slide_info">
-                                <span>استراتژی</span>
-                                <div>02</div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="slide_info">
-                                <span>تحلیل</span>
-                                <div>03</div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="slide_info">
-                                <span>نیاز ها</span>
-                                <div>04</div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="slide_info">
-                                <span>طراحی سایت</span>
-                                <div>05</div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="slide_info">
-                                <span>محتوا سازی</span>
-                                <div>06</div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="slide_info">
-                                <span>برندینگ</span>
-                                <div>07</div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="slide_info">
-                                <span>اپلیکیشن</span>
-                                <div>08</div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="slide_info">
-                                <span>تبلیغات</span>
-                                <div>09</div>
-                            </div>
-                        </div>
+                        <?php
+                        if (have_rows('your_position_steps')) {
+                            $i = 1;
+                            while (have_rows('your_position_steps')) {
+                                the_row(); ?>
+                                <div class="swiper-slide">
+                                    <div class="slide_info">
+                                        <span><?php echo get_sub_field('step_title') ?></span>
+                                        <div>
+                                            <?php
+                                            if ($i < 10)
+                                                echo '0' . $i;
+                                            else
+                                                echo $i;
+                                            ?>
+                                        </div>
+                                    </div>
+                                </div>
+                                <?php
+                                $i++;
+                                wp_reset_postdata();
+                            }
+                        }
+                        ?>
                     </div><!-- .swiper-wrapper -->
                 </div><!-- .categories_title_list -->
                 <div class="swiper-container categories_description_list">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="slide_content">
-                                <span>01</span>
-                                <h4>برند</h4>
-                                <p>در زندگی دیجیتالی امروز داشتن وب سایت برای یک کسب و کار یکی از الزامات می باشد. تفاوتی نمی کند
-                                    که شما یک کسب و کار بزرگ یا کوچک هستید، اگر شما یک کسب و کاری دارید که برای آن وب سایتی تهیه
-                                    نکرده اید قطعا فرصت های زیادی را در کسب وکار خود از دست داده اید. </p>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="slide_content">
-                                <span>02</span>
-                                <h4>استراتژی</h4>
-                                <p>در زندگی دیجیتالی امروز داشتن وب سایت برای یک کسب و کار یکی از الزامات می باشد. تفاوتی نمی کند
-                                    که شما یک کسب و کار بزرگ یا کوچک هستید، اگر شما یک کسب و کاری دارید که برای آن وب سایتی تهیه
-                                    نکرده اید قطعا فرصت های زیادی را در کسب وکار خود از دست داده اید. </p>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="slide_content">
-                                <span>03</span>
-                                <h4>تحلیل</h4>
-                                <p>در زندگی دیجیتالی امروز داشتن وب سایت برای یک کسب و کار یکی از الزامات می باشد. تفاوتی نمی کند
-                                    که شما یک کسب و کار بزرگ یا کوچک هستید، اگر شما یک کسب و کاری دارید که برای آن وب سایتی تهیه
-                                    نکرده اید قطعا فرصت های زیادی را در کسب وکار خود از دست داده اید. </p>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="slide_content">
-                                <span>04</span>
-                                <h4>نیاز ها</h4>
-                                <p>در زندگی دیجیتالی امروز داشتن وب سایت برای یک کسب و کار یکی از الزامات می باشد. تفاوتی نمی کند
-                                    که شما یک کسب و کار بزرگ یا کوچک هستید، اگر شما یک کسب و کاری دارید که برای آن وب سایتی تهیه
-                                    نکرده اید قطعا فرصت های زیادی را در کسب وکار خود از دست داده اید. </p>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="slide_content">
-                                <span>05</span>
-                                <h4>طراحی سایت</h4>
-                                <p>در زندگی دیجیتالی امروز داشتن وب سایت برای یک کسب و کار یکی از الزامات می باشد. تفاوتی نمی کند
-                                    که شما یک کسب و کار بزرگ یا کوچک هستید، اگر شما یک کسب و کاری دارید که برای آن وب سایتی تهیه
-                                    نکرده اید قطعا فرصت های زیادی را در کسب وکار خود از دست داده اید. </p>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="slide_content">
-                                <span>06</span>
-                                <h4>محتواسازی</h4>
-                                <p>در زندگی دیجیتالی امروز داشتن وب سایت برای یک کسب و کار یکی از الزامات می باشد. تفاوتی نمی کند
-                                    که شما یک کسب و کار بزرگ یا کوچک هستید، اگر شما یک کسب و کاری دارید که برای آن وب سایتی تهیه
-                                    نکرده اید قطعا فرصت های زیادی را در کسب وکار خود از دست داده اید. </p>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="slide_content">
-                                <span>07</span>
-                                <h4>برندینگ</h4>
-                                <p>در زندگی دیجیتالی امروز داشتن وب سایت برای یک کسب و کار یکی از الزامات می باشد. تفاوتی نمی کند
-                                    که شما یک کسب و کار بزرگ یا کوچک هستید، اگر شما یک کسب و کاری دارید که برای آن وب سایتی تهیه
-                                    نکرده اید قطعا فرصت های زیادی را در کسب وکار خود از دست داده اید. </p>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="slide_content">
-                                <span>08</span>
-                                <h4>اپلیکیشن</h4>
-                                <p>در زندگی دیجیتالی امروز داشتن وب سایت برای یک کسب و کار یکی از الزامات می باشد. تفاوتی نمی کند
-                                    که شما یک کسب و کار بزرگ یا کوچک هستید، اگر شما یک کسب و کاری دارید که برای آن وب سایتی تهیه
-                                    نکرده اید قطعا فرصت های زیادی را در کسب وکار خود از دست داده اید. </p>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="slide_content">
-                                <span>09</span>
-                                <h4>تبلیغات</h4>
-                                <p>در زندگی دیجیتالی امروز داشتن وب سایت برای یک کسب و کار یکی از الزامات می باشد. تفاوتی نمی کند
-                                    که شما یک کسب و کار بزرگ یا کوچک هستید، اگر شما یک کسب و کاری دارید که برای آن وب سایتی تهیه
-                                    نکرده اید قطعا فرصت های زیادی را در کسب وکار خود از دست داده اید. </p>
-                            </div>
-                        </div>
+                        <?php
+                        if (have_rows('your_position_steps')) {
+                            $i = 1;
+                            while (have_rows('your_position_steps')) {
+                                the_row(); ?>
+                                <div class="swiper-slide">
+                                    <div class="slide_content">
+                                        <span>
+                                            <?php
+                                            if ($i < 10)
+                                                echo '0' . $i;
+                                            else
+                                                echo $i;
+                                            ?>
+                                        </span>
+                                        <h4><?php echo get_sub_field('step_title') ?></h4>
+                                        <p><?php echo get_sub_field('step_description') ?></p>
+                                    </div>
+                                </div>
+                                <?php
+                                $i++;
+                                wp_reset_postdata();
+                            }
+                        }
+                        ?>
                     </div><!-- .swiper-wrapper -->
                 </div><!-- .categories_description_list -->
             </div><!-- .your_position_wrapper -->
