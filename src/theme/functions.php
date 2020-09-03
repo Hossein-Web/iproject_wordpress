@@ -266,3 +266,35 @@ function ivahid_difference_shortcode( $atts ){
     return ob_get_clean();
 }
 add_shortcode( 'ivahid_difference', 'ivahid_difference_shortcode' );
+
+function portal_shortcode( $atts ){
+    ob_start();
+    ?>
+    <section class="portal">
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-md-24 col-24">
+                    <div class="portal__img">
+                        <img src="http://127.0.0.1:3020/wp-content/uploads/2020/09/portal.png" alt="portal">
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 col-24 mr-auto">
+                            <div class="portal__content">
+                                <div class="title title--white">
+                                    <h4><?php the_field( 'portal_title' ); ?></h4>
+                                </div><!-- .title -->
+                                <p><?php the_field( 'portal_description' ); ?></p>
+                                <div class="link">
+                                    <a href="#">پرتال مشتریان</a>
+                                </div>
+                            </div><!-- .portal__content -->
+                        </div><!-- .col-lg-12 -->
+                    </div><!-- .row -->
+                </div><!-- .col-md-24 -->
+            </div><!-- .row -->
+        </div><!-- .container -->
+    </section><!-- .portal -->
+<?php
+    return ob_get_clean();
+}
+add_shortcode( 'portal', 'portal_shortcode' );
