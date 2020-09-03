@@ -452,8 +452,8 @@ ob_start();
                     <div class="customers__wrapper">
                         <div class="swiper-container">
                             <div class="title">
-                                <h4>مشتریانی که اعتماد کردند </h4>
-                                <p>loremipsommatn</p>
+                                <h4><?php the_field( 'customers_title_fa' ); ?></h4>
+                                <p><?php the_field( 'customers_title_en' ); ?></p>
                             </div><!-- .title -->
                             <div class="swiper-pagination"></div>
                             <div class="swiper-wrapper">
