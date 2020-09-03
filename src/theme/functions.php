@@ -405,7 +405,7 @@ function podcast_shortcode(){
                         <div class="podcast_img_wrapper">
                             <img class="img-fluid" src="http://127.0.0.1:3020/wp-content/uploads/2020/09/podcast.jpg" alt="podcast image">
                         </div><!-- .podcast_img_wrapper -->
-                        <div class="podcast_wrapper">
+                        <div class="podcast_wrapper" data-audio-link="<?php the_field( 'podcast_audio' ); ?>">
                             <div class="podcast_details">
                                 <div class="podcast_title">
                                     <h4><?php the_field( 'podcast_title' ); ?></h4>
@@ -441,3 +441,45 @@ function podcast_shortcode(){
     return ob_get_clean();
 }
 add_shortcode( 'podcast', 'podcast_shortcode' );
+
+function customers_shortcode() {
+ob_start();
+?>
+    <section class="customers">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-24">
+                    <div class="customers__wrapper">
+                        <div class="swiper-container">
+                            <div class="title">
+                                <h4>مشتریانی که اعتماد کردند </h4>
+                                <p>loremipsommatn</p>
+                            </div><!-- .title -->
+                            <div class="swiper-pagination"></div>
+                            <div class="swiper-wrapper">
+                                <?php
+                                if( have_rows( 'customers_logos' ) ){
+                                    while( have_rows( 'customers_logos' ) ){
+                                        the_row();
+                                        $logo = get_sub_field( 'customer_logo' );
+                                        ?>
+                                        <div class="swiper-slide">
+                                            <div>
+                                                <img src="<?php echo $logo[ 'url' ]; ?>" alt="<?php echo $logo[ 'alt' ]; ?>"></div>
+                                        </div>
+                                        <?php
+                                    }
+                                }
+                                ?>
+                            </div><!-- .swiper-wrapper -->
+                        </div><!-- .swiper-container -->
+                    </div><!-- .customers__wrapper -->
+                </div><!-- .col-xl-24 -->
+            </div><!-- .row -->
+        </div><!-- .container -->
+    </section><!-- .customers -->
+    <?php
+    return ob_get_clean();
+}
+
+add_shortcode( 'customers', 'customers_shortcode' );
