@@ -393,3 +393,51 @@ function services_card_shortcode(){
     return ob_get_clean();
 }
 add_shortcode( 'services_card', 'services_card_shortcode' );
+
+function podcast_shortcode(){
+    ob_start();
+    ?>
+    <section class="podcast">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-24">
+                    <div class="podcast__container">
+                        <div class="podcast_img_wrapper">
+                            <img class="img-fluid" src="http://127.0.0.1:3020/wp-content/uploads/2020/09/podcast.jpg" alt="podcast image">
+                        </div><!-- .podcast_img_wrapper -->
+                        <div class="podcast_wrapper">
+                            <div class="podcast_details">
+                                <div class="podcast_title">
+                                    <h4><?php the_field( 'podcast_title' ); ?></h4>
+                                    <span><?php the_field( 'podcast_topic' ); ?></span>
+                                </div><!-- .podcast_title -->
+                                <button class="podcast_button paused">
+                                    <span class="icon-play"></span>
+                                    <svg class="progress-ring" >
+                                        <circle
+                                                class="progress-ring__circle"
+                                                stroke="#ff4342"
+                                                stroke-width="1"
+                                                fill="transparent"
+                                                r="35"
+                                                cx="35"
+                                                cy="35"
+                                        />
+                                    </svg>
+                                </button><!-- .podcast_button -->
+                            </div><!-- .podcast_details -->
+                            <div class="waveform_wrapper">
+                                <span class="duration"></span>
+                                <div id="waveform"></div><!-- #waveform -->
+                                <span class="current_time">00.00</span>
+                            </div><!-- .waveform_wrapper -->
+                        </div><!-- .podcast_wrapper -->
+                    </div><!-- .podcast__container -->
+                </div><!-- .col-md-24 -->
+            </div><!-- .row -->
+        </div><!-- .container -->
+    </section><!-- .podcast -->
+<?php
+    return ob_get_clean();
+}
+add_shortcode( 'podcast', 'podcast_shortcode' );
