@@ -90,6 +90,103 @@ function web_design_sec_shortcode($atts)
 }
 add_shortcode('web_design_sec', 'web_design_sec_shortcode');
 
+// your position
+function your_position_shortcode()
+{
+    ob_start(); ?>
+    <section class="your_position">
+        <div class="outer_text_wrapper">
+            <div class="container">
+                <div class="text">
+                    <div class="title">
+                        <h4><?php the_field('your_position_title_fa'); ?></h4>
+                        <p><?php the_field('your_position_title_en'); ?></p>
+                    </div><!-- .title -->
+                    <p><?php the_field('your_position_description'); ?></p>
+                </div><!-- .text -->
+            </div><!-- .container -->
+        </div><!-- .outer_text_wrapper -->
+        <div class="your_position__content_wrapper">
+            <img class="background" src="http://127.0.0.1:3020/wp-content/uploads/2020/09/your_position_back_2.png"
+                 alt="your position background">
+            <div class="your_position__container">
+                <div class="col-lg-21">
+                    <div class="inner_text_wrapper">
+                        <div class="text">
+                            <div class="title">
+                                <h4><?php the_field('your_position_title_fa'); ?></h4>
+                                <p><?php the_field('your_position_title_en'); ?></p>
+                            </div><!-- .title -->
+                            <p><?php the_field('your_position_description'); ?></p>
+                        </div><!-- .text -->
+                    </div><!-- .inner_text_wrapper -->
+                </div><!-- .col-lg-21 -->
+                <div class="swiper-container categories_title_list">
+                    <div class="swiper-wrapper">
+                        <?php
+                        if (have_rows('your_position_steps')) {
+                            $i = 1;
+                            while (have_rows('your_position_steps')) {
+                                the_row(); ?>
+                                <div class="swiper-slide">
+                                    <div class="slide_info">
+                                        <span><?php echo get_sub_field('step_title') ?></span>
+                                        <div>
+                                            <?php
+                                            if ($i < 10)
+                                                echo '0' . $i;
+                                            else
+                                                echo $i;
+                                            ?>
+                                        </div>
+                                    </div>
+                                </div>
+                                <?php
+                                $i++;
+                                wp_reset_postdata();
+                            }
+                        }
+                        ?>
+                    </div><!-- .swiper-wrapper -->
+                </div><!-- .categories_title_list -->
+                <div class="swiper-container categories_description_list">
+                    <div class="swiper-wrapper">
+                        <?php
+                        if (have_rows('your_position_steps')) {
+                            $i = 1;
+                            while (have_rows('your_position_steps')) {
+                                the_row(); ?>
+                                <div class="swiper-slide">
+                                    <div class="slide_content">
+                                        <span>
+                                            <?php
+                                            if ($i < 10)
+                                                echo '0' . $i;
+                                            else
+                                                echo $i;
+                                            ?>
+                                        </span>
+                                        <h4><?php echo get_sub_field('step_title') ?></h4>
+                                        <p><?php echo get_sub_field('step_description') ?></p>
+                                    </div>
+                                </div>
+                                <?php
+                                $i++;
+                                wp_reset_postdata();
+                            }
+                        }
+                        ?>
+                    </div><!-- .swiper-wrapper -->
+                </div><!-- .categories_description_list -->
+            </div><!-- .your_position_wrapper -->
+        </div><!-- .image_container -->
+    </section><!-- .your_position -->
+    <?php
+    return ob_get_clean();
+}
+
+add_shortcode( 'your_position' , 'your_position_shortcode' );
+
 //services
 function services_shortcode( $atts ) {
     $attributes = shortcode_atts( array(
@@ -97,7 +194,6 @@ function services_shortcode( $atts ) {
     ), $atts );
     $posts_ids_str = $attributes[ 'post_ids' ];
     $post_ids_array = explode( ',', $posts_ids_str );
-
     $post_ids = [];
     foreach ( $post_ids_array as $post_id ){
         $post_ids[] = trim( $post_id );
