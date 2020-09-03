@@ -261,7 +261,9 @@ var wavesurfer = WaveSurfer.create({
 	height: 66
 });
 
-wavesurfer.load( '/assets/audio/test.mp3' );
+var audio_link = $( '.podcast_wrapper' ).data( 'audio-link' );
+
+wavesurfer.load( audio_link );
 
 wavesurfer.on('ready', function () {
 	$( '.duration' ).html( formatTime( wavesurfer.getDuration() ) );
