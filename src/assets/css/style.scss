@@ -1571,6 +1571,9 @@ body{
     &__container{
       padding-left: 10px;
       padding-right: 10px;
+      .podcast_img_wrapper{
+        margin-left: 10px;
+      }
       .podcast_wrapper{
         .podcast_details{
           flex-wrap: wrap;
