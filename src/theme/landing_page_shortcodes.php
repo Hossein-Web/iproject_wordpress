@@ -479,7 +479,7 @@ function podcast_shortcode()
                 <div class="col-md-24">
                     <div class="podcast__container">
                         <div class="podcast_img_wrapper">
-                            <img class="img-fluid" src="http://127.0.0.1:3020/wp-content/uploads/2020/09/podcast.jpg"
+                            <img src="http://127.0.0.1:3020/wp-content/uploads/2020/09/podcast.jpg"
                                  alt="podcast image">
                         </div><!-- .podcast_img_wrapper -->
                         <div class="podcast_wrapper" data-audio-link="<?php the_field('podcast_audio'); ?>">
