@@ -125,7 +125,6 @@ function your_position_shortcode()
                     <div class="swiper-wrapper">
                         <?php
                         if (have_rows('your_position_steps')) {
-                            $i = 1;
                             while (have_rows('your_position_steps')) {
                                 the_row(); ?>
                                 <div class="swiper-slide">
@@ -133,7 +132,8 @@ function your_position_shortcode()
                                         <span><?php echo get_sub_field('step_title') ?></span>
                                         <div>
                                             <?php
-                                            if ($i < 10)
+                                            $i = get_row_index();
+                                            if ( $i < 10)
                                                 echo '0' . $i;
                                             else
                                                 echo $i;
@@ -152,14 +152,14 @@ function your_position_shortcode()
                 <div class="swiper-container categories_description_list">
                     <div class="swiper-wrapper">
                         <?php
-                        if (have_rows('your_position_steps')) {
-                            $i = 1;
-                            while (have_rows('your_position_steps')) {
+                        if ( have_rows('your_position_steps') ) {
+                            while ( have_rows('your_position_steps') ) {
                                 the_row(); ?>
                                 <div class="swiper-slide">
                                     <div class="slide_content">
                                         <span>
                                             <?php
+                                            $i = get_row_index();
                                             if ($i < 10)
                                                 echo '0' . $i;
                                             else
