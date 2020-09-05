@@ -579,3 +579,42 @@ ob_start();
 }
 
 add_shortcode( 'customers', 'customers_shortcode' );
+
+function order_shortcode(){
+    ob_start();
+    ?>
+    <section class="order">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-xl-10 col-md-10">
+                    <div class="title">
+                        <h4><?php the_field( 'order_title_fa' ); ?></h4>
+                        <p><?php the_field('order_title_en'); ?></p>
+                    </div><!-- .title -->
+                </div><!-- .col-xl-10 -->
+                <div class="col-xl-14 col-md-14">
+                    <div class="order__content">
+                        <ul>
+                            <?php
+                            if( have_rows('order_items') ){
+                                while( have_rows( 'order_items' ) ){
+                                    the_row();
+                                    ?>
+                                    <li>
+                                        <span><?php echo get_row_index(); ?></span>
+                                        <p><?php echo get_sub_field( 'item_description' ); ?></p>
+                                    </li>
+                                    <?php
+                                }
+                            }
+                            ?>
+                        </ul>
+                    </div><!-- .order__content -->
+                </div><!-- .col-xl-14 -->
+            </div><!-- .row -->
+        </div><!-- .container -->
+    </section><!-- .order -->
+<?php
+    return ob_get_clean();
+}
+add_shortcode( 'order', 'order_shortcode' );
