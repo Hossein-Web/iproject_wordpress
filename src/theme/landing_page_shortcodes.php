@@ -271,15 +271,15 @@ function select_team_shortcode()
                     <div class="select_team__img">
                         <img src="http://127.0.0.1:3020/wp-content/uploads/2020/09/select_team2.jpg"
                              alt="design_effect">
-                        <div class="select_team__img__lable">
+                        <div class="select_team__img__label">
                             <div class="icon">
                                 <span class="icon-man"></span>
                             </div>
-                            <div class="lable">
+                            <div class="label">
                                 <p>آی وحید</p>
                                 <p>لذت تفاوت</p>
                             </div>
-                        </div><!-- .select_team__img__lable -->
+                        </div><!-- .select_team__img__label -->
                     </div><!-- .select_team__img -->
                     <div class="row align-items-center">
                         <div class="col-lg-12 col-24 mr-auto">

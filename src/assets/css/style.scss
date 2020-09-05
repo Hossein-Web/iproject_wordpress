@@ -429,7 +429,7 @@ body{
   &__img{
     position: absolute;
     transform: translateX(55% );
-    &__lable{
+    &__label{
       display: flex;
       position: absolute;
       bottom: 80px;
@@ -455,7 +455,7 @@ body{
           transform: translate(50%, -50%);
         }
       }
-      .lable{
+      .label{
         font-size: 24px;
         font-weight: 700;
         flex: 0 0 auto;
@@ -1459,7 +1459,7 @@ body{
 //---------------------- < 768px ----------------------
 @media only screen and( max-width: 768px ){
   //Select_team
-  .select_team__img__lable{
+  .select_team__img__label{
     height: 80px;
   }
   //Ivahid_difference
@@ -1527,13 +1527,13 @@ body{
   }
   //Select_team
   .select_team{
-    &__img__lable{
+    &__img__label{
       left: 0;
       bottom: 20px;
       .icon{
         margin-right: 5px;
       }
-      .lable{
+      .label{
         padding-right: 10px;
         margin-left: 80px;
         font-size: 18px;
