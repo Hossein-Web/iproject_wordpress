@@ -749,3 +749,71 @@ function videos_shortcode()
 }
 
 add_shortcode('videos', 'videos_shortcode');
+
+function blog_shortcode( $atts ){
+    ob_start();
+    $attributes = shortcode_atts(
+            array(
+                    'post_ids' => ''
+            ),
+        $atts
+    );
+    $posts_ids_str = $attributes[ 'post_ids' ];
+    $post_ids_array = explode( ',', $posts_ids_str );
+
+    $post_ids = [];
+    foreach ( $post_ids_array as $post_id ){
+        $post_ids[] = trim( $post_id );
+    }
+
+    $args = [
+        'post__in'            => $post_ids,
+        'ignore_sticky_posts' => true
+    ];
+    $blog_posts = new WP_Query( $args );
+?>
+    <section class="blog">
+        <div class="container">
+            <div class="blog__wrapper">
+                <div class="swiper-container">
+                    <div class="title">
+                        <h4><?php the_field( 'blog_title_fa' ); ?></h4>
+                        <p><?php the_field( 'blog_title_en' ); ?></p>
+                    </div><!-- .title -->
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-wrapper">
+                        <?php
+                       if ( $blog_posts->have_posts() ){
+                           while ( $blog_posts->have_posts() ){
+                               $blog_posts->the_post();
+                               ?>
+                               <div class="swiper-slide">
+                                   <div class="post_wrapper">
+                                       <div class="post_img_wrapper">
+                                           <a href="<?php the_permalink(); ?>">
+                                               <?php echo get_the_post_thumbnail(); ?>
+                                           </a>
+                                       </div><!-- .post_img_wrapper -->
+                                       <a class="post_title" href="<?php the_permalink(); ?>"><?php the_title(); ?></a><!-- .post_title -->
+                                       <!-- <h4></h4> -->
+                                       <p class="post_excerpt">
+                                           <?php the_excerpt(); ?>
+                                       </p><!-- .post_excerpt -->
+                                       <div class="read_more_wrapper">
+                                           <a href="<?php the_permalink(); ?>">مشاهده بیشتر</a>
+                                       </div><!-- .read_more_wrapper -->
+                                   </div><!-- .post_wrapper -->
+                               </div><!-- .swiper-slide -->
+                               <?php
+                           }
+                       }
+                        ?>
+                    </div><!-- .swiper-wrapper -->
+                </div><!-- .swiper-container -->
+            </div><!-- .blog__wrapper -->
+        </div><!-- .container -->
+    </section><!-- .blog -->
+<?php
+    return ob_get_clean();
+}
+add_shortcode( 'blog', 'blog_shortcode' );
