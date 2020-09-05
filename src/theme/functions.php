@@ -607,6 +607,59 @@ function customers_shortcode()
 
 add_shortcode('customers', 'customers_shortcode');
 
+function portfolio_shortcode()
+{
+    ob_start();
+    ?>
+    <section class="portfolio">
+        <div class="container">
+            <div class="row">
+                <div class="col-24">
+                    <div class="portfolio__background">
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="portfolio__description">
+                        <h4><?php the_field('portfolio_title'); ?></h4>
+                        <p><?php the_field('portfolio_description'); ?></p>
+                    </div><!-- .portfolio__description -->
+                    <div class="portfolio__wrapper">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <?php
+                                if (have_rows('portfolio_items')) {
+                                    while (have_rows('portfolio_items')) {
+                                        the_row();
+                                        $image = get_sub_field('item_image');
+                                        ?>
+                                        <div class="swiper-slide">
+                                            <div class="portfolio__wrapper__item">
+                                                <img src="<?php echo $image['url'] ?>"
+                                                     alt="<?php echo $image['alt'] ?>">
+                                                <h4><?php echo get_sub_field('item_title'); ?></h4>
+                                                <p><?php echo get_sub_field('item_description') ?></p>
+                                            </div>
+                                        </div>
+                                        <?php
+                                    }
+                                }
+                                ?>
+                            </div><!-- .swiper-wrapper -->
+                        </div><!-- .swiper-container -->
+                        <div class="view_more">
+                            <a href="#">مشاهده بیشتر</a>
+                        </div><!-- .view_more -->
+                    </div><!-- .portfolio__wrapper -->
+                </div><!-- .col-24 -->
+            </div><!-- .row -->
+        </div><!-- .container-fluid -->
+    </section><!-- .portfolio -->
+    <?php
+    return ob_get_clean();
+}
+
+add_shortcode('portfolio', 'portfolio_shortcode');
+
 function order_shortcode()
 {
     ob_start();
@@ -664,30 +717,32 @@ function videos_shortcode()
                             </div><!-- .title -->
                             <div class="swiper-pagination"></div>
                             <div class="swiper-wrapper">
-                            <?php
-                            if (have_rows('videos')) {
-                                while (have_rows('videos')) {
-                                    the_row();
-                                    $item_img = get_sub_field('item_img');
-                                    ?>
-                                    <div class="swiper-slide">
-                                        <div class="item">
-                                            <a class="video_link" href="#"><span class="icon-play"></span></a>
-                                            <img src="<?php echo $item_img['url'] ?>" alt="<?php echo $item_img['alt'] ?>>">
-                                            <p><?php echo get_sub_field('item_description') ?></p>
+                                <?php
+                                if (have_rows('videos')) {
+                                    while (have_rows('videos')) {
+                                        the_row();
+                                        $item_img = get_sub_field('item_img');
+                                        ?>
+                                        <div class="swiper-slide">
+                                            <div class="item">
+                                                <a class="video_link" href="#"><span class="icon-play"></span></a>
+                                                <img src="<?php echo $item_img['url'] ?>"
+                                                     alt="<?php echo $item_img['alt'] ?>>">
+                                                <p><?php echo get_sub_field('item_description') ?></p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <?php
+                                        <?php
+                                    }
                                 }
-                            }
-                            ?>
+                                ?>
                             </div><!-- .swiper-wrapper -->
                         </div><!-- .swiper-container -->
                     </div><!-- .videos__wrapper -->
                 </div><!-- .col-xl-24 -->
             </div><!-- .row -->
         </div><!-- .container -->
-        <img class="videos__background" src="http://127.0.0.1:3020/wp-content/uploads/2020/09/dots-gray.png" alt="dot background">
+        <img class="videos__background" src="http://127.0.0.1:3020/wp-content/uploads/2020/09/dots-gray.png"
+             alt="dot background">
     </section><!-- .videos -->
     <?php
     return ob_get_clean();
