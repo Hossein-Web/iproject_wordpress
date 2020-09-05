@@ -5,7 +5,7 @@ function ivahid_landing_resources()
 {
     if ( is_page_template( 'page-ivahid.php' ) ){
         wp_enqueue_style('style', get_stylesheet_uri());
-        wp_enqueue_script('header_js', get_template_directory_uri() . '/js/header-bundle.js', null, 1.0, false);
+        wp_enqueue_script('header_js', get_template_directory_uri() . '/js/header-bundle.js', null, 1.0, true);
         wp_enqueue_script('footer_js', get_template_directory_uri() . '/js/footer-bundle.js', null, 1.0, true);
     }
 }
@@ -39,7 +39,7 @@ function web_design_sec_shortcode($atts)
                 </div><!-- .col-xl-10 -->
                 <div class="col-xl-12">
                     <div class="web_design_sec__img_wrapper">
-                        <img src="http://127.0.0.1:3020/wp-content/uploads/2020/09/web_design_sec.png"
+                        <img src="<?php echo get_template_directory_uri() . '/img/web_design_sec.png' ?>"
                              alt="section image">
                     </div><!-- .web_design_sec__img_wrapper -->
                 </div><!-- .col-xl-12 -->
@@ -72,7 +72,7 @@ function your_position_shortcode()
             </div><!-- .container -->
         </div><!-- .outer_text_wrapper -->
         <div class="your_position__content_wrapper">
-            <img class="background" src="http://127.0.0.1:3020/wp-content/uploads/2020/09/your_position_back_2.png"
+            <img class="background" src="<?php echo get_template_directory_uri() . '/img/your_position_back_2.png' ?>"
                  alt="your position background">
             <div class="your_position__container">
                 <div class="col-lg-21">
@@ -186,7 +186,7 @@ function services_shortcode($atts)
                                 <div class="services__list__item">
                                     <div class="item_title_wrapper">
                                         <div class="icon">
-                                            <img src="http://127.0.0.1:3020/wp-content/uploads/2020/09/wordpress-Logo.png"
+                                            <img src="<?php echo get_template_directory_uri() . '/img/wordpress-Logo.png' ?>"
                                                  alt="wordpress logo">
                                         </div>
                                         <div class="title">
@@ -236,7 +236,7 @@ function design_effect_shortcode()
             <div class="row align-items-center">
                 <div class="col-xl-12 col-md-12 col-24">
                     <div class="design_effect__img">
-                        <img src="http://127.0.0.1:3020/wp-content/uploads/2020/09/design_effect.png"
+                        <img src="<?php echo get_template_directory_uri() . '/img/design_effect.png' ?>"
                              alt="design_effect">
                     </div><!-- .img -->
                 </div><!-- .col-xl-12 -->
@@ -270,7 +270,7 @@ function select_team_shortcode()
                 <div class="col-xl-24">
                     <div class="select_team__img">
                         <img src="http://127.0.0.1:3020/wp-content/uploads/2020/09/select_team2.jpg"
-                             alt="design_effect">
+                             alt="select team">
                         <div class="select_team__img__label">
                             <div class="icon">
                                 <span class="icon-man"></span>
@@ -341,7 +341,7 @@ function portal_shortcode($atts)
             <div class="row align-items-center justify-content-center">
                 <div class="col-md-24 col-24">
                     <div class="portal__img">
-                        <img src="http://127.0.0.1:3020/wp-content/uploads/2020/09/portal.png" alt="portal">
+                        <img src="<?php echo get_template_directory_uri() . '/img/portal.png' ?>" alt="portal">
                     </div>
                     <div class="row">
                         <div class="col-lg-12 col-24 mr-auto">
@@ -479,7 +479,7 @@ function podcast_shortcode()
                 <div class="col-md-24">
                     <div class="podcast__container">
                         <div class="podcast_img_wrapper">
-                            <img src="http://127.0.0.1:3020/wp-content/uploads/2020/09/podcast.jpg"
+                            <img src="<?php echo get_template_directory_uri() . '/img/podcast.jpg' ?>"
                                  alt="podcast image">
                         </div><!-- .podcast_img_wrapper -->
                         <div class="podcast_wrapper" data-audio-link="<?php the_field('podcast_audio'); ?>">
@@ -699,7 +699,7 @@ function videos_shortcode()
                 </div><!-- .col-xl-24 -->
             </div><!-- .row -->
         </div><!-- .container -->
-        <img class="videos__background" src="http://127.0.0.1:3020/wp-content/uploads/2020/09/dots-gray.png"
+        <img class="videos__background" src="<?php echo get_template_directory_uri() . '/img/dots-gray.png' ?>"
              alt="dot background">
     </section><!-- .videos -->
     <?php
