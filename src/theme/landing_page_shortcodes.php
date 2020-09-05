@@ -757,6 +757,7 @@ function blog_shortcode( $atts ){
                                 </div><!-- .swiper-slide -->
                                 <?php
                             }
+                            wp_reset_postdata();
                         }
                         ?>
                     </div><!-- .swiper-wrapper -->
