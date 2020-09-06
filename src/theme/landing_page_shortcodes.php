@@ -409,8 +409,7 @@ function services_card_shortcode(){
 }
 add_shortcode( 'services_card', 'services_card_shortcode' );
 
-function podcast_shortcode()
-{
+function podcast_shortcode(){
     ob_start();
     ?>
     <section class="podcast">
@@ -419,26 +418,29 @@ function podcast_shortcode()
                 <div class="col-md-24">
                     <div class="podcast__container">
                         <div class="podcast_img_wrapper">
-                            <img src="<?php echo get_template_directory_uri() . '/img/podcast.jpg' ?>"
-                                 alt="podcast image">
+                            <img class="img-fluid" src="http://127.0.0.1:3020/wp-content/uploads/2020/09/podcast.jpg" alt="podcast image">
                         </div><!-- .podcast_img_wrapper -->
-                        <div class="podcast_wrapper" data-audio-link="<?php the_field('podcast_audio'); ?>">
+                        <div class="podcast_wrapper" data-audio-link="<?php the_field( 'podcast_audio' ); ?>">
                             <div class="podcast_details">
                                 <div class="podcast_title">
-                                    <h4><?php the_field('podcast_title'); ?></h4>
-                                    <span><?php the_field('podcast_topic'); ?></span>
+                                    <?php
+                                    $podcast_title_link = get_field( 'podcast_title_link' );
+                                    $podcast_topic_link = get_field( 'podcast_topic_link' );
+                                    ?>
+                                    <h4><a href="<?php echo esc_url( $podcast_title_link['url'] ); ?>"><?php echo esc_html( $podcast_title_link['title'] ); ?></a></h4>
+                                    <span><a href="<?php echo esc_url( $podcast_topic_link['url'] ) ?>"><?php echo esc_html( $podcast_topic_link['title'] ) ?></a></span>
                                 </div><!-- .podcast_title -->
                                 <button class="podcast_button paused">
                                     <span class="icon-play"></span>
-                                    <svg class="progress-ring">
+                                    <svg class="progress-ring" >
                                         <circle
-                                            class="progress-ring__circle"
-                                            stroke="#ff4342"
-                                            stroke-width="1"
-                                            fill="transparent"
-                                            r="35"
-                                            cx="35"
-                                            cy="35"
+                                                class="progress-ring__circle"
+                                                stroke="#ff4342"
+                                                stroke-width="1"
+                                                fill="transparent"
+                                                r="35"
+                                                cx="35"
+                                                cy="35"
                                         />
                                     </svg>
                                 </button><!-- .podcast_button -->
@@ -457,8 +459,7 @@ function podcast_shortcode()
     <?php
     return ob_get_clean();
 }
-
-add_shortcode('podcast', 'podcast_shortcode');
+add_shortcode( 'podcast', 'podcast_shortcode' );
 
 function customers_shortcode()
 {
