@@ -1171,29 +1171,18 @@ body{
 }
 
 /*--------------------------------- Content encyclopedia -------------------------------------*/
-.content_encyclopedia{
-  margin-bottom: 321px;
-  &__item_wrapper{
-    &:not(:last-child){
-      margin-bottom: 45px;
-    }
-    h4, h5{
-      color: #333333;
-      margin-bottom: 45px;
-      font-weight: 700;
-    }
-    h4{
-      font-size: 24px;
-    }
-    h5{
-      font-size: 18px;
-    }
-    .item_description{
-      color: #333333;
-      font-weight: 400;
-      text-align: justify;
-    }
-    .wiki_link{
+.wiki{
+  h2, h3{
+    color: #333333;
+    margin-bottom: 45px;
+    font-weight: 700;
+  }
+  p{
+    color: #333333;
+    font-weight: 400;
+    text-align: justify;
+    margin-bottom: 45px;
+    a{
       color: $accent_color;
       transition: 0.1s;
       font-weight: 400;
