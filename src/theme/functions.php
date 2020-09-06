@@ -139,7 +139,12 @@ function portal_shortcode( $atts ){
                                 </div><!-- .title -->
                                 <p><?php the_field( 'portal_description' ); ?></p>
                                 <div class="link">
-                                    <a href="#">پرتال مشتریان</a>
+                                    <?php
+                                    $portal_link = get_field( 'portal_link' );
+                                    $url = $portal_link['url'];
+                                    $title = $portal_link['title'];
+                                    ?>
+                                    <a href="<?php echo esc_url( $url ); ?>"><?php echo esc_html( $title ); ?></a>
                                 </div>
                             </div><!-- .portal__content -->
                         </div><!-- .col-lg-12 -->
