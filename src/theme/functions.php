@@ -54,5 +54,4 @@ function wordpressify_widgets()
 
 add_action('widgets_init', 'wordpressify_widgets');
 
-
 require 'landing_page_shortcodes.php';
