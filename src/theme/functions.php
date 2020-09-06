@@ -120,3 +120,85 @@ function design_effect_shortcode(){
     return ob_get_clean();
 }
 add_shortcode( 'design_effect', 'design_effect_shortcode' );
+
+function services_shortcode($atts)
+{
+//    $attributes = shortcode_atts(array(
+//        'post_ids' => ''
+//    ), $atts);
+//    $posts_ids_str = $attributes['post_ids'];
+//
+//    // split attribute string with ','
+//    $post_ids_array = explode(',', $posts_ids_str);
+//
+//    // remove spaces before and after attribute
+//    $post_ids = [];
+//    foreach ($post_ids_array as $post_id) {
+//        $post_ids[] = trim($post_id);
+//    }
+
+    // posts query
+//    $args = [
+//        'post__in' => $post_ids,
+//        'ignore_sticky_posts' => true
+//    ];
+//    $services_posts_query = new WP_Query($args);
+    ob_start(); ?>
+    <section class="services">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-xl-12 col-lg-12 col-md-24">
+                    <div class="services__introduction">
+                        <div class="title">
+                            <h4><?php the_field('services_title_fa'); ?></h4>
+                            <p><?php the_field('services_title_en'); ?></p>
+                        </div><!-- .title -->
+                        <p><?php the_field('services_description'); ?></p>
+                    </div><!-- .services_introduction -->
+                </div><!-- .col-xl-12 -->
+                <div class="col-xl-12 col-lg-12 col-md-24">
+                    <div class="services__list">
+                        <?php
+                        if ( have_rows( 'services_list' ) ){
+                            while (have_rows( 'services_list' )){
+                                the_row();
+                                ?>
+                                <div class="services__list__item">
+                                    <div class="item_title_wrapper">
+                                        <div class="icon">
+                                            <img src="http://127.0.0.1:3020/wp-content/uploads/2020/09/wordpress-Logo.png"
+                                                 alt="wordpress logo">
+                                        </div>
+                                        <div class="title">
+                                            <?php
+                                            $first_title_link = get_sub_field( 'first_title_link' );
+                                            $second_title_link = get_sub_field( 'second_title_link' );
+                                            $item_link = get_sub_field( 'item_link' );
+                                            ?>
+                                            <p>
+                                                <a href="<?php echo esc_url( $first_title_link['url'] ); ?>"><?php echo esc_html( $first_title_link['title'] ); ?></a>
+                                            </p>
+                                            <p>
+                                                <a href="<?php echo esc_url( $second_title_link['url'] ); ?>"><?php echo esc_html($second_title_link['title']); ?></a>
+                                            </p>
+                                        </div>
+                                    </div><!-- .item_title_wrapper -->
+                                    <div class="content">
+                                        <p><?php echo get_sub_field( 'item_description' ); ?></p>
+                                        <a href="<?php echo esc_url( $item_link['url'] ); ?>" class="read_more"><?php echo esc_html( $item_link['title'] ); ?></a>
+                                    </div>
+                                </div><!-- .services__list__item -->
+                                <?php
+                            }
+                        }
+                        ?>
+                    </div><!-- .services__list -->
+                </div><!-- .col-xl-12-->
+            </div><!-- .row -->
+        </div><!-- .container -->
+    </section><!-- .services -->
+    <?php return ob_get_clean();
+}
+
+add_shortcode('services', 'services_shortcode');
+
