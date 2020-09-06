@@ -129,7 +129,8 @@ function ivahid_difference_shortcode( $atts ){
             <div class="row">
                 <div class="col-xl-9 col-lg-9 col-md-12">
                     <div class="ivahid_difference__img">
-                        <img src="./assets/img/ivahid.png" alt="ivahid">
+                        <?php $ivahid_difference_img = get_field( 'ivahid_difference_img' ); ?>
+                        <img src="<?php $ivahid_difference_img['url'] ?>" alt="<?php $ivahid_difference_img['alt'] ?>">
                     </div><!-- .ivahid_difference__img -->
                 </div><!-- .col-xl-9 -->
                 <div class="col-xl-15 col-lg-15 col-md-12">
