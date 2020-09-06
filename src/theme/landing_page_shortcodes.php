@@ -332,8 +332,7 @@ function ivahid_difference_shortcode($atts)
 
 add_shortcode('ivahid_difference', 'ivahid_difference_shortcode');
 
-function portal_shortcode($atts)
-{
+function portal_shortcode( $atts ){
     ob_start();
     ?>
     <section class="portal">
@@ -347,11 +346,16 @@ function portal_shortcode($atts)
                         <div class="col-lg-12 col-24 mr-auto">
                             <div class="portal__content">
                                 <div class="title title--white">
-                                    <h4><?php the_field('portal_title'); ?></h4>
+                                    <h4><?php the_field( 'portal_title' ); ?></h4>
                                 </div><!-- .title -->
-                                <p><?php the_field('portal_description'); ?></p>
+                                <p><?php the_field( 'portal_description' ); ?></p>
                                 <div class="link">
-                                    <a href="#">پرتال مشتریان</a>
+                                    <?php
+                                    $portal_link = get_field( 'portal_link' );
+                                    $url = $portal_link['url'];
+                                    $title = $portal_link['title'];
+                                    ?>
+                                    <a href="<?php echo esc_url( $url ); ?>"><?php echo esc_html( $title ); ?></a>
                                 </div>
                             </div><!-- .portal__content -->
                         </div><!-- .col-lg-12 -->
@@ -363,8 +367,7 @@ function portal_shortcode($atts)
     <?php
     return ob_get_clean();
 }
-
-add_shortcode('portal', 'portal_shortcode');
+add_shortcode( 'portal', 'portal_shortcode' );
 
 function services_card_shortcode(){
     ob_start();
