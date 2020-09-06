@@ -302,8 +302,7 @@ function select_team_shortcode()
 
 add_shortcode('select_team', 'select_team_shortcode');
 
-function ivahid_difference_shortcode($atts)
-{
+function ivahid_difference_shortcode( $atts ){
     ob_start();
     ?>
     <section class="ivahid_difference">
@@ -311,16 +310,17 @@ function ivahid_difference_shortcode($atts)
             <div class="row">
                 <div class="col-xl-9 col-lg-9 col-md-12">
                     <div class="ivahid_difference__img">
-                        <img src="http://127.0.0.1:3020/wp-content/uploads/2020/09/ivahid.png" alt="ivahid">
+                        <?php $ivahid_difference_img = get_field( 'ivahid_difference_img' ); ?>
+                        <img src="<?php echo $ivahid_difference_img['url']; ?>" alt="<?php echo $ivahid_difference_img['alt']; ?>">
                     </div><!-- .ivahid_difference__img -->
                 </div><!-- .col-xl-9 -->
                 <div class="col-xl-15 col-lg-15 col-md-12">
                     <div class="ivahid_difference__content">
                         <div class="title">
-                            <h4><?php the_field('ivahid_difference_title_fa'); ?></h4>
-                            <p><?php the_field('ivahid_difference_title_en'); ?></p>
+                            <h4><?php the_field( 'ivahid_difference_title_fa' ); ?></h4>
+                            <p><?php the_field( 'ivahid_difference_title_en' ); ?></p>
                         </div><!-- .title -->
-                        <p><?php the_field('ivahid_difference_description'); ?></p>
+                        <p><?php the_field( 'ivahid_difference_description' ); ?></p>
                     </div><!-- .ivahid_difference__content -->
                 </div><!-- .col-xl-15 -->
             </div><!-- .row -->
@@ -330,7 +330,7 @@ function ivahid_difference_shortcode($atts)
     return ob_get_clean();
 }
 
-add_shortcode('ivahid_difference', 'ivahid_difference_shortcode');
+add_shortcode( 'ivahid_difference', 'ivahid_difference_shortcode' );
 
 function portal_shortcode( $atts ){
     ob_start();
