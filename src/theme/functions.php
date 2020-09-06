@@ -129,7 +129,8 @@ function select_team_shortcode(){
             <div class="row justify-content-center align-items-center">
                 <div class="col-xl-24">
                     <div class="select_team__img">
-                        <img src="./assets/img/select_team2.jpg" alt="design_effect">
+                        <?php $select_team_img = get_field( 'select_team_img' ); ?>
+                        <img src="<?php $select_team_img['url'] ?>" alt="<?php $select_team_img['alt'] ?>">
                         <div class="select_team__img__lable">
                             <div class="icon">
                                 <span class="icon-man"></span>
