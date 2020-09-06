@@ -408,8 +408,12 @@ function podcast_shortcode(){
                         <div class="podcast_wrapper" data-audio-link="<?php the_field( 'podcast_audio' ); ?>">
                             <div class="podcast_details">
                                 <div class="podcast_title">
-                                    <h4><?php the_field( 'podcast_title' ); ?></h4>
-                                    <span><?php the_field( 'podcast_topic' ); ?></span>
+                                    <?php
+                                    $podcast_title_link = get_field( 'podcast_title_link' );
+                                    $podcast_topic_link = get_field( 'podcast_topic_link' );
+                                    ?>
+                                    <h4><?php echo esc_html( $podcast_title_link['title'] ); ?></h4>
+                                    <span><?php echo esc_html( $podcast_topic_link['title'] ) ?></span>
                                 </div><!-- .podcast_title -->
                                 <button class="podcast_button paused">
                                     <span class="icon-play"></span>
