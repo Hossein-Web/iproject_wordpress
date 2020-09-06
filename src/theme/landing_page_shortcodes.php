@@ -155,15 +155,6 @@ add_shortcode('your_position', 'your_position_shortcode');
 //services
 function services_shortcode($atts)
 {
-    $attributes = shortcode_atts(array(
-        'post_ids' => ''
-    ), $atts);
-    $post_ids = StrToArr( $attributes['post_ids'], ',' );
-    $args = [
-        'post__in' => $post_ids,
-        'ignore_sticky_posts' => true
-    ];
-    $services_posts_query = new WP_Query($args);
     ob_start(); ?>
     <section class="services">
         <div class="container">
@@ -180,9 +171,10 @@ function services_shortcode($atts)
                 <div class="col-xl-12 col-lg-12 col-md-24">
                     <div class="services__list">
                         <?php
-                        if ($services_posts_query->have_posts()) {
-                            while ($services_posts_query->have_posts()) {
-                                $services_posts_query->the_post(); ?>
+                        if ( have_rows( 'services_list' ) ){
+                            while (have_rows( 'services_list' )){
+                                the_row();
+                                ?>
                                 <div class="services__list__item">
                                     <div class="item_title_wrapper">
                                         <div class="icon">
@@ -190,31 +182,26 @@ function services_shortcode($atts)
                                                  alt="wordpress logo">
                                         </div>
                                         <div class="title">
-                                            <p><?php the_title() ?></p>
                                             <?php
-                                            $post_cats_id = wp_get_post_categories(get_the_ID());
-                                            for ($i = 0; $i < count($post_cats_id); $i++) {
-                                                ?>
-                                                <a href="<?php echo get_category_link($post_cats_id[$i]); ?>"><?php echo get_the_category_by_ID($post_cats_id[$i]); ?></a>
-                                                <?php
-                                                if ((count($post_cats_id) > 1) && ($i < count($post_cats_id) - 1)) {
-                                                    ?>
-                                                    <span> ,</span>
-                                                    <?php
-                                                }
-                                            }
+                                            $main_title_link = get_sub_field( 'main_title_link' );
+                                            $subtitle_link = get_sub_field( 'subtitle_link' );
+                                            $item_link = get_sub_field( 'item_link' );
                                             ?>
+                                            <p>
+                                                <a href="<?php echo esc_url( $main_title_link['url'] ); ?>"><?php echo esc_html( $main_title_link['title'] ); ?></a>
+                                            </p>
+                                            <p>
+                                                <a href="<?php echo esc_url( $subtitle_link['url'] ); ?>"><?php echo esc_html($subtitle_link['title']); ?></a>
                                             </p>
                                         </div>
                                     </div><!-- .item_title_wrapper -->
                                     <div class="content">
-                                        <?php the_excerpt(); ?>
-                                        <a href="<?php the_permalink(); ?>" class="read_more">اطلاعات بیشتر</a>
+                                        <p><?php echo get_sub_field( 'item_description' ); ?></p>
+                                        <a href="<?php echo esc_url( $item_link['url'] ); ?>" class="read_more"><?php echo esc_html( $item_link['title'] ); ?></a>
                                     </div>
                                 </div><!-- .services__list__item -->
                                 <?php
                             }
-                            wp_reset_postdata();
                         }
                         ?>
                     </div><!-- .services__list -->
