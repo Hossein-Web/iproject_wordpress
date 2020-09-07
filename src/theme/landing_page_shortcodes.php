@@ -534,27 +534,29 @@ function portfolio_shortcode()
                         <div class="swiper-container">
                             <div class="swiper-wrapper">
                                 <?php
-                                if (have_rows('portfolio_items')) {
-                                    while (have_rows('portfolio_items')) {
-                                        the_row();
-                                        $image = get_sub_field('item_image');
+                                $portfolio_items = get_field( 'portfolio_items' );
+                                if ( $portfolio_items ){
+                                    foreach ( $portfolio_items as $item ){
                                         ?>
                                         <div class="swiper-slide">
                                             <div class="portfolio__wrapper__item">
-                                                <img src="<?php echo $image['url'] ?>"
-                                                     alt="<?php echo $image['alt'] ?>">
-                                                <h4><?php echo get_sub_field('item_title'); ?></h4>
-                                                <p><?php echo get_sub_field('item_description') ?></p>
+                                                <?php echo get_the_post_thumbnail( $item ); ?>
+                                                <h4><?php echo get_the_title( $item ); ?></h4>
+                                                <p><?php echo get_the_excerpt( $item ); ?></p>
                                             </div>
                                         </div>
                                         <?php
                                     }
+                                    wp_reset_postdata();
                                 }
                                 ?>
                             </div><!-- .swiper-wrapper -->
                         </div><!-- .swiper-container -->
                         <div class="view_more">
-                            <a href="#">مشاهده بیشتر</a>
+                            <?php
+                            $portfolio_link = get_field( 'portfolio_link' );
+                            ?>
+                            <a href="<?php echo esc_url( $portfolio_link['url'] );  ?>"><?php echo esc_html( $portfolio_link['title'] ); ?></a>
                         </div><!-- .view_more -->
                     </div><!-- .portfolio__wrapper -->
                 </div><!-- .col-24 -->
