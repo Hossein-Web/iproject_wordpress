@@ -25,6 +25,7 @@ function StrToArr( $str, $delimiter  ) {
 function web_design_sec_shortcode($atts)
 {
     ob_start(); ?>
+    </div><!-- .container -->
     <section class="web_design_sec">
         <div class="container">
             <div class="row">
@@ -49,6 +50,7 @@ function web_design_sec_shortcode($atts)
             <span class="icon-arrow-down"></span>
         </a><!-- .web_design_sec__go_bottom -->
     </section><!-- .web_design_sec -->
+    <div class="container">
     <?php
     return ob_get_clean();
 }
@@ -59,6 +61,7 @@ add_shortcode('web_design_sec', 'web_design_sec_shortcode');
 function your_position_shortcode()
 {
     ob_start(); ?>
+    </div><!-- .container -->
     <section class="your_position">
         <div class="outer_text_wrapper">
             <div class="container">
@@ -146,6 +149,7 @@ function your_position_shortcode()
             </div><!-- .your_position_wrapper -->
         </div><!-- .image_container -->
     </section><!-- .your_position -->
+    <div class="container">
     <?php
     return ob_get_clean();
 }
@@ -156,6 +160,7 @@ add_shortcode('your_position', 'your_position_shortcode');
 function services_shortcode($atts)
 {
     ob_start(); ?>
+    </div><!-- .container -->
     <section class="services">
         <div class="container">
             <div class="row align-items-center">
@@ -209,6 +214,7 @@ function services_shortcode($atts)
             </div><!-- .row -->
         </div><!-- .container -->
     </section><!-- .services -->
+    <div class="container">
     <?php return ob_get_clean();
 }
 
@@ -218,6 +224,7 @@ function design_effect_shortcode()
 {
     ob_start();
     ?>
+    </div><!-- .container -->
     <section class="design_effect">
         <div class="container">
             <div class="row align-items-center">
@@ -241,6 +248,7 @@ function design_effect_shortcode()
             </div><!-- .row -->
         </div><!-- .container -->
     </section><!-- .design_effect -->
+    <div class="container">
     <?php
     return ob_get_clean();
 }
@@ -251,6 +259,7 @@ function select_team_shortcode()
 {
     ob_start();
     ?>
+    </div><!-- .container -->
     <section class="select_team">
         <div class="container">
             <div class="row justify-content-center align-items-center">
@@ -283,6 +292,7 @@ function select_team_shortcode()
             </div><!-- .row -->
         </div><!-- .container -->
     </section><!-- .select_team -->
+    <div class="container">
     <?php
     return ob_get_clean();
 }
@@ -292,6 +302,7 @@ add_shortcode('select_team', 'select_team_shortcode');
 function ivahid_difference_shortcode( $atts ){
     ob_start();
     ?>
+    </div><!-- .container -->
     <section class="ivahid_difference">
         <div class="container">
             <div class="row">
@@ -313,6 +324,7 @@ function ivahid_difference_shortcode( $atts ){
             </div><!-- .row -->
         </div><!-- .container -->
     </section><!-- .ivahid_difference -->
+    <div class="container">
     <?php
     return ob_get_clean();
 }
@@ -322,6 +334,7 @@ add_shortcode( 'ivahid_difference', 'ivahid_difference_shortcode' );
 function portal_shortcode( $atts ){
     ob_start();
     ?>
+    </div><!-- .container -->
     <section class="portal">
         <div class="container">
             <div class="row align-items-center justify-content-center">
@@ -351,6 +364,7 @@ function portal_shortcode( $atts ){
             </div><!-- .row -->
         </div><!-- .container -->
     </section><!-- .portal -->
+    <div class="container">
     <?php
     return ob_get_clean();
 }
@@ -359,6 +373,7 @@ add_shortcode( 'portal', 'portal_shortcode' );
 function services_card_shortcode(){
     ob_start();
     ?>
+    </div><!-- .container -->
     <section class="services_card">
         <div class="container">
             <div class="title">
@@ -391,6 +406,7 @@ function services_card_shortcode(){
             </div><!-- .services_card__wrapper -->
         </div><!-- .container -->
     </section><!-- .services_card -->
+    <div class="container">
     <?php
     return ob_get_clean();
 }
@@ -399,6 +415,7 @@ add_shortcode( 'services_card', 'services_card_shortcode' );
 function podcast_shortcode(){
     ob_start();
     ?>
+    </div><!-- .container -->
     <section class="podcast">
         <div class="container">
             <div class="row">
@@ -443,6 +460,7 @@ function podcast_shortcode(){
             </div><!-- .row -->
         </div><!-- .container -->
     </section><!-- .podcast -->
+    <div class="container">
     <?php
     return ob_get_clean();
 }
@@ -452,6 +470,7 @@ function customers_shortcode()
 {
     ob_start();
     ?>
+    </div><!-- .container -->
     <section class="customers">
         <div class="container">
             <div class="row">
@@ -487,6 +506,7 @@ function customers_shortcode()
             </div><!-- .row -->
         </div><!-- .container -->
     </section><!-- .customers -->
+    <div class="container">
     <?php
     return ob_get_clean();
 }
@@ -497,6 +517,7 @@ function portfolio_shortcode()
 {
     ob_start();
     ?>
+    </div><!-- .container -->
     <section class="portfolio">
         <div class="container">
             <div class="row">
@@ -540,6 +561,7 @@ function portfolio_shortcode()
             </div><!-- .row -->
         </div><!-- .container-fluid -->
     </section><!-- .portfolio -->
+    <div class="container">
     <?php
     return ob_get_clean();
 }
@@ -550,6 +572,7 @@ function order_shortcode()
 {
     ob_start();
     ?>
+    </div><!-- .container -->
     <section class="order">
         <div class="container">
             <div class="row align-items-center">
@@ -581,6 +604,7 @@ function order_shortcode()
             </div><!-- .row -->
         </div><!-- .container -->
     </section><!-- .order -->
+    <div class="container">
     <?php
     return ob_get_clean();
 }
@@ -591,6 +615,7 @@ function videos_shortcode()
 {
     ob_start();
     ?>
+    </div><!-- .container -->
     <section class="videos">
         <div class="container">
             <div class="row">
@@ -630,6 +655,7 @@ function videos_shortcode()
         <img class="videos__background" src="<?php echo get_template_directory_uri() . '/img/dots-gray.png' ?>"
              alt="dot background">
     </section><!-- .videos -->
+    <div class="container">
     <?php
     return ob_get_clean();
 }
@@ -651,6 +677,7 @@ function blog_shortcode( $atts ){
     ];
     $blog_posts = new WP_Query( $args );
     ?>
+    </div><!-- .container -->
     <section class="blog">
         <div class="container">
             <div class="blog__wrapper">
@@ -693,6 +720,7 @@ function blog_shortcode( $atts ){
             </div><!-- .blog__wrapper -->
         </div><!-- .container -->
     </section><!-- .blog -->
+    <div class="container">
     <?php
     return ob_get_clean();
 }
