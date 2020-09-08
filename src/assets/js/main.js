@@ -88,20 +88,30 @@ var portfolio_swiper = new Swiper('.portfolio__wrapper > .swiper-container ', {
 });
 
 // faq section
-var coll = document.getElementsByClassName("faq__collapsible");
-var i;
+var container_element = $( '.wp-block-yoast-faq-block' ).parent();
 
-for (i = 0; i < coll.length; i++) {
-	coll[i].addEventListener("click", function() {
-		this.classList.toggle("active");
-		var content = this.nextElementSibling;
-		if (content.style.maxHeight){
-			content.style.maxHeight = null;
-		} else {
-			content.style.maxHeight = content.scrollHeight + "px" ;
-		}
-	});
-}
+container_element.wrap( '<section class="faq"></section><!-- .faq -->' );
+// var coll = document.getElementsByClassName("schema-faq-question");
+// var i;
+//
+// for (i = 0; i < coll.length; i++) {
+// 	coll[i].addEventListener("click", function() {
+// 		this.classList.toggle("active");
+// 		var content = this.nextElementSibling;
+// 		console.log( content );
+// 		if (content.style.maxHeight){
+// 			content.style.maxHeight = null;
+// 		} else {
+// 			content.style.maxHeight = content.scrollHeight + "px" ;
+// 		}
+// 	});
+// }
+
+$( '.schema-faq-section' ).on( 'click', function (e) {
+	e.preventDefault();
+	$(this).find( '.schema-faq-question' ).toggleClass('active');
+	$(this).find('.schema-faq-answer').slideToggle();
+} )
 
 // 'blog' section swiper slider
 var blog__posts = new Swiper('.blog__wrapper > .swiper-container', {
