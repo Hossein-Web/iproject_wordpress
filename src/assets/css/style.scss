@@ -230,7 +230,7 @@ body{
 //------------- Design effect -------------
 .design_effect{
   margin-bottom: 113px;
-  background-image: url( 'http://127.0.0.1:3020/wp-content/uploads/2020/09/dots_background.png' );
+  background-image: url( 'img/dots_background.png' );
   background-repeat: no-repeat;
   background-position: right center;
   background-size: contain;
@@ -267,7 +267,7 @@ body{
 
 /*--------------------------------- Your position -------------------------------------*/
 .your_position{
-  background-image: url('http://127.0.0.1:3020/wp-content/uploads/2020/09/your_position_back_1.png');
+  background-image: url('img/your_position_back_1.png');
   background-position-y: center;
   background-position-x: 100%;
   background-repeat: no-repeat;
@@ -705,7 +705,7 @@ body{
     left: 0;
     width: 239px;
     height: 552px;
-    background-image: url( '../img/top_back.jpg' );
+    background-image: url( 'img/top_back.jpg' );
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center center;
@@ -719,7 +719,7 @@ body{
     right: 0;
     width: 360px;
     height: 651px;
-    background-image: url( '../img/bottom_back.jpg' );
+    background-image: url( 'img/bottom_back.jpg' );
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center center;

@@ -22,7 +22,7 @@ function StrToArr( $str, $delimiter  ) {
 
 // shortcodes
 //web design sec
-function web_design_sec_shortcode($atts)
+function web_design_sec_shortcode()
 {
     ob_start(); ?>
     </div><!-- .container -->
@@ -41,7 +41,7 @@ function web_design_sec_shortcode($atts)
                 <div class="col-xl-12">
                     <div class="web_design_sec__img_wrapper">
                         <img src="<?php echo get_template_directory_uri() . '/img/web_design_sec.png' ?>"
-                             alt="section image">
+                             alt="web design">
                     </div><!-- .web_design_sec__img_wrapper -->
                 </div><!-- .col-xl-12 -->
             </div><!-- .row -->
@@ -110,7 +110,6 @@ function your_position_shortcode()
                                     </div>
                                 </div>
                                 <?php
-                                $i++;
                                 wp_reset_postdata();
                             }
                         }
@@ -139,7 +138,6 @@ function your_position_shortcode()
                                     </div>
                                 </div>
                                 <?php
-                                $i++;
                                 wp_reset_postdata();
                             }
                         }
@@ -157,7 +155,7 @@ function your_position_shortcode()
 add_shortcode('your_position', 'your_position_shortcode');
 
 //services
-function services_shortcode($atts)
+function services_shortcode()
 {
     ob_start(); ?>
     </div><!-- .container -->
@@ -231,7 +229,7 @@ function design_effect_shortcode()
                 <div class="col-xl-12 col-md-12 col-24">
                     <div class="design_effect__img">
                         <img src="<?php echo get_template_directory_uri() . '/img/design_effect.png' ?>"
-                             alt="design_effect">
+                             alt="design effect">
                     </div><!-- .img -->
                 </div><!-- .col-xl-12 -->
                 <div class="col-xl-12 col-md-12 col-24">
@@ -265,8 +263,14 @@ function select_team_shortcode()
             <div class="row justify-content-center align-items-center">
                 <div class="col-xl-24">
                     <div class="select_team__img">
-                        <?php $select_team_img = get_field( 'select_team_img' ); ?>
-                        <img src="<?php echo $select_team_img['url']; ?>" alt="<?php echo $select_team_img['alt']; ?>">
+                        <?php
+                        $select_team_img = get_field( 'select_team_img' );
+                        if ( !empty( $select_team_img ) ){
+                            ?>
+                            <img src="<?php echo esc_url( $select_team_img['url'] ); ?>" alt="<?php echo esc_attr( $select_team_img['alt'] ); ?>">
+                            <?php
+                        }
+                        ?>
                         <div class="select_team__img__label">
                             <div class="icon">
                                 <span class="icon-man"></span>
@@ -299,7 +303,7 @@ function select_team_shortcode()
 
 add_shortcode('select_team', 'select_team_shortcode');
 
-function ivahid_difference_shortcode( $atts ){
+function ivahid_difference_shortcode(){
     ob_start();
     ?>
     </div><!-- .container -->
@@ -308,8 +312,14 @@ function ivahid_difference_shortcode( $atts ){
             <div class="row">
                 <div class="col-xl-9 col-lg-9 col-md-12">
                     <div class="ivahid_difference__img">
-                        <?php $ivahid_difference_img = get_field( 'ivahid_difference_img' ); ?>
-                        <img src="<?php echo $ivahid_difference_img['url']; ?>" alt="<?php echo $ivahid_difference_img['alt']; ?>">
+                        <?php
+                        $ivahid_difference_img = get_field( 'ivahid_difference_img' );
+                        if ( !empty( $ivahid_difference_img ) ){
+                            ?>
+                            <img src="<?php echo esc_url( $ivahid_difference_img['url'] ); ?>" alt="<?php echo esc_attr( $ivahid_difference_img['alt'] ); ?>">
+                            <?php
+                        }
+                        ?>
                     </div><!-- .ivahid_difference__img -->
                 </div><!-- .col-xl-9 -->
                 <div class="col-xl-15 col-lg-15 col-md-12">
@@ -331,7 +341,7 @@ function ivahid_difference_shortcode( $atts ){
 
 add_shortcode( 'ivahid_difference', 'ivahid_difference_shortcode' );
 
-function portal_shortcode( $atts ){
+function portal_shortcode(){
     ob_start();
     ?>
     </div><!-- .container -->
@@ -422,7 +432,7 @@ function podcast_shortcode(){
                 <div class="col-md-24">
                     <div class="podcast__container">
                         <div class="podcast_img_wrapper">
-                            <img class="img-fluid" src="http://127.0.0.1:3020/wp-content/uploads/2020/09/podcast.jpg" alt="podcast image">
+                            <img class="img-fluid" src="http://127.0.0.1:3020/wp-content/uploads/2020/09/podcast.jpg" alt="podcast">
                         </div><!-- .podcast_img_wrapper -->
                         <div class="podcast_wrapper" data-audio-link="<?php the_field( 'podcast_audio' ); ?>">
                             <div class="podcast_details">
@@ -491,8 +501,14 @@ function customers_shortcode()
                                         ?>
                                         <div class="swiper-slide">
                                             <div>
-                                                <img src="<?php echo $logo['url']; ?>"
-                                                     alt="<?php echo $logo['alt']; ?>">
+                                                <?php
+                                                if ( !empty( $logo ) ){
+                                                    ?>
+                                                    <img src="<?php echo esc_url( $logo['url'] ); ?>"
+                                                         alt="<?php echo esc_attr( $logo['alt'] ); ?>">
+                                                    <?php
+                                                }
+                                                ?>
                                             </div>
                                         </div>
                                         <?php
@@ -639,8 +655,14 @@ function videos_shortcode()
                                         <div class="swiper-slide">
                                             <div class="item">
                                                 <a class="video_link" href="#"><span class="icon-play"></span></a>
-                                                <img src="<?php echo $item_img['url'] ?>"
-                                                     alt="<?php echo $item_img['alt'] ?>>">
+                                                <?php
+                                                if ( !empty( $item_img ) ){
+                                                    ?>
+                                                    <img src="<?php echo esc_url( $item_img['url'] ); ?>"
+                                                         alt="<?php echo esc_attr( $item_img['alt'] ); ?>>">
+                                                    <?php
+                                                }
+                                                ?>
                                                 <p><?php echo get_sub_field('item_description') ?></p>
                                             </div>
                                         </div>
