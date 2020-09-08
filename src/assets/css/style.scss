@@ -100,6 +100,40 @@ body{
   text-align: right;
   color: $text_color;
   font-size: 18px;
+  .container{
+    &>h2{
+      &:not( section h2 ){
+        color: #333333;
+        margin-bottom: 45px;
+        font-weight: 700;
+        font-size: 24px;
+      }
+    }
+    &>p{
+      &:not( section p ){
+        color: #333333;
+        font-weight: 400;
+        text-align: justify;
+        margin-bottom: 45px;
+        a{
+          color: #ff4342;
+          transition: 0.1s;
+          font-weight: 400;
+          &:hover{
+            font-weight: 700;
+          }
+        }
+      }
+    }
+    &>h3{
+      &:not( section h3 ){
+        color: #333333;
+        margin-bottom: 45px;
+        font-size: 18px;
+        font-weight: 700;
+      }
+    }
+  }
 }
 .title{
   margin-bottom: 21px;
@@ -1279,7 +1313,7 @@ body{
       right: -100px;
       width: 100px;
       height: 100%;
-      box-shadow: 90px 0px 41px -11px  #f1f1f1;
+      box-shadow: 90px 0px 41px -11px rgba(241, 241, 241 , 0.7);
       transform: rotate(180deg);
       left: 0;
       bottom: 0;

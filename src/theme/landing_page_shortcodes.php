@@ -3,7 +3,7 @@
 add_action('wp_enqueue_scripts', 'ivahid_landing_resources');
 function ivahid_landing_resources()
 {
-    if ( is_page_template( 'page-ivahid.php' ) ){
+    if (is_page_template('page-ivahid.php')) {
         wp_enqueue_style('style', get_stylesheet_uri());
         wp_enqueue_script('header_js', get_template_directory_uri() . '/js/header-bundle.js', null, 1.0, true);
         wp_enqueue_script('footer_js', get_template_directory_uri() . '/js/footer-bundle.js', null, 1.0, true);
@@ -11,11 +11,12 @@ function ivahid_landing_resources()
 }
 
 //functions
-function StrToArr( $str, $delimiter  ) {
-    $arr = explode( $delimiter, $str );
+function StrToArr($str, $delimiter)
+{
+    $arr = explode($delimiter, $str);
     $result = [];
-    foreach ( $arr as $item ) {
-        $result[] = trim( $item );
+    foreach ($arr as $item) {
+        $result[] = trim($item);
     }
     return $result;
 }
@@ -174,8 +175,8 @@ function services_shortcode()
                 <div class="col-xl-12 col-lg-12 col-md-24">
                     <div class="services__list">
                         <?php
-                        if ( have_rows( 'services_list' ) ){
-                            while (have_rows( 'services_list' )){
+                        if (have_rows('services_list')) {
+                            while (have_rows('services_list')) {
                                 the_row();
                                 ?>
                                 <div class="services__list__item">
@@ -186,21 +187,22 @@ function services_shortcode()
                                         </div>
                                         <div class="title">
                                             <?php
-                                            $main_title_link = get_sub_field( 'main_title_link' );
-                                            $subtitle_link = get_sub_field( 'subtitle_link' );
-                                            $item_link = get_sub_field( 'item_link' );
+                                            $main_title_link = get_sub_field('main_title_link');
+                                            $subtitle_link = get_sub_field('subtitle_link');
+                                            $item_link = get_sub_field('item_link');
                                             ?>
                                             <p>
-                                                <a href="<?php echo esc_url( $main_title_link['url'] ); ?>"><?php echo esc_html( $main_title_link['title'] ); ?></a>
+                                                <a href="<?php echo esc_url($main_title_link['url']); ?>"><?php echo esc_html($main_title_link['title']); ?></a>
                                             </p>
                                             <p>
-                                                <a href="<?php echo esc_url( $subtitle_link['url'] ); ?>"><?php echo esc_html($subtitle_link['title']); ?></a>
+                                                <a href="<?php echo esc_url($subtitle_link['url']); ?>"><?php echo esc_html($subtitle_link['title']); ?></a>
                                             </p>
                                         </div>
                                     </div><!-- .item_title_wrapper -->
                                     <div class="content">
-                                        <p><?php echo get_sub_field( 'item_description' ); ?></p>
-                                        <a href="<?php echo esc_url( $item_link['url'] ); ?>" class="read_more"><?php echo esc_html( $item_link['title'] ); ?></a>
+                                        <p><?php echo get_sub_field('item_description'); ?></p>
+                                        <a href="<?php echo esc_url($item_link['url']); ?>"
+                                           class="read_more"><?php echo esc_html($item_link['title']); ?></a>
                                     </div>
                                 </div><!-- .services__list__item -->
                                 <?php
@@ -264,10 +266,11 @@ function select_team_shortcode()
                 <div class="col-xl-24">
                     <div class="select_team__img">
                         <?php
-                        $select_team_img = get_field( 'select_team_img' );
-                        if ( !empty( $select_team_img ) ){
+                        $select_team_img = get_field('select_team_img');
+                        if (!empty($select_team_img)) {
                             ?>
-                            <img src="<?php echo esc_url( $select_team_img['url'] ); ?>" alt="<?php echo esc_attr( $select_team_img['alt'] ); ?>">
+                            <img src="<?php echo esc_url($select_team_img['url']); ?>"
+                                 alt="<?php echo esc_attr($select_team_img['alt']); ?>">
                             <?php
                         }
                         ?>
@@ -303,7 +306,8 @@ function select_team_shortcode()
 
 add_shortcode('select_team', 'select_team_shortcode');
 
-function ivahid_difference_shortcode(){
+function ivahid_difference_shortcode()
+{
     ob_start();
     ?>
     </div><!-- .container -->
@@ -313,10 +317,11 @@ function ivahid_difference_shortcode(){
                 <div class="col-xl-9 col-lg-9 col-md-12">
                     <div class="ivahid_difference__img">
                         <?php
-                        $ivahid_difference_img = get_field( 'ivahid_difference_img' );
-                        if ( !empty( $ivahid_difference_img ) ){
+                        $ivahid_difference_img = get_field('ivahid_difference_img');
+                        if (!empty($ivahid_difference_img)) {
                             ?>
-                            <img src="<?php echo esc_url( $ivahid_difference_img['url'] ); ?>" alt="<?php echo esc_attr( $ivahid_difference_img['alt'] ); ?>">
+                            <img src="<?php echo esc_url($ivahid_difference_img['url']); ?>"
+                                 alt="<?php echo esc_attr($ivahid_difference_img['alt']); ?>">
                             <?php
                         }
                         ?>
@@ -325,10 +330,10 @@ function ivahid_difference_shortcode(){
                 <div class="col-xl-15 col-lg-15 col-md-12">
                     <div class="ivahid_difference__content">
                         <div class="title">
-                            <h4><?php the_field( 'ivahid_difference_title_fa' ); ?></h4>
-                            <p><?php the_field( 'ivahid_difference_title_en' ); ?></p>
+                            <h4><?php the_field('ivahid_difference_title_fa'); ?></h4>
+                            <p><?php the_field('ivahid_difference_title_en'); ?></p>
                         </div><!-- .title -->
-                        <p><?php the_field( 'ivahid_difference_description' ); ?></p>
+                        <p><?php the_field('ivahid_difference_description'); ?></p>
                     </div><!-- .ivahid_difference__content -->
                 </div><!-- .col-xl-15 -->
             </div><!-- .row -->
@@ -339,9 +344,10 @@ function ivahid_difference_shortcode(){
     return ob_get_clean();
 }
 
-add_shortcode( 'ivahid_difference', 'ivahid_difference_shortcode' );
+add_shortcode('ivahid_difference', 'ivahid_difference_shortcode');
 
-function portal_shortcode(){
+function portal_shortcode()
+{
     ob_start();
     ?>
     </div><!-- .container -->
@@ -356,16 +362,16 @@ function portal_shortcode(){
                         <div class="col-lg-12 col-24 mr-auto">
                             <div class="portal__content">
                                 <div class="title title--white">
-                                    <h4><?php the_field( 'portal_title' ); ?></h4>
+                                    <h4><?php the_field('portal_title'); ?></h4>
                                 </div><!-- .title -->
-                                <p><?php the_field( 'portal_description' ); ?></p>
+                                <p><?php the_field('portal_description'); ?></p>
                                 <div class="link">
                                     <?php
-                                    $portal_link = get_field( 'portal_link' );
+                                    $portal_link = get_field('portal_link');
                                     $url = $portal_link['url'];
                                     $title = $portal_link['title'];
                                     ?>
-                                    <a href="<?php echo esc_url( $url ); ?>"><?php echo esc_html( $title ); ?></a>
+                                    <a href="<?php echo esc_url($url); ?>"><?php echo esc_html($title); ?></a>
                                 </div>
                             </div><!-- .portal__content -->
                         </div><!-- .col-lg-12 -->
@@ -378,23 +384,25 @@ function portal_shortcode(){
     <?php
     return ob_get_clean();
 }
-add_shortcode( 'portal', 'portal_shortcode' );
 
-function services_card_shortcode(){
+add_shortcode('portal', 'portal_shortcode');
+
+function services_card_shortcode()
+{
     ob_start();
     ?>
     </div><!-- .container -->
     <section class="services_card">
         <div class="container">
             <div class="title">
-                <h4><?php the_field( 'services_card_title_fa' ); ?></h4>
-                <p><?php the_field( 'services_card_title_en' ) ?></p>
+                <h4><?php the_field('services_card_title_fa'); ?></h4>
+                <p><?php the_field('services_card_title_en') ?></p>
             </div><!-- .title -->
             <div class="services_card__wrapper">
                 <div class="row">
                     <?php
-                    if ( have_rows( 'services_cards' ) ){
-                        while ( have_rows( 'services_cards' ) ){
+                    if (have_rows('services_cards')) {
+                        while (have_rows('services_cards')) {
                             the_row();
                             ?>
                             <div class="col-md-24 col-lg-8">
@@ -403,8 +411,8 @@ function services_card_shortcode(){
                                         <?php echo get_sub_field('services_card_svg'); ?>
                                     </div><!-- .img_wrapper -->
                                     <div class="text_wrapper">
-                                        <h4><?php echo get_sub_field( 'services_card_title_fa' ); ?></h4>
-                                        <span><?php echo get_sub_field( 'services_card_title_en' ); ?></span>
+                                        <h4><?php echo get_sub_field('services_card_title_fa'); ?></h4>
+                                        <span><?php echo get_sub_field('services_card_title_en'); ?></span>
                                     </div><!-- .text_wrapper -->
                                 </div><!-- .item -->
                             </div><!-- .col-lg-8 -->
@@ -420,61 +428,62 @@ function services_card_shortcode(){
     <?php
     return ob_get_clean();
 }
-add_shortcode( 'services_card', 'services_card_shortcode' );
 
-function podcast_shortcode(){
+add_shortcode('services_card', 'services_card_shortcode');
+
+function podcast_shortcode()
+{
     ob_start();
     ?>
     </div><!-- .container -->
     <section class="podcast">
         <div class="container">
-            <div class="row">
-                <div class="col-md-24">
-                    <div class="podcast__container">
-                        <div class="podcast_img_wrapper">
-                            <img src="<?php echo get_template_directory_uri() . '/img/podcast.jpg'; ?>" alt="podcast">
-                        </div><!-- .podcast_img_wrapper -->
-                        <div class="podcast_wrapper" data-audio-link="<?php the_field( 'podcast_audio' ); ?>">
-                            <div class="podcast_details">
-                                <div class="podcast_title">
-                                    <?php
-                                    $podcast_title_link = get_field( 'podcast_title_link' );
-                                    $podcast_topic_link = get_field( 'podcast_topic_link' );
-                                    ?>
-                                    <h4><a href="<?php echo esc_url( $podcast_title_link['url'] ); ?>"><?php echo esc_html( $podcast_title_link['title'] ); ?></a></h4>
-                                    <span><a href="<?php echo esc_url( $podcast_topic_link['url'] ) ?>"><?php echo esc_html( $podcast_topic_link['title'] ) ?></a></span>
-                                </div><!-- .podcast_title -->
-                                <button class="podcast_button paused">
-                                    <span class="icon-play"></span>
-                                    <svg class="progress-ring" >
-                                        <circle
-                                                class="progress-ring__circle"
-                                                stroke="#ff4342"
-                                                stroke-width="1"
-                                                fill="transparent"
-                                                r="35"
-                                                cx="35"
-                                                cy="35"
-                                        />
-                                    </svg>
-                                </button><!-- .podcast_button -->
-                            </div><!-- .podcast_details -->
-                            <div class="waveform_wrapper">
-                                <span class="duration"></span>
-                                <div id="waveform"></div><!-- #waveform -->
-                                <span class="current_time">00.00</span>
-                            </div><!-- .waveform_wrapper -->
-                        </div><!-- .podcast_wrapper -->
-                    </div><!-- .podcast__container -->
-                </div><!-- .col-md-24 -->
-            </div><!-- .row -->
+            <div class="podcast__container">
+                <div class="podcast_img_wrapper">
+                    <img src="<?php echo get_template_directory_uri() . '/img/podcast.jpg'; ?>" alt="podcast">
+                </div><!-- .podcast_img_wrapper -->
+                <div class="podcast_wrapper" data-audio-link="<?php the_field('podcast_audio'); ?>">
+                    <div class="podcast_details">
+                        <div class="podcast_title">
+                            <?php
+                            $podcast_title_link = get_field('podcast_title_link');
+                            $podcast_topic_link = get_field('podcast_topic_link');
+                            ?>
+                            <h4>
+                                <a href="<?php echo esc_url($podcast_title_link['url']); ?>"><?php echo esc_html($podcast_title_link['title']); ?></a>
+                            </h4>
+                            <span><a href="<?php echo esc_url($podcast_topic_link['url']) ?>"><?php echo esc_html($podcast_topic_link['title']) ?></a></span>
+                        </div><!-- .podcast_title -->
+                        <button class="podcast_button paused">
+                            <span class="icon-play"></span>
+                            <svg class="progress-ring">
+                                <circle
+                                        class="progress-ring__circle"
+                                        stroke="#ff4342"
+                                        stroke-width="1"
+                                        fill="transparent"
+                                        r="35"
+                                        cx="35"
+                                        cy="35"
+                                />
+                            </svg>
+                        </button><!-- .podcast_button -->
+                    </div><!-- .podcast_details -->
+                    <div class="waveform_wrapper">
+                        <span class="duration"></span>
+                        <div id="waveform"></div><!-- #waveform -->
+                        <span class="current_time">00.00</span>
+                    </div><!-- .waveform_wrapper -->
+                </div><!-- .podcast_wrapper -->
+            </div><!-- .podcast__container -->
         </div><!-- .container -->
     </section><!-- .podcast -->
     <div class="container">
     <?php
     return ob_get_clean();
 }
-add_shortcode( 'podcast', 'podcast_shortcode' );
+
+add_shortcode('podcast', 'podcast_shortcode');
 
 function customers_shortcode()
 {
@@ -483,43 +492,39 @@ function customers_shortcode()
     </div><!-- .container -->
     <section class="customers">
         <div class="container">
-            <div class="row">
-                <div class="col-xl-24">
-                    <div class="customers__wrapper">
-                        <div class="swiper-container">
-                            <div class="title">
-                                <h4><?php the_field('customers_title_fa'); ?></h4>
-                                <p><?php the_field('customers_title_en'); ?></p>
-                            </div><!-- .title -->
-                            <div class="swiper-pagination"></div>
-                            <div class="swiper-wrapper">
-                                <?php
-                                if (have_rows('customers_logos')) {
-                                    while (have_rows('customers_logos')) {
-                                        the_row();
-                                        $logo = get_sub_field('customer_logo');
-                                        ?>
-                                        <div class="swiper-slide">
-                                            <div>
-                                                <?php
-                                                if ( !empty( $logo ) ){
-                                                    ?>
-                                                    <img src="<?php echo esc_url( $logo['url'] ); ?>"
-                                                         alt="<?php echo esc_attr( $logo['alt'] ); ?>">
-                                                    <?php
-                                                }
-                                                ?>
-                                            </div>
-                                        </div>
-                                        <?php
-                                    }
-                                }
+            <div class="customers__wrapper">
+                <div class="swiper-container">
+                    <div class="title">
+                        <h4><?php the_field('customers_title_fa'); ?></h4>
+                        <p><?php the_field('customers_title_en'); ?></p>
+                    </div><!-- .title -->
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-wrapper">
+                        <?php
+                        if (have_rows('customers_logos')) {
+                            while (have_rows('customers_logos')) {
+                                the_row();
+                                $logo = get_sub_field('customer_logo');
                                 ?>
-                            </div><!-- .swiper-wrapper -->
-                        </div><!-- .swiper-container -->
-                    </div><!-- .customers__wrapper -->
-                </div><!-- .col-xl-24 -->
-            </div><!-- .row -->
+                                <div class="swiper-slide">
+                                    <div>
+                                        <?php
+                                        if (!empty($logo)) {
+                                            ?>
+                                            <img src="<?php echo esc_url($logo['url']); ?>"
+                                                 alt="<?php echo esc_attr($logo['alt']); ?>">
+                                            <?php
+                                        }
+                                        ?>
+                                    </div>
+                                </div>
+                                <?php
+                            }
+                        }
+                        ?>
+                    </div><!-- .swiper-wrapper -->
+                </div><!-- .swiper-container -->
+            </div><!-- .customers__wrapper -->
         </div><!-- .container -->
     </section><!-- .customers -->
     <div class="container">
@@ -536,48 +541,50 @@ function portfolio_shortcode()
     </div><!-- .container -->
     <section class="portfolio">
         <div class="container">
-            <div class="row">
-                <div class="col-24">
-                    <div class="portfolio__background">
-                        <span></span>
-                        <span></span>
-                    </div>
-                    <div class="portfolio__description">
-                        <h4><?php the_field('portfolio_title'); ?></h4>
-                        <p><?php the_field('portfolio_description'); ?></p>
-                    </div><!-- .portfolio__description -->
-                    <div class="portfolio__wrapper">
-                        <div class="swiper-container">
-                            <div class="swiper-wrapper">
-                                <?php
-                                $portfolio_items = get_field( 'portfolio_items' );
-                                if ( $portfolio_items ){
-                                    foreach ( $portfolio_items as $item ){
-                                        ?>
-                                        <div class="swiper-slide">
-                                            <div class="portfolio__wrapper__item">
-                                                <?php echo get_the_post_thumbnail( $item ); ?>
-                                                <h4><?php echo get_the_title( $item ); ?></h4>
-                                                <p><?php echo get_the_excerpt( $item ); ?></p>
-                                            </div>
-                                        </div>
-                                        <?php
-                                    }
-                                    wp_reset_postdata();
-                                }
+            <div class="portfolio__background">
+                <span></span>
+                <span></span>
+            </div>
+            <div class="portfolio__description">
+                <h4><?php the_field('portfolio_title'); ?></h4>
+                <p><?php the_field('portfolio_description'); ?></p>
+            </div><!-- .portfolio__description -->
+            <div class="portfolio__wrapper">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <?php
+                        $portfolio_items = get_field('portfolio_items');
+                        if ($portfolio_items) {
+                            foreach ($portfolio_items as $item) {
                                 ?>
-                            </div><!-- .swiper-wrapper -->
-                        </div><!-- .swiper-container -->
-                        <div class="view_more">
-                            <?php
-                            $portfolio_link = get_field( 'portfolio_link' );
-                            ?>
-                            <a href="<?php echo esc_url( $portfolio_link['url'] );  ?>"><?php echo esc_html( $portfolio_link['title'] ); ?></a>
-                        </div><!-- .view_more -->
-                    </div><!-- .portfolio__wrapper -->
-                </div><!-- .col-24 -->
-            </div><!-- .row -->
-        </div><!-- .container-fluid -->
+                                <div class="swiper-slide">
+                                    <div class="portfolio__wrapper__item">
+                                        <a href="<?php echo get_permalink( $item ); ?>">
+                                            <?php echo get_the_post_thumbnail($item); ?>
+                                        </a>
+                                        <h4>
+                                            <a href="<?php echo get_permalink( $item ); ?>">
+                                            <?php echo get_the_title($item); ?>
+                                            </a>
+                                        </h4>
+                                        <p><?php echo get_the_excerpt($item); ?></p>
+                                    </div>
+                                </div>
+                                <?php
+                            }
+                            wp_reset_postdata();
+                        }
+                        ?>
+                    </div><!-- .swiper-wrapper -->
+                </div><!-- .swiper-container -->
+                <div class="view_more">
+                    <?php
+                    $portfolio_link = get_field('portfolio_link');
+                    ?>
+                    <a href="<?php echo esc_url($portfolio_link['url']); ?>"><?php echo esc_html($portfolio_link['title']); ?></a>
+                </div><!-- .view_more -->
+            </div><!-- .portfolio__wrapper -->
+        </div><!-- .container -->
     </section><!-- .portfolio -->
     <div class="container">
     <?php
@@ -656,10 +663,10 @@ function videos_shortcode()
                                             <div class="item">
                                                 <a class="video_link" href="#"><span class="icon-play"></span></a>
                                                 <?php
-                                                if ( !empty( $item_img ) ){
+                                                if (!empty($item_img)) {
                                                     ?>
-                                                    <img src="<?php echo esc_url( $item_img['url'] ); ?>"
-                                                         alt="<?php echo esc_attr( $item_img['alt'] ); ?>>">
+                                                    <img src="<?php echo esc_url($item_img['url']); ?>"
+                                                         alt="<?php echo esc_attr($item_img['alt']); ?>>">
                                                     <?php
                                                 }
                                                 ?>
@@ -686,7 +693,8 @@ function videos_shortcode()
 
 add_shortcode('videos', 'videos_shortcode');
 
-function blog_shortcode( $atts ){
+function blog_shortcode($atts)
+{
     ob_start();
     $attributes = shortcode_atts(
         array(
@@ -694,12 +702,12 @@ function blog_shortcode( $atts ){
         ),
         $atts
     );
-    $post_ids = StrToArr( $attributes[ 'post_ids' ], ',' );
+    $post_ids = StrToArr($attributes['post_ids'], ',');
     $args = [
-        'post__in'            => $post_ids,
+        'post__in' => $post_ids,
         'ignore_sticky_posts' => true
     ];
-    $blog_posts = new WP_Query( $args );
+    $blog_posts = new WP_Query($args);
     ?>
     </div><!-- .container -->
     <section class="blog">
@@ -707,14 +715,14 @@ function blog_shortcode( $atts ){
             <div class="blog__wrapper">
                 <div class="swiper-container">
                     <div class="title">
-                        <h4><?php the_field( 'blog_title_fa' ); ?></h4>
-                        <p><?php the_field( 'blog_title_en' ); ?></p>
+                        <h4><?php the_field('blog_title_fa'); ?></h4>
+                        <p><?php the_field('blog_title_en'); ?></p>
                     </div><!-- .title -->
                     <div class="swiper-pagination"></div>
                     <div class="swiper-wrapper">
                         <?php
-                        if ( $blog_posts->have_posts() ){
-                            while ( $blog_posts->have_posts() ){
+                        if ($blog_posts->have_posts()) {
+                            while ($blog_posts->have_posts()) {
                                 $blog_posts->the_post();
                                 ?>
                                 <div class="swiper-slide">
@@ -724,7 +732,8 @@ function blog_shortcode( $atts ){
                                                 <?php echo get_the_post_thumbnail(); ?>
                                             </a>
                                         </div><!-- .post_img_wrapper -->
-                                        <a class="post_title" href="<?php the_permalink(); ?>"><?php the_title(); ?></a><!-- .post_title -->
+                                        <a class="post_title" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                        <!-- .post_title -->
                                         <!-- <h4></h4> -->
                                         <p class="post_excerpt">
                                             <?php the_excerpt(); ?>
@@ -748,5 +757,6 @@ function blog_shortcode( $atts ){
     <?php
     return ob_get_clean();
 }
-add_shortcode( 'blog', 'blog_shortcode' );
+
+add_shortcode('blog', 'blog_shortcode');
 
