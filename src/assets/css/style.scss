@@ -100,7 +100,6 @@ body{
   text-align: right;
   color: $text_color;
   font-size: 18px;
-  background-color: $background_color;
 }
 .title{
   margin-bottom: 21px;
@@ -485,6 +484,7 @@ body{
     position: absolute;
     display: block;
     content: '';
+    box-shadow: 0 15px 70px rgba(56, 66, 77, 0.04);
     background-color: white;
     width: 100%;
     height: 100%;
