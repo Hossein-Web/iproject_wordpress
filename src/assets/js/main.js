@@ -174,8 +174,12 @@ var videos_swiper = new Swiper('.videos__wrapper > .swiper-container', {
 		clickable: true,
 	},
 	breakpoints: {
-		768: {
+		992: {
 			slidesPerView: 3,
+			spaceBetween: 34
+		},
+		768: {
+			slidesPerView: 2.5,
 			spaceBetween: 34
 		},
 		576: {

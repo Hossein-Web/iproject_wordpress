@@ -541,6 +541,8 @@ function portfolio_shortcode()
     </div><!-- .container -->
     <section class="portfolio">
         <div class="container">
+            <div class="row">
+                <div class="col-24">
             <div class="portfolio__background">
                 <span></span>
                 <span></span>
@@ -584,6 +586,8 @@ function portfolio_shortcode()
                     <a href="<?php echo esc_url($portfolio_link['url']); ?>"><?php echo esc_html($portfolio_link['title']); ?></a>
                 </div><!-- .view_more -->
             </div><!-- .portfolio__wrapper -->
+                </div><!-- .col-24 -->
+            </div><!-- .row -->
         </div><!-- .container -->
     </section><!-- .portfolio -->
     <div class="container">

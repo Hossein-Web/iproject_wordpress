@@ -101,6 +101,13 @@ body{
   color: $text_color;
   font-size: 18px;
   .web-design-page{
+    &__title{
+      margin: 0;
+      color: $text_color;
+      font-size: 20px;
+      font-weight: 700;
+      padding: 18px 0 37px;
+    }
     &__content{
       h2{
         color: #333333;
@@ -698,12 +705,14 @@ body{
         font-weight: 700;
         font-size: 24px;
         margin-bottom: -7px;
+        text-align: center;
       }
       p{
         line-height: 40px;
         font-size: 18px;
         font-weight: 400;
         margin-bottom: 0 !important;
+        text-align: center !important;
       }
     }
 
@@ -999,7 +1008,6 @@ body{
     display: inline-block;
   }
   .item{
-    text-align: center;
     position: relative;
     box-shadow: 0 15px 70px rgba(56, 66, 77, 0.04);
     border-radius: 8px;
@@ -1010,6 +1018,7 @@ body{
     }
     p{
       font-size: 24px;
+      text-align: center !important;
       font-weight: 700;
       margin-bottom: 0 !important;
     }
@@ -1270,6 +1279,7 @@ body{
   padding-top: 54px;
   padding-bottom: 26px;
   margin-bottom: 233px;
+  margin-top: 70px;
   &__img{
     position: absolute;
     right: 0;
@@ -1508,6 +1518,7 @@ body{
   }
   //Portal
   .portal{
+    margin-top: 0;
     &__img{
       text-align: center;
       position: relative;
@@ -1531,12 +1542,29 @@ body{
   .ivahid_difference{
     &__img{
       margin-bottom: 50px;
+      text-align: center;
     }
     &__content{
       padding-right: 0;
     }
   }
 
+  //videos
+  .videos{
+    &__wrapper{
+      .item{
+        a{
+          opacity: 1;
+          &::before{
+            animation: wave 2s ease-in 1s infinite;
+          }
+          &::after{
+            animation: wave2 3s ease-in infinite;
+          }
+        }
+      }
+    }
+  }
   // podcast
   .podcast{
     &__container{
@@ -1631,6 +1659,15 @@ body{
     }
   }
 
+  //videos
+  .videos{
+    &__wrapper{
+      .item{
+        padding-right: 0;
+        padding-left: 0;
+      }
+    }
+  }
   // podcast
   .podcast{
     &__container{

@@ -2,7 +2,9 @@
 <?php get_header(); ?>
 <article class="web-design-page">
     <header>
-        <h1 class="web-design-page__title"><?php the_title(); ?></h1>
+        <div class="container">
+            <h1 class="web-design-page__title"><?php the_title(); ?></h1>
+        </div><!-- .container -->
     </header>
     <div class="web-design-page__content">
         <div class="container">
