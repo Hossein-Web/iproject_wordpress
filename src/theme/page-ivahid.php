@@ -1,6 +1,20 @@
 <?php /* Template Name: ivahid */ ?>
 <?php get_header(); ?>
-<div class="container">
-    <?php the_content(); ?>
-</div><!-- .container -->
+<article class="web-design-page">
+    <header>
+        <h1 class="web-design-page__title"><?php the_title(); ?></h1>
+    </header>
+    <div class="web-design-page__content">
+        <div class="container">
+            <?php
+            if ( have_posts() ){
+                while ( have_posts() ){
+                    the_post();
+                    the_content();
+                }
+            }
+            ?>
+        </div><!-- .container -->
+    </div>
+</article>
 <?php get_footer(); ?>

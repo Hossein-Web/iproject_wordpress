@@ -736,7 +736,7 @@ function blog_shortcode($atts)
                                         <!-- .post_title -->
                                         <!-- <h4></h4> -->
                                         <p class="post_excerpt">
-                                            <?php the_excerpt(); ?>
+                                            <?php echo get_the_excerpt(); ?>
                                         </p><!-- .post_excerpt -->
                                         <div class="read_more_wrapper">
                                             <a href="<?php the_permalink(); ?>">مشاهده بیشتر</a>

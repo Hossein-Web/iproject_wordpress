@@ -100,17 +100,15 @@ body{
   text-align: right;
   color: $text_color;
   font-size: 18px;
-  .container{
-    &>h2{
-      &:not( section h2 ){
+  .web-design-page{
+    &__content{
+      h2{
         color: #333333;
         margin-bottom: 45px;
         font-weight: 700;
         font-size: 24px;
       }
-    }
-    &>p{
-      &:not( section p ){
+      p{
         color: #333333;
         font-weight: 400;
         text-align: justify;
@@ -124,9 +122,7 @@ body{
           }
         }
       }
-    }
-    &>h3{
-      &:not( section h3 ){
+      h3{
         color: #333333;
         margin-bottom: 45px;
         font-size: 18px;
@@ -152,6 +148,7 @@ body{
     font-size: 18px;
     font-weight: 400;
     color: $text_color;
+    margin-bottom: 0 !important;
   }
   &--red{
     h4{
@@ -210,6 +207,7 @@ body{
     }
     &>p{
       line-height: 35px;
+      margin-bottom: 0 !important;
     }
   }
   &__go_bottom{
@@ -289,6 +287,7 @@ body{
         font-size: 18px;
         line-height: 35px;
         text-align: justify;
+        margin-bottom: 0;
       }
       padding-top: 90px;
       .title{
@@ -305,6 +304,11 @@ body{
   background-position-x: 100%;
   background-repeat: no-repeat;
   margin-bottom: 131px;
+  .inner_text_wrapper, .outer_text_wrapper{
+    p{
+      margin-bottom: 0;
+    }
+  }
   .outer_text_wrapper{
     display: none;
   }
@@ -431,6 +435,7 @@ body{
           font-size: 14px;
           text-align: justify;
           line-height: 27px;
+          margin-bottom: 0;
         }
         opacity: 0.5;
       }
@@ -490,10 +495,13 @@ body{
       }
       .label{
         font-size: 24px;
-        font-weight: 700;
         flex: 0 0 auto;
         padding-right:17px ;
         margin-left: 200px;
+        p{
+          margin-bottom: 0;
+          font-weight: 700 !important;
+        }
         p:nth-child(2){
           color: $accent_color;
         }
@@ -506,6 +514,7 @@ body{
     padding-top: 160px;
     &>p{
       line-height: 35px;
+      margin-bottom: 0 !important;
     }
   }
 }
@@ -533,6 +542,7 @@ body{
     &>p{
       line-height: 35px;
       text-align: justify;
+      margin-bottom: 0 !important;
     }
   }
   &__list{
@@ -551,9 +561,14 @@ body{
           font-size: 18px;
           line-height: 18px;
           padding-right: 20px;
+          a{
+            color: $text_color;
+          }
           p:first-child{
-            font-weight: 700;
-            color: #333333;
+            a{
+              font-weight: 700;
+              color: #333333;
+            }
             padding-bottom: 13px;
           }
         }
@@ -562,6 +577,7 @@ body{
         position: relative;
         p{
           padding-bottom: 38px;
+          margin-bottom: 0 !important;
           text-align: justify;
           font-size: 14px;
           line-height: 30px;
@@ -593,6 +609,7 @@ body{
     &>p{
       line-height: 35px;
       text-align: justify;
+      margin-bottom: 0 !important;
     }
   }
 
@@ -666,6 +683,7 @@ body{
     }
     p{
       line-height: 40px;
+      margin-bottom: 0 !important;
     }
   }
   &__wrapper{
@@ -685,6 +703,7 @@ body{
         line-height: 40px;
         font-size: 18px;
         font-weight: 400;
+        margin-bottom: 0 !important;
       }
     }
 
@@ -830,6 +849,7 @@ body{
         overflow: hidden;
         transition: max-height 0.3s;
         padding-bottom: 32px;
+        margin-bottom: 0 !important;
         display: none;
       }
     }
@@ -895,7 +915,7 @@ body{
         font-weight: 400;
         line-height: 40px;
         color: $text_color;
-        margin-bottom: 17px;
+        margin-bottom: 17px !important;
         text-align: justify;
       }
       .read_more_wrapper{
@@ -991,6 +1011,7 @@ body{
     p{
       font-size: 24px;
       font-weight: 700;
+      margin-bottom: 0 !important;
     }
     a{
       opacity: 0;
@@ -1266,6 +1287,8 @@ body{
       font-size: 20px;
       line-height: 40px;
       padding-bottom: 55px;
+      margin-bottom: 0 !important;
+      color: white !important;
     }
     .link{
       text-align: left;
@@ -1327,6 +1350,9 @@ body{
         background-color: #f0f1f7;
         border-radius: 49px;
         transition: 0.3s;
+        p{
+          margin-bottom: 0 !important;
+        }
         &:hover{
           background-color: $accent_color;
           p{
