@@ -65,8 +65,8 @@ var categories_description_list = new Swiper('.categories_description_list', {
 
 //portfolio swiper
 var portfolio_swiper = new Swiper('.portfolio__wrapper > .swiper-container ', {
-	slidesPerView: 1.5,
-	spaceBetween: 35,
+	slidesPerView: 1.2,
+	spaceBetween: 10,
 	pagination: {
 		el: '.swiper-pagination',
 		clickable: true,
@@ -78,11 +78,11 @@ var portfolio_swiper = new Swiper('.portfolio__wrapper > .swiper-container ', {
 		},
 		768: {
 			slidesPerView: 3,
-			spaceBetween: 35
+			spaceBetween: 10
 		},
 		576: {
 			slidesPerView: 2,
-			spaceBetween: 35
+			spaceBetween: 10
 		}
 	}
 });
@@ -107,11 +107,17 @@ container_element.wrap( '<section class="faq"></section><!-- .faq -->' );
 // 	});
 // }
 
-$( '.schema-faq-section' ).on( 'click', function (e) {
+// $( '.schema-faq-section' ).on( 'click', function(e) {
+// 	e.preventDefault();
+// 	$(this).find( '.schema-faq-question' ).toggleClass('active');
+// 	$(this).find('.schema-faq-answer').slideToggle();
+// } );
+
+$('.schema-faq-section').on('click',function (e) {
 	e.preventDefault();
-	$(this).find( '.schema-faq-question' ).toggleClass('active');
+	$(this).toggleClass('active');
 	$(this).find('.schema-faq-answer').slideToggle();
-} )
+});
 
 // 'blog' section swiper slider
 var blog__posts = new Swiper('.blog__wrapper > .swiper-container', {

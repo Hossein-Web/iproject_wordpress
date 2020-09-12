@@ -37,7 +37,7 @@ function web_design_sec_shortcode()
                             <p><?php the_field('web_design_sec_title_en'); ?></p>
                         </div><!-- .title -->
                         <p><?php the_field('web_design_sec_description'); ?></p>
-                    </div><!-- .web_design_sec_text__content -->
+                    </div><!-- .web_design_sec__text -->
                 </div><!-- .col-xl-10 -->
                 <div class="col-xl-12">
                     <div class="web_design_sec__img_wrapper">
@@ -181,7 +181,7 @@ function services_shortcode()
                                 ?>
                                 <div class="services__list__item">
                                     <div class="item_title_wrapper">
-                                        <div class="icon">
+                                        <div>
                                             <img src="<?php echo get_template_directory_uri() . '/img/wordpress-Logo.png' ?>"
                                                  alt="wordpress logo">
                                         </div>
@@ -199,7 +199,7 @@ function services_shortcode()
                                             </p>
                                         </div>
                                     </div><!-- .item_title_wrapper -->
-                                    <div class="content">
+                                    <div class="item_content">
                                         <p><?php echo get_sub_field('item_description'); ?></p>
                                         <a href="<?php echo esc_url($item_link['url']); ?>"
                                            class="read_more"><?php echo esc_html($item_link['title']); ?></a>
@@ -236,13 +236,13 @@ function design_effect_shortcode()
                 </div><!-- .col-xl-12 -->
                 <div class="col-xl-12 col-md-12 col-24">
                     <div class="design_effect__wrapper">
-                        <div class="content">
+                        <div class="design_effect_content">
                             <div class="title title--red">
                                 <h4><?php the_field('design_effect_title_fa'); ?></h4>
                                 <p><?php the_field('design_effect_title_en'); ?></p>
                             </div><!-- .title -->
                             <p><?php the_field('design_effect_description'); ?></p>
-                        </div><!-- .content -->
+                        </div><!-- .design_effect_content -->
                     </div><!-- .design_effect__wrapper -->
                 </div>
             </div><!-- .row -->
@@ -275,7 +275,7 @@ function select_team_shortcode()
                         }
                         ?>
                         <div class="select_team__img__label">
-                            <div class="icon">
+                            <div class="select_team_icon">
                                 <span class="icon-man"></span>
                             </div>
                             <div class="label">
