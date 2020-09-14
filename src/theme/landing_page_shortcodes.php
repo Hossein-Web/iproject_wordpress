@@ -472,7 +472,7 @@ function podcast_shortcode()
                     <div class="waveform_wrapper">
                         <span class="duration"></span>
                         <div id="waveform"></div><!-- #waveform -->
-                        <span class="current_time">00.00</span>
+                        <span class="current_time">00:00</span>
                     </div><!-- .waveform_wrapper -->
                 </div><!-- .podcast_wrapper -->
             </div><!-- .podcast__container -->

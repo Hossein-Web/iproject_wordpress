@@ -203,8 +203,11 @@ var formatTime = function (time) {
 	].join(':');
 };
 
-const circle = document.querySelector('.progress-ring__circle');
-const radius = circle.r.baseVal.value;
+var circle = document.querySelector('.progress-ring__circle');
+var radius = circle.r.baseVal.value;
+if ( window.matchMedia("(max-width: 576px)").matches ) {
+	radius = 25;
+}
 var circumference = radius * 2 * Math.PI;
 circle.style.strokeDasharray = `${circumference} ${circumference}`;
 circle.style.strokeDashoffset = `${circumference}`;
@@ -306,4 +309,8 @@ wavesurfer.on( 'audioprocess', function() {
 	progress_percent = wavesurfer.getCurrentTime()*100/wavesurfer.getDuration();
 	$( '.current_time' ).html( formatTime( wavesurfer.getCurrentTime() ) );
 	setProgress( progress_percent );
+	if ( progress_percent > 99.99 ) {
+		$( '.podcast_button' ).find( 'span' ).removeClass( 'icon-pause' );
+		$( '.podcast_button' ).find( 'span' ).addClass( 'icon-play' );
+	}
 } );
