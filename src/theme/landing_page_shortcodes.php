@@ -30,7 +30,7 @@ function web_design_sec_shortcode()
     <section class="web_design_sec">
         <div class="container">
             <div class="row">
-                <div class="col-xl-12">
+                <div class="col-xl-9">
                     <div class="web_design_sec__text">
                         <div class="title title--red">
                             <h4><?php the_field('web_design_sec_title_fa'); ?></h4>
@@ -38,13 +38,13 @@ function web_design_sec_shortcode()
                         </div><!-- .title -->
                         <p><?php the_field('web_design_sec_description'); ?></p>
                     </div><!-- .web_design_sec__text -->
-                </div><!-- .col-xl-10 -->
-                <div class="col-xl-12">
+                </div><!-- .col-xl-9 -->
+                <div class="col-xl-15">
                     <div class="web_design_sec__img_wrapper">
                         <img src="<?php echo get_template_directory_uri() . '/img/web_design_sec.png' ?>"
                              alt="web design">
                     </div><!-- .web_design_sec__img_wrapper -->
-                </div><!-- .col-xl-12 -->
+                </div><!-- .col-xl-15 -->
             </div><!-- .row -->
         </div><!-- .container-->
         <a class="web_design_sec__go_bottom" href="#">
@@ -460,7 +460,7 @@ function podcast_shortcode()
                                 <circle
                                         class="progress-ring__circle"
                                         stroke="#ff4342"
-                                        stroke-width="1"
+                                        stroke-width="2"
                                         fill="transparent"
                                         r="35"
                                         cx="35"

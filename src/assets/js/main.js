@@ -71,6 +71,9 @@ var portfolio_swiper = new Swiper('.portfolio__wrapper > .swiper-container ', {
 		el: '.swiper-pagination',
 		clickable: true,
 	},
+	autoplay: {
+		delay: 3000,
+	},
 	breakpoints: {
 		1200: {
 			slidesPerView: 4,
