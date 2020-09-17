@@ -122,11 +122,7 @@ body{
         margin-bottom: 45px;
         a{
           color: #ff4342;
-          transition: 0.1s;
-          font-weight: 400;
-          &:hover{
-            font-weight: 700;
-          }
+          font-weight: 700;
         }
       }
       h3{
@@ -203,8 +199,22 @@ body{
   }
   &__img_wrapper{
     position: relative;
-    right: -30px;
     text-align: center;
+    .web_design_sec_slider{
+      position: absolute;
+      top: 6%;
+      left: 12%;
+      right: 11%;
+      bottom: 12%;
+      .swiper-container{
+        width: 100%;
+        height: 100%;
+        .swiper-slide{
+          background-position: center;
+          background-size: cover;
+        }
+      }
+    }
   }
   &__text{
     color: $text_color;
@@ -321,7 +331,7 @@ body{
   }
   .text{
     color: $text_color;
-    margin-bottom: 63px;
+    margin-bottom: 64px;
     .title{
       margin-bottom: 16px;
     }
@@ -381,6 +391,7 @@ body{
             min-width: 70px;
           }
           div{
+            font-family: sans-serif;
             color: $text_color;
             font-weight: 300;
             margin-top: 7px;
@@ -423,6 +434,7 @@ body{
         padding-right: 38px;
         padding-top: 21px;
         span{
+          font-family: sans-serif;
           display: none;
           position: absolute;
           color: #c7c7c7;
@@ -470,7 +482,7 @@ body{
 /*--------------------------------- Select team -------------------------------------*/
 .select_team{
   position: relative;
-  margin-bottom: 300px;
+  margin-bottom: 340px;
   &__img{
     position: absolute;
     transform: translateX(55% );
@@ -695,17 +707,19 @@ body{
   }
   &__wrapper{
     &__item{
-      padding: 36px 0px 28px 0px;
+      padding: 36px 0 28px 0;
       img{
-        padding-bottom: 28px;
+        padding-bottom: 10px;
       }
       h4{
-        color: $accent_color;
         line-height: 40px;
         font-weight: 700;
         font-size: 24px;
-        margin-bottom: -7px;
+        margin-bottom: 20px;
         text-align: center;
+        a{
+          color: $accent_color;
+        }
       }
       p{
         line-height: 40px;
@@ -747,6 +761,7 @@ body{
         padding: 21px 55px 26px;
         border-radius: 4px;
         box-shadow: 0 15px 70px rgba(46, 197, 192, 0.3);
+        transition: 0.3s;
         &:hover{
           box-shadow: none;
         }
@@ -757,21 +772,6 @@ body{
 
 /*--------------------------------- Faq -------------------------------------*/
 .faq{
-  margin-bottom: 109px;
-  .container{
-    &>h4{
-      color: $text_color;
-      font-size: 24px;
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
-    &>p{
-      font-size: 18px;
-      font-weight: 400;
-      color: $text_color;
-      margin-bottom: 30px;
-    }
-  }
   padding-top: 107px;
   padding-bottom: 300px;
   margin-bottom: 109px;
@@ -802,6 +802,20 @@ body{
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center center;
+  }
+  .container{
+    &>h4{
+      color: $text_color;
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    &>p{
+      font-size: 18px;
+      font-weight: 400;
+      color: $text_color;
+      margin-bottom: 30px;
+    }
   }
   .schema-faq.wp-block-yoast-faq-block{
     .schema-faq-section{
@@ -863,7 +877,7 @@ body{
           font-size: 20px;
           overflow: hidden;
           transition: max-height 0.3s;
-          padding-bottom: 32px;
+          padding-bottom: 23px;
           margin-bottom: 0 !important;
           display: none;
         }
@@ -1279,7 +1293,7 @@ body{
 }
 
 /*--------------------------------- Content encyclopedia -------------------------------------*/
-.wiki{
+/*.wiki{
   h2, h3{
     color: #333333;
     margin-bottom: 45px;
@@ -1299,15 +1313,15 @@ body{
       }
     }
   }
-}
+}*/
 
 /*----------- Portal -------------*/
 .portal{
   background-color: $accent_color;
   padding-top: 54px;
   padding-bottom: 26px;
-  margin-bottom: 115px;
-  margin-top: 70px;
+  margin-bottom: 100px;
+  margin-top: 100px;
   &__img{
     position: absolute;
     right: 0;
@@ -1318,6 +1332,9 @@ body{
     position: relative;
     color: white;
     text-align: justify;
+    a{
+      color: white;
+    }
     .title{
       margin-bottom: 40px;
     }
@@ -1388,6 +1405,9 @@ body{
         background-color: #f0f1f7;
         border-radius: 49px;
         transition: 0.3s;
+        p{
+          margin-bottom: 0 !important;
+        }
         &:hover{
           background-color: $accent_color;
           p{
@@ -1401,7 +1421,7 @@ body{
           text-align: center;
           flex: 0 0 auto;
           font-size: 20px;
-          line-height: 50px;
+          padding-top: 10px;
           margin-left: 24px;
           width: 50px;
           height: 50px;
@@ -1472,6 +1492,12 @@ body{
     }
   }
 }
+
+/*----------------------> 992px and <1200px ------------------------*/
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .web_design_sec_slider {
+    left: 21% !important;
+    right: 20% !important; } }
 
 /*----------------------< 992px ------------------------*/
 @media only screen and (max-width: 992px){
@@ -1659,8 +1685,16 @@ body{
     padding-left: 20px;
     padding-right: 20px;
   }
-
+  .portal{
+    margin-bottom: 40px;
+  }
   //faq
+  .faq{
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-bottom: 40px;
+  }
+
   .faq{
     &::before, &::after{
       display: none;
@@ -1712,7 +1746,7 @@ body{
               height: 50px;
               width: 50px;
               circle{
-                r: 25px;
+                r: 24px;
                 cx: 25px;
                 cy: 25px;
               }
@@ -1756,6 +1790,8 @@ body{
   }
 
   .portfolio{
+    padding-top: 0;
+    padding-bottom: 0;
     &__background{
       display: none;
     }
@@ -1763,6 +1799,11 @@ body{
       a{
         padding: 10px 5px 13px;
       }
+    }
+  }
+  .videos{
+    &__background{
+      bottom: -25px;
     }
   }
   //services
