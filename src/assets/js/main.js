@@ -1,6 +1,17 @@
 $(window).on('load', () => {
 	console.log('Loaded!');
 });
+
+
+//web_design_sec swiper
+var web_design_sec_swiper = new Swiper('.web_design_sec_slider >.swiper-container ', {
+	autoplay: {
+		delay: 3000,
+	},
+	effect: 'fade',
+	loop: true
+});
+
 // 'web_design_sec' go bottom function
 $( '.web_design_sec__go_bottom' ).on( 'click', function(e) {
 	e.preventDefault();

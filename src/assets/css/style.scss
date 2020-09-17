@@ -119,7 +119,6 @@ body{
         color: #333333;
         font-weight: 400;
         text-align: justify;
-        margin-bottom: 45px;
         a{
           color: #ff4342;
           font-weight: 700;
@@ -1495,9 +1494,11 @@ body{
 
 /*----------------------> 992px and <1200px ------------------------*/
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .web_design_sec_slider {
+  .web_design_sec_slider{
     left: 21% !important;
-    right: 20% !important; } }
+    right: 20% !important;
+  }
+}
 
 /*----------------------< 992px ------------------------*/
 @media only screen and (max-width: 992px){
