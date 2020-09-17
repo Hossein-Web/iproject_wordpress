@@ -209,6 +209,10 @@ body{
       .swiper-container{
         width: 100%;
         height: 100%;
+        .swiper-slide{
+          background-position: center;
+          background-size: cover;
+        }
       }
     }
   }

@@ -46,9 +46,16 @@ function web_design_sec_shortcode()
                         <div class="web_design_sec_slider">
                             <div class="swiper-container">
                                 <div class="swiper-wrapper">
-                                    <div class="swiper-slide" style="background-image:url(<?php echo get_template_directory_uri() . '/img/one.jpg'; ?>)"></div>
-                                    <div class="swiper-slide" style="background-image:url(<?php echo get_template_directory_uri() . '/img/two.jpg'; ?>)"></div>
-                                    <div class="swiper-slide" style="background-image:url(<?php echo get_template_directory_uri() . '/img/three.jpg'; ?>)"></div>
+                                    <?php
+                                    if (have_rows('web_design_sec_portfolio')) {
+                                        while (have_rows('web_design_sec_portfolio')) {
+                                            the_row(); ?>
+                                            <div class="swiper-slide" style="background-image:url(<?php echo get_sub_field( 'web_design_sec_portfolio_img' ) ?>)">
+                                            </div>
+                                            <?php
+                                        }
+                                    }
+                                    ?>
                                 </div>
                             </div>
                         </div><!-- .web_design_sec_slider -->

@@ -132,6 +132,7 @@ $('.schema-faq-section').on('click',function (e) {
 	$(this).toggleClass('active');
 	$(this).find('.schema-faq-answer').slideToggle();
 });
+$('.schema-faq-section').first().trigger( 'click' );
 
 // 'blog' section swiper slider
 var blog__posts = new Swiper('.blog__wrapper > .swiper-container', {
