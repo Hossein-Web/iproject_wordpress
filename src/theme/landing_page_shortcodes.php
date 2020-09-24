@@ -3,11 +3,14 @@
 add_action('wp_enqueue_scripts', 'ivahid_landing_resources');
 function ivahid_landing_resources()
 {
-    if (is_page_template('page-ivahid.php')) {
+    if (is_page_template('page-ivahid.php') || is_page_template('page-ivahid-copy.php') ) {
         wp_enqueue_style('style', get_stylesheet_uri());
         wp_enqueue_script('header_js', get_template_directory_uri() . '/js/header-bundle.js', null, 1.0, true);
         wp_enqueue_script('footer_js', get_template_directory_uri() . '/js/footer-bundle.js', null, 1.0, true);
     }
+//    if (is_page_template('page-ivahid-copy.php')) {
+//        wp_enqueue_style('ivahid_style_yekan_font', get_template_directory_uri() . '/assets/css/ivahid_style_yekan_font.css');
+//    }
 }
 
 //functions
@@ -31,13 +34,13 @@ function web_design_sec_shortcode()
         <div class="container">
             <div class="row">
                 <div class="col-xl-9">
-                    <div class="web_design_sec__text">
+                    <div class="web_design_sec__content">
                         <div class="title title--red">
                             <h4><?php the_field('web_design_sec_title_fa'); ?></h4>
                             <p><?php the_field('web_design_sec_title_en'); ?></p>
                         </div><!-- .title -->
                         <p><?php the_field('web_design_sec_description'); ?></p>
-                    </div><!-- .web_design_sec__text -->
+                    </div><!-- .web_design_sec__content -->
                 </div><!-- .col-xl-9 -->
                 <div class="col-xl-15">
                     <div class="web_design_sec__img_wrapper">
@@ -180,13 +183,13 @@ function services_shortcode()
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-xl-12 col-lg-12 col-md-24">
-                    <div class="services__introduction">
+                    <div class="services__content">
                         <div class="title">
                             <h4><?php the_field('services_title_fa'); ?></h4>
                             <p><?php the_field('services_title_en'); ?></p>
                         </div><!-- .title -->
                         <p><?php the_field('services_description'); ?></p>
-                    </div><!-- .services_introduction -->
+                    </div><!-- .services_content -->
                 </div><!-- .col-xl-12 -->
                 <div class="col-xl-12 col-lg-12 col-md-24">
                     <div class="services__list">
@@ -251,15 +254,13 @@ function design_effect_shortcode()
                     </div><!-- .img -->
                 </div><!-- .col-xl-12 -->
                 <div class="col-xl-12 col-md-12 col-24">
-                    <div class="design_effect__wrapper">
-                        <div class="design_effect_content">
+                        <div class="design_effect__content">
                             <div class="title title--red">
                                 <h4><?php the_field('design_effect_title_fa'); ?></h4>
                                 <p><?php the_field('design_effect_title_en'); ?></p>
                             </div><!-- .title -->
                             <p><?php the_field('design_effect_description'); ?></p>
                         </div><!-- .design_effect_content -->
-                    </div><!-- .design_effect__wrapper -->
                 </div>
             </div><!-- .row -->
         </div><!-- .container -->
