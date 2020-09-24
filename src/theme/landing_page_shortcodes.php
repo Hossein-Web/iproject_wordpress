@@ -42,7 +42,8 @@ function web_design_sec_shortcode()
                         <p><?php the_field('web_design_sec_description'); ?></p>
                     </div><!-- .web_design_sec__content -->
                     <div class="text-center">
-                        <a href="#" class="web_design_sec_link">درخواست پیش فاکتور و مشاوره رایگان</a>
+                        <a href="<?php $web_design_sec_link = get_field( 'web_design_sec_link' ); echo esc_url( $web_design_sec_link['url'] ); ?>"
+                           class="web_design_sec_link"><?php echo esc_html( $web_design_sec_link['title'] ); ?></a>
                     </div>
                 </div><!-- .col-xl-9 -->
                 <div class="col-xl-15">
@@ -51,7 +52,7 @@ function web_design_sec_shortcode()
                              alt="web design">
                         <div class="web_design_sec_video_wrapper">
                             <video id="web_design_sec_video">
-                                <source src="http://127.0.0.1:3020/wp-content/uploads/2020/09/ivahid-asli-1_567x355.mp4" type="video/mp4">
+                                <source src="<?php $video_link = get_field( 'web_design_sec_video' ); echo esc_url( $video_link ); ?>" type="video/mp4">
                                 Your browser does not support HTML video.
                             </video>
                             <button class="web_design_sec_video_btn paused">
