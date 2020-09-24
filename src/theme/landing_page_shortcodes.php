@@ -49,22 +49,14 @@ function web_design_sec_shortcode()
                     <div class="web_design_sec__img_wrapper">
                         <img src="<?php echo get_template_directory_uri() . '/img/web_design_sec.png' ?>"
                              alt="web design">
-                        <div class="web_design_sec_slider">
-                            <div class="swiper-container">
-                                <div class="swiper-wrapper">
-                                    <?php
-                                    if (have_rows('web_design_sec_portfolio')) {
-                                        while (have_rows('web_design_sec_portfolio')) {
-                                            the_row(); ?>
-                                            <div class="swiper-slide"
-                                                 style="background-image:url(<?php echo get_sub_field('web_design_sec_portfolio_img') ?>)">
-                                            </div>
-                                            <?php
-                                        }
-                                    }
-                                    ?>
-                                </div>
-                            </div>
+                        <div class="web_design_sec_video_wrapper">
+                            <video id="web_design_sec_video">
+                                <source src="http://127.0.0.1:3020/wp-content/uploads/2020/09/ivahid-asli-1_567x355.mp4" type="video/mp4">
+                                Your browser does not support HTML video.
+                            </video>
+                            <button class="web_design_sec_video_btn paused">
+                                <span class="icon-play"></span>
+                            </button><!-- .web_design_sec_video_btn -->
                         </div><!-- .web_design_sec_slider -->
                     </div><!-- .web_design_sec__img_wrapper -->
                 </div><!-- .col-xl-15 -->
