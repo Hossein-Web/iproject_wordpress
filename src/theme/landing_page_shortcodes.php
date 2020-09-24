@@ -177,7 +177,7 @@ function services_shortcode()
     </div><!-- .container -->
     <section class="services">
         <div class="container">
-            <div class="row align-items-center">
+            <div class="row p30 align-items-center">
                 <div class="col-24">
                     <div class="services__content">
                         <div class="title">

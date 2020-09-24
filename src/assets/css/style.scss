@@ -124,6 +124,12 @@ Media queries
 }
 
 /*--------------------------------- General -------------------------------------*/
+.p30{
+  margin: 0 -15px;
+  [class*=col]{
+    padding: 0 15px;
+  }
+}
 body{
   font-family: "Yekan Bakh";
   font-weight: 400;
@@ -665,10 +671,6 @@ body{
     //  text-align: justify;
     //  margin-bottom: 0 !important;
     //}
-  }
-  .col-md-12{
-    padding-right: 15px;
-    padding-left: 15px;
   }
     &__item{
       border-radius: 8px;
