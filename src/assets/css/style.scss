@@ -222,7 +222,7 @@ body{
 /*--------------------------------- Web design sec -------------------------------------*/
 .web_design_sec{
   position: relative;
-  padding: 221px 0;
+  padding: 150px 0;
   margin-bottom: 40px;
   &::before{
     position: absolute;
@@ -255,6 +255,7 @@ body{
     }
   }
   &__content{
+    margin-bottom: 30px;
     //color: $text_color;
     //text-align: justify;
     .title{
@@ -265,6 +266,22 @@ body{
     //  margin-bottom: 0 !important;
     //  color: $text_color !important;
     //}
+  }
+  .text-center{
+    .web_design_sec_link{
+      font-size: 20px;
+      font-weight: 700;
+      display: inline-block;
+      color: white;
+      background-color: #2ec5c0;
+      padding: 20px 30px;
+      border-radius: 4px;
+      box-shadow: 0 15px 70px rgba(46, 197, 192, 0.3);
+      transition: 0.3s;
+      &:hover{
+        box-shadow: none;
+      }
+    }
   }
   &__go_bottom{
     &::before{
