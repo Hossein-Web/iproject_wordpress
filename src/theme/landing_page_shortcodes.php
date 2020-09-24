@@ -3,7 +3,7 @@
 add_action('wp_enqueue_scripts', 'ivahid_landing_resources');
 function ivahid_landing_resources()
 {
-    if (is_page_template('page-ivahid.php') || is_page_template('page-ivahid-copy.php') ) {
+    if (is_page_template('page-ivahid.php') || is_page_template('page-ivahid-copy.php')) {
         wp_enqueue_style('style', get_stylesheet_uri());
         wp_enqueue_script('header_js', get_template_directory_uri() . '/js/header-bundle.js', null, 1.0, true);
         wp_enqueue_script('footer_js', get_template_directory_uri() . '/js/footer-bundle.js', null, 1.0, true);
@@ -53,7 +53,8 @@ function web_design_sec_shortcode()
                                     if (have_rows('web_design_sec_portfolio')) {
                                         while (have_rows('web_design_sec_portfolio')) {
                                             the_row(); ?>
-                                            <div class="swiper-slide" style="background-image:url(<?php echo get_sub_field( 'web_design_sec_portfolio_img' ) ?>)">
+                                            <div class="swiper-slide"
+                                                 style="background-image:url(<?php echo get_sub_field('web_design_sec_portfolio_img') ?>)">
                                             </div>
                                             <?php
                                         }
@@ -182,7 +183,7 @@ function services_shortcode()
     <section class="services">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-xl-12 col-lg-12 col-md-24">
+                <div class="col-24">
                     <div class="services__content">
                         <div class="title">
                             <h4><?php the_field('services_title_fa'); ?></h4>
@@ -190,46 +191,44 @@ function services_shortcode()
                         </div><!-- .title -->
                         <p><?php the_field('services_description'); ?></p>
                     </div><!-- .services_content -->
-                </div><!-- .col-xl-12 -->
-                <div class="col-xl-12 col-lg-12 col-md-24">
-                    <div class="services__list">
-                        <?php
-                        if (have_rows('services_list')) {
-                            while (have_rows('services_list')) {
-                                the_row();
-                                ?>
-                                <div class="services__list__item">
-                                    <div class="item_title_wrapper">
-                                        <div>
-                                            <img src="<?php echo get_template_directory_uri() . '/img/wordpress-Logo.png' ?>"
-                                                 alt="wordpress logo">
-                                        </div>
-                                        <div class="title">
-                                            <?php
-                                            $main_title_link = get_sub_field('main_title_link');
-                                            $subtitle_link = get_sub_field('subtitle_link');
-                                            $item_link = get_sub_field('item_link');
-                                            ?>
-                                            <p>
-                                                <a href="<?php echo esc_url($main_title_link['url']); ?>"><?php echo esc_html($main_title_link['title']); ?></a>
-                                            </p>
-                                            <p>
-                                                <a href="<?php echo esc_url($subtitle_link['url']); ?>"><?php echo esc_html($subtitle_link['title']); ?></a>
-                                            </p>
-                                        </div>
-                                    </div><!-- .item_title_wrapper -->
-                                    <div class="item_content">
-                                        <p><?php echo get_sub_field('item_description'); ?></p>
-                                        <a href="<?php echo esc_url($item_link['url']); ?>"
-                                           class="read_more"><?php echo esc_html($item_link['title']); ?></a>
-                                    </div>
-                                </div><!-- .services__list__item -->
-                                <?php
-                            }
-                        }
+                </div><!-- .col-24 -->
+                <?php
+                if (have_rows('services_list')) {
+                    while (have_rows('services_list')) {
+                        the_row();
                         ?>
-                    </div><!-- .services__list -->
-                </div><!-- .col-xl-12-->
+                        <div class="col-lg-8 col-md-12 col-24">
+                            <div class="services__item">
+                                <div class="item_title_wrapper">
+                                    <div>
+                                        <img src="<?php echo get_template_directory_uri() . '/img/wordpress-Logo.png' ?>"
+                                             alt="wordpress logo">
+                                    </div>
+                                    <div class="title">
+                                        <?php
+                                        $main_title_link = get_sub_field('main_title_link');
+                                        $subtitle_link = get_sub_field('subtitle_link');
+                                        $item_link = get_sub_field('item_link');
+                                        ?>
+                                        <p>
+                                            <a href="<?php echo esc_url($main_title_link['url']); ?>"><?php echo esc_html($main_title_link['title']); ?></a>
+                                        </p>
+                                        <p>
+                                            <a href="<?php echo esc_url($subtitle_link['url']); ?>"><?php echo esc_html($subtitle_link['title']); ?></a>
+                                        </p>
+                                    </div>
+                                </div><!-- .item_title_wrapper -->
+                                <div class="item_content">
+                                    <p><?php echo get_sub_field('item_description'); ?></p>
+                                    <a href="<?php echo esc_url($item_link['url']); ?>"
+                                       class="read_more"><?php echo esc_html($item_link['title']); ?></a>
+                                </div>
+                            </div><!-- .services__item -->
+                        </div><!-- .col-lg-8-->
+                        <?php
+                    }
+                }
+                ?>
             </div><!-- .row -->
         </div><!-- .container -->
     </section><!-- .services -->
@@ -254,13 +253,13 @@ function design_effect_shortcode()
                     </div><!-- .img -->
                 </div><!-- .col-xl-12 -->
                 <div class="col-xl-12 col-md-12 col-24">
-                        <div class="design_effect__content">
-                            <div class="title title--red">
-                                <h4><?php the_field('design_effect_title_fa'); ?></h4>
-                                <p><?php the_field('design_effect_title_en'); ?></p>
-                            </div><!-- .title -->
-                            <p><?php the_field('design_effect_description'); ?></p>
-                        </div><!-- .design_effect_content -->
+                    <div class="design_effect__content">
+                        <div class="title title--red">
+                            <h4><?php the_field('design_effect_title_fa'); ?></h4>
+                            <p><?php the_field('design_effect_title_en'); ?></p>
+                        </div><!-- .title -->
+                        <p><?php the_field('design_effect_description'); ?></p>
+                    </div><!-- .design_effect_content -->
                 </div>
             </div><!-- .row -->
         </div><!-- .container -->
@@ -560,49 +559,49 @@ function portfolio_shortcode()
         <div class="container">
             <div class="row">
                 <div class="col-24">
-            <div class="portfolio__background">
-                <span></span>
-                <span></span>
-            </div>
-            <div class="portfolio__description">
-                <h4><?php the_field('portfolio_title'); ?></h4>
-                <p><?php the_field('portfolio_description'); ?></p>
-            </div><!-- .portfolio__description -->
-            <div class="portfolio__wrapper">
-                <div class="swiper-container">
-                    <div class="swiper-wrapper">
-                        <?php
-                        $portfolio_items = get_field('portfolio_items');
-                        if ($portfolio_items) {
-                            foreach ($portfolio_items as $item) {
-                                ?>
-                                <div class="swiper-slide">
-                                    <div class="portfolio__wrapper__item">
-                                        <a href="<?php echo get_permalink( $item ); ?>">
-                                            <?php echo get_the_post_thumbnail($item); ?>
-                                        </a>
-                                        <h4>
-                                            <a href="<?php echo get_permalink( $item ); ?>">
-                                            <?php echo get_the_title($item); ?>
-                                            </a>
-                                        </h4>
-                                        <p><?php echo get_the_excerpt($item); ?></p>
-                                    </div>
-                                </div>
+                    <div class="portfolio__background">
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="portfolio__description">
+                        <h4><?php the_field('portfolio_title'); ?></h4>
+                        <p><?php the_field('portfolio_description'); ?></p>
+                    </div><!-- .portfolio__description -->
+                    <div class="portfolio__wrapper">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
                                 <?php
-                            }
-                            wp_reset_postdata();
-                        }
-                        ?>
-                    </div><!-- .swiper-wrapper -->
-                </div><!-- .swiper-container -->
-                <div class="view_more">
-                    <?php
-                    $portfolio_link = get_field('portfolio_link');
-                    ?>
-                    <a href="<?php echo esc_url($portfolio_link['url']); ?>"><?php echo esc_html($portfolio_link['title']); ?></a>
-                </div><!-- .view_more -->
-            </div><!-- .portfolio__wrapper -->
+                                $portfolio_items = get_field('portfolio_items');
+                                if ($portfolio_items) {
+                                    foreach ($portfolio_items as $item) {
+                                        ?>
+                                        <div class="swiper-slide">
+                                            <div class="portfolio__wrapper__item">
+                                                <a href="<?php echo get_permalink($item); ?>">
+                                                    <?php echo get_the_post_thumbnail($item); ?>
+                                                </a>
+                                                <h4>
+                                                    <a href="<?php echo get_permalink($item); ?>">
+                                                        <?php echo get_the_title($item); ?>
+                                                    </a>
+                                                </h4>
+                                                <p><?php echo get_the_excerpt($item); ?></p>
+                                            </div>
+                                        </div>
+                                        <?php
+                                    }
+                                    wp_reset_postdata();
+                                }
+                                ?>
+                            </div><!-- .swiper-wrapper -->
+                        </div><!-- .swiper-container -->
+                        <div class="view_more">
+                            <?php
+                            $portfolio_link = get_field('portfolio_link');
+                            ?>
+                            <a href="<?php echo esc_url($portfolio_link['url']); ?>"><?php echo esc_html($portfolio_link['title']); ?></a>
+                        </div><!-- .view_more -->
+                    </div><!-- .portfolio__wrapper -->
                 </div><!-- .col-24 -->
             </div><!-- .row -->
         </div><!-- .container -->
