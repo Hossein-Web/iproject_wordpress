@@ -41,6 +41,9 @@ function web_design_sec_shortcode()
                         </div><!-- .title -->
                         <p><?php the_field('web_design_sec_description'); ?></p>
                     </div><!-- .web_design_sec__content -->
+                    <div class="text-center">
+                        <a href="#" class="web_design_sec_link">درخواست پیش فاکتور و مشاوره رایگان</a>
+                    </div>
                 </div><!-- .col-xl-9 -->
                 <div class="col-xl-15">
                     <div class="web_design_sec__img_wrapper">
