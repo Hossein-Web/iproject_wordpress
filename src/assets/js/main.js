@@ -4,12 +4,31 @@ $(window).on('load', () => {
 
 
 //web_design_sec swiper
-var web_design_sec_swiper = new Swiper('.web_design_sec_slider >.swiper-container ', {
-	autoplay: {
-		delay: 3000,
-	},
-	effect: 'fade',
-	loop: true
+// var web_design_sec_swiper = new Swiper('.web_design_sec_slider >.swiper-container ', {
+// 	autoplay: {
+// 		delay: 3000,
+// 	},
+// 	effect: 'fade',
+// 	loop: true
+// });
+
+//web_design_sec video play button
+$( '.web_design_sec_video_btn' ).on( 'click', function (e) {
+	let video_element = document.getElementById( 'web_design_sec_video' );
+	let video_btn = $(this);
+	let video_btn_span = $(this).find( 'span' );
+	if( video_btn_span.hasClass( 'icon-play' ) ){
+
+		video_btn_span.removeClass( 'icon-play' );
+		video_btn_span.addClass( 'icon-pause');
+		video_element.play();
+
+	}else if( video_btn_span.hasClass( 'icon-pause' ) ){
+
+		video_element.pause();
+		video_btn_span.removeClass( 'icon-pause' );
+		video_btn_span.addClass( 'icon-play');
+	}
 });
 
 // 'web_design_sec' go bottom function

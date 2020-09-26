@@ -42,29 +42,22 @@ function web_design_sec_shortcode()
                         <p><?php the_field('web_design_sec_description'); ?></p>
                     </div><!-- .web_design_sec__content -->
                     <div class="text-center">
-                        <a href="#" class="web_design_sec_link">درخواست پیش فاکتور و مشاوره رایگان</a>
+                        <a href="<?php $web_design_sec_link = get_field( 'web_design_sec_link' ); echo esc_url( $web_design_sec_link['url'] ); ?>"
+                           class="web_design_sec_link"><?php echo esc_html( $web_design_sec_link['title'] ); ?></a>
                     </div>
                 </div><!-- .col-xl-9 -->
                 <div class="col-xl-15">
                     <div class="web_design_sec__img_wrapper">
                         <img src="<?php echo get_template_directory_uri() . '/img/web_design_sec.png' ?>"
                              alt="web design">
-                        <div class="web_design_sec_slider">
-                            <div class="swiper-container">
-                                <div class="swiper-wrapper">
-                                    <?php
-                                    if (have_rows('web_design_sec_portfolio')) {
-                                        while (have_rows('web_design_sec_portfolio')) {
-                                            the_row(); ?>
-                                            <div class="swiper-slide"
-                                                 style="background-image:url(<?php echo get_sub_field('web_design_sec_portfolio_img') ?>)">
-                                            </div>
-                                            <?php
-                                        }
-                                    }
-                                    ?>
-                                </div>
-                            </div>
+                        <div class="web_design_sec_video_wrapper">
+                            <video id="web_design_sec_video">
+                                <source src="<?php $video_link = get_field( 'web_design_sec_video' ); echo esc_url( $video_link ); ?>" type="video/mp4">
+                                Your browser does not support HTML video.
+                            </video>
+                            <button class="web_design_sec_video_btn paused">
+                                <span class="icon-play"></span>
+                            </button><!-- .web_design_sec_video_btn -->
                         </div><!-- .web_design_sec_slider -->
                     </div><!-- .web_design_sec__img_wrapper -->
                 </div><!-- .col-xl-15 -->
