@@ -55,7 +55,7 @@ function web_design_sec_shortcode()
                                 <source src="<?php $video_link = get_field( 'web_design_sec_video' ); echo esc_url( $video_link ); ?>" type="video/mp4">
                                 Your browser does not support HTML video.
                             </video>
-                            <button class="web_design_sec_video_btn paused">
+                            <button class="web_design_sec_video_btn btn_visible paused">
                                 <span class="icon-play"></span>
                             </button><!-- .web_design_sec_video_btn -->
                         </div><!-- .web_design_sec_slider -->

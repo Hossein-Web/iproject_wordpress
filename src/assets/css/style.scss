@@ -266,6 +266,10 @@ body{
         position: absolute;
         top: 60%;
         right: 50%;
+        &.btn_visible{
+          opacity: 1;
+          top: 50%;
+        }
         transform: translate( 50%, -50% );
         border-radius: 50%;
         background-color: $accent_color;
@@ -278,15 +282,13 @@ body{
           transform: translate( 50%, -50% );
           color: white;
         }
-        &:hover{
-          &::after{
-            opacity: 0.15;
-            animation: wave2 3s ease-in infinite;
+        &::after{
+          opacity: 0.15;
+          animation: wave 2s linear 0.5s infinite;
           }
-          &::before{
-            opacity: 0.35;
-            animation: wave 2s ease-in 1s infinite;
-          }
+        &::before{
+          opacity: 0.35;
+          animation: wave 2s linear 1.5s infinite;
         }
         &::before, &::after{
           content: '';
@@ -1896,7 +1898,7 @@ body{
 
 /*----------------------< 450px ------------------------*/
 @media only screen and (max-width: 450px){
-  section{
+  .container{
     padding-left: 10px !important;
     padding-right: 10px !important;
   }

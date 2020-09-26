@@ -22,13 +22,15 @@ $( '.web_design_sec_video_btn' ).on( 'click', function (e) {
 		video_btn_span.removeClass( 'icon-play' );
 		video_btn_span.addClass( 'icon-pause');
 		video_element.play();
+		video_btn.toggleClass( 'btn_visible' );
 
 	}else if( video_btn_span.hasClass( 'icon-pause' ) ){
 
 		video_element.pause();
 		video_btn_span.removeClass( 'icon-pause' );
 		video_btn_span.addClass( 'icon-play');
-	}
+        video_btn.toggleClass( 'btn_visible' );
+    }
 });
 
 // 'web_design_sec' go bottom function
