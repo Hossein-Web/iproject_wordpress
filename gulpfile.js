@@ -64,7 +64,7 @@ const pluginsListProd = [
 /* -------------------------------------------------------------------------------------------------
 Header & Footer JavaScript Boundles
 -------------------------------------------------------------------------------------------------- */
-const headerJS = ['./node_modules/jquery/dist/jquery.js',
+const headerJS = [
 				  './node_modules/swiper/swiper-bundle.js',
 				  './node_modules/wavesurfer.js/dist/wavesurfer.min.js',];
 

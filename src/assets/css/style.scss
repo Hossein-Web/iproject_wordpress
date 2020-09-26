@@ -1,12 +1,10 @@
-@import '../../../node_modules/normalize.css/normalize';
-
 @import '../../../node_modules/swiper/swiper-bundle';
 
 @import 'variables';
 
 @import 'font_icon_style';
 
-@import './reset';
+//@import './reset';
 
 /*
 Table of content
@@ -422,7 +420,7 @@ body{
 
 /*--------------------------------- Your position -------------------------------------*/
 .your_position{
-  background-image: url('img/your_position_back_1.png');
+  background-image: url('img/dots_background.png');
   background-position-y: center;
   background-position-x: 100%;
   background-repeat: no-repeat;
