@@ -301,7 +301,7 @@ body{
       opacity: 0.35;
       width: 100%;
       height: 100%;
-      animation: wave 2s ease-in 1s infinite;
+      animation: wave 2s linear 0.5s infinite;
 
     }
     &::after{
@@ -315,7 +315,7 @@ body{
       right: 0;
       width: 100%;
       height: 100%;
-      animation: wave2 3s ease-in infinite;
+      animation: wave 2s linear 1.5s infinite;
 
     }
     position: absolute;
@@ -1178,10 +1178,10 @@ body{
           background-color: white;
         }
         &::before{
-          animation: wave 2s ease-in 1s infinite;
+          animation: wave 2s linear 0.5s infinite;
         }
         &::after{
-          animation: wave2 3s ease-in infinite;
+          animation: wave 2s linear 1.5s infinite;
         }
       }
     }
@@ -1669,10 +1669,10 @@ body{
         a{
           opacity: 1;
           &::before{
-            animation: wave 2s ease-in 1s infinite;
+            animation: wave 2s linear 0.5s infinite;
           }
           &::after{
-            animation: wave2 3s ease-in infinite;
+            animation: wave 2s linear 1.5s infinite;
           }
         }
       }
@@ -1894,21 +1894,6 @@ body{
 
 
 @keyframes wave {
-0% {
-  -webkit-transform: scale(1);
-  transform: scale(1);
-}
-50% {
-  -webkit-transform: scale(1.5);
-  transform: scale(1.5);
-}
-100% {
-  opacity: 0;
-  -webkit-transform: scale(1.7);
-  transform: scale(1.7);
-}
-}
-@keyframes wave2 {
 0% {
   -webkit-transform: scale(1);
   transform: scale(1);
