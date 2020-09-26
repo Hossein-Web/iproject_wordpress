@@ -3,19 +3,10 @@
 add_action('wp_enqueue_scripts', 'ivahid_landing_resources');
 function ivahid_landing_resources()
 {
-<<<<<<< Updated upstream:src/theme/landing_page_shortcodes.php
     if (is_page_template('page-ivahid.php') || is_page_template('page-ivahid-copy.php')) {
         wp_enqueue_style('style', get_stylesheet_uri());
         wp_enqueue_script('header_js', get_template_directory_uri() . '/js/header-bundle.js', null, 1.0, true);
         wp_enqueue_script('footer_js', get_template_directory_uri() . '/js/footer-bundle.js', null, 1.0, true);
-=======
-    if ( is_page_template('page-ivahid.php') ) {
-        wp_enqueue_style( 'reset', get_template_directory_uri() . '/css/reset.css' );
-        wp_enqueue_style('ivahid_style', get_stylesheet_uri() . '/assets/css/ivahid_style.css', array( 'reset' ));
-        wp_enqueue_script( 'jquery', get_template_directory_uri() . '/javascript/jquery.min.js', array(), 1.10, true );
-        wp_enqueue_script('header_js', get_template_directory_uri() . '/assets/js/header-bundle.js', array( 'jquery' ), 1.0, true);
-        wp_enqueue_script('footer_js', get_template_directory_uri() . '/assets/js/footer-bundle.js', array( 'header_js' ), 1.0, true);
->>>>>>> Stashed changes:src/theme/ivahid-page-shortcodes.php
     }
 //    if (is_page_template('page-ivahid-copy.php')) {
 //        wp_enqueue_style('ivahid_style_yekan_font', get_template_directory_uri() . '/assets/css/ivahid_style_yekan_font.css');

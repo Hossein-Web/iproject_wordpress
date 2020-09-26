@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 $(window).on('load', () => {
 	console.log('Loaded!');
 });
@@ -34,8 +33,6 @@ $( '.web_design_sec_video_btn' ).on( 'click', function (e) {
     }
 });
 
-=======
->>>>>>> Stashed changes
 // 'web_design_sec' go bottom function
 $( '.web_design_sec__go_bottom' ).on( 'click', function(e) {
 	e.preventDefault();
@@ -129,6 +126,21 @@ var portfolio_swiper = new Swiper('.portfolio__wrapper > .swiper-container ', {
 var container_element = $( '.wp-block-yoast-faq-block' ).parent();
 
 container_element.wrap( '<section class="faq"></section><!-- .faq -->' );
+// var coll = document.getElementsByClassName("schema-faq-question");
+// var i;
+//
+// for (i = 0; i < coll.length; i++) {
+// 	coll[i].addEventListener("click", function() {
+// 		this.classList.toggle("active");
+// 		var content = this.nextElementSibling;
+// 		console.log( content );
+// 		if (content.style.maxHeight){
+// 			content.style.maxHeight = null;
+// 		} else {
+// 			content.style.maxHeight = content.scrollHeight + "px" ;
+// 		}
+// 	});
+// }
 
 // $( '.schema-faq-section' ).on( 'click', function(e) {
 // 	e.preventDefault();
@@ -239,6 +251,61 @@ function setProgress(percent) {
 	const offset = circumference - percent / 100 * circumference;
 	circle.style.strokeDashoffset = offset;
 }
+
+//   var audio_url = '';
+//   var xhr = new XMLHttpRequest();
+//   xhr.open('GET','http://localhost:3000/assets/audio/test.mp3', true);
+//   xhr.responseType = 'arraybuffer';
+//   var blob_url;
+//   xhr.onload = function(e) {
+//   var responseArray = new Uint8Array(this.response).buffer;
+// 	responseArray = responseArray.slice(2);
+// 	   var blob = new Blob([responseArray]);
+// 	   var URLObject = window.webkitURL || window.URL;
+// 	   blob_url =       URLObject.createObjectURL(blob);
+// 	//    audio_url = blob_url;
+// 	   console.log( this.response );
+// 	   wavesurferInit(blob_url);
+
+//   };
+//   xhr.send();
+
+//   function wavesurferInit(blob_url) {
+// 	  var wavesurfer = WaveSurfer.create({
+// 										container: '#waveform',
+// 										mediaType: 'audio',
+// 										waveColor: '#f0f1f7',
+// 										barWidth: 3,
+// 										cursorColor: 'transparent',
+// 										backend: 'MediaElement',
+// 										progressColor: '#ff4342',
+// 										barGap: 4,
+// 										responsive: true,
+// 										height: 66
+// 									});
+// 	  wavesurfer.loadBlob(blob_url);
+// 	  wavesurfer.on('ready', function () {
+// 		$( '.duration' ).html( formatTime( wavesurfer.getDuration() ) );
+// 		$( '.podcast_button' ).on( 'click', function(){
+// 			var icon_element = $( this ).find('span');
+// 			if( icon_element.hasClass('icon-play') ) {
+// 				icon_element.removeClass( 'icon-play' );
+// 				icon_element.addClass( 'icon-pause' );
+// 				wavesurfer.play();
+// 			}else{
+// 				icon_element.removeClass( 'icon-pause' );
+// 				icon_element.addClass( 'icon-play' );
+// 				wavesurfer.pause();
+// 			}
+// 		} );
+// 	});
+// 	wavesurfer.on( 'audioprocess', function() {
+// 		progress_percent = wavesurfer.getCurrentTime()*100/wavesurfer.getDuration();
+// 		$( '.current_time' ).html( formatTime( wavesurfer.getCurrentTime() ) );
+// 		setProgress( progress_percent );
+// 	} );
+//   }
+
 
 var wavesurfer = WaveSurfer.create({
 	container: '#waveform',

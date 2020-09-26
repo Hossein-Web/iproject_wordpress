@@ -54,5 +54,4 @@ function wordpressify_widgets()
 
 add_action('widgets_init', 'wordpressify_widgets');
 
-require 'ivahid-page-shortcodes.php';
-echo get_template_directory_uri();
+require 'landing_page_shortcodes.php';
