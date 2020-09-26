@@ -32,7 +32,7 @@ function web_design_sec_shortcode()
     </div><!-- .container -->
     <section class="web_design_sec">
         <div class="container">
-            <div class="row">
+            <div class="row align-items-center">
                 <div class="col-xl-9">
                     <div class="web_design_sec__content">
                         <div class="title title--red">
@@ -178,7 +178,7 @@ function services_shortcode()
     </div><!-- .container -->
     <section class="services">
         <div class="container">
-            <div class="row p30 align-items-center">
+            <div class="row align-items-center">
                 <div class="col-24">
                     <div class="services__content">
                         <div class="title">
@@ -189,7 +189,9 @@ function services_shortcode()
                     </div><!-- .services_content -->
                 </div><!-- .col-24 -->
                 <?php
-                if (have_rows('services_list')) {
+                if (have_rows('services_list')) {?>
+                    <div class="row p30">
+                    <?php
                     while (have_rows('services_list')) {
                         the_row();
                         ?>
@@ -222,7 +224,9 @@ function services_shortcode()
                             </div><!-- .services__item -->
                         </div><!-- .col-lg-8-->
                         <?php
-                    }
+                    }?>
+                    </div><!-- .row -->
+                    <?php
                 }
                 ?>
             </div><!-- .row -->
