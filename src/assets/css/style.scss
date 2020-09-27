@@ -200,6 +200,23 @@ body{
   }
 }
 .web_design_sec, .design_effect, .ivahid_difference, .select_team, .services{
+  ul{
+    li{
+      position: relative;
+      padding-right: 18px;
+      &::before{
+        content: '\2713';
+        display: block;
+        position: absolute;
+        right: 0;
+        color: $text_color;
+      }
+      &:not( :last-child ){
+        margin-bottom: 8px;
+      }
+    }
+    margin: 20px 0;
+  }
   &__content{
     &>p{
       color: $text_color !important;
