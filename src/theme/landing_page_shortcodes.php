@@ -198,7 +198,7 @@ function services_shortcode()
                         <div class="col-lg-8 col-md-12 col-24">
                             <div class="services__item">
                                 <div class="item_title_wrapper">
-                                    <div>
+                                    <div class="services_icon">
                                         <img src="<?php echo get_template_directory_uri() . '/img/wordpress-Logo.png' ?>"
                                              alt="wordpress logo">
                                     </div>

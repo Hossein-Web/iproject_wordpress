@@ -703,6 +703,12 @@ body{
       .item_title_wrapper{
         display: flex;
         padding-bottom: 17px;
+        .services_icon{
+          margin-top: -6px;
+          img{
+            width: 60px;
+          }
+        }
         .title{
           font-size: 18px;
           line-height: 18px;
@@ -716,6 +722,12 @@ body{
               color: #333333;
             }
             padding-bottom: 13px;
+          }
+          p:last-child{
+            a{
+              font-size: 15px;
+              color: #777777;
+            }
           }
         }
       }
