@@ -358,15 +358,26 @@ function ivahid_difference_shortcode()
             <div class="container">
                 <div class="row p30 align-items-center">
                     <div class="col-md-13 col-24">
-                        <p class="consultation-content">نیاز به مشاوره و استعلام هزینه دارید</p>
+                        <p class="consultation-content">
+                            <?php
+                            $ivahid_difference_bar_title = get_field( 'ivahid_difference_bar_title' );
+                            echo esc_html( $ivahid_difference_bar_title );
+                            ?>
+                        </p>
                     </div>
                     <div class="col-md-11 col-24">
                         <div class="consultation-contact">
                             <div class="consultation-contact__button">
-                                <a href="#">درخواست مشاوره رایگان</a>
+                                <a href="<?php $ivahid_difference_bar_link = get_field( 'ivahid_difference_bar_link' );
+                                        echo esc_url( $ivahid_difference_bar_link['url'] ); ?>"><?php echo esc_html( $ivahid_difference_bar_link['title'] ) ?></a>
                             </div>
                             <p class="consultation-contact__tel">
-                                <span>021</span><span>28424421</span>
+                                <span><?php $ivahid_difference_bar_area_code = get_field( 'ivahid_difference_bar_area_code' );
+                                            echo esc_html( $ivahid_difference_bar_area_code ); ?>
+                                </span>
+                                <span><?php $ivahid_difference_bar_phone_number = get_field( 'ivahid_difference_bar_phone_number' );
+                                            echo esc_html( $ivahid_difference_bar_phone_number ) ?>
+                                </span>
                             </p>
                         </div>
                     </div>
