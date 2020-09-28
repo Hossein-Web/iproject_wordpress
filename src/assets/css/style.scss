@@ -876,7 +876,6 @@ body{
       margin-bottom: 70px;
     }
     .swiper-slide {
-      opacity: 0.5;
       text-align: center;
       display: flex;
       justify-content: center;
@@ -1105,8 +1104,8 @@ body{
         right: 0;
         bottom: 0;
         transform: translateY(50%);
-        visibility: visible;
-        opacity: 1;
+        //visibility: visible;
+        //opacity: 1;
         a{
           font-size: 18px;
           font-weight: 700;
@@ -1209,7 +1208,7 @@ body{
       color: $text_color !important;
     }
     a{
-      opacity: 1;
+      //opacity: 1;
       display: inline-block;
       position: absolute;
       top: 20%;
@@ -1217,7 +1216,7 @@ body{
       transform: translatex(50%);
       border-radius: 50%;
       background-color: $accent_color;
-      transition: opacity 0.3s;
+      //transition: opacity 0.3s;
       padding: 30px;
       &::before{
         content: '';
