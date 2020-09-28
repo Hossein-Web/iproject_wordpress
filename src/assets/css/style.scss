@@ -171,30 +171,30 @@ body{
 }
 .title{
   margin-bottom: 21px;
-  h4{
-    color: $text_color;
-    font-size: 24px;
-    font-weight: 700;
-    margin-bottom: 12px;
+  h1, h2, h3, h4, h5{
+    color: $text_color !important;
+    font-size: 24px !important;
+    font-weight: 700 !important;
+    margin-bottom: 12px !important;
     span{
-      font-size: 24px;
-      font-weight: 700;
-      color: $accent_color;
+      font-size: 24px !important;
+      font-weight: 700 !important;
+      color: $accent_color !important;
     }
   }
   p{
-    font-size: 18px;
-    font-weight: 400;
+    font-size: 18px !important;
+    font-weight: 400 !important;
     color: $text_color !important;
     margin-bottom: 0 !important;
   }
   &--red{
-    h4{
+    h1, h2, h3, h4, h5{
       color: $accent_color !important;
     }
   }
   &--white{
-    h4{
+    h1, h2, h3, h4, h5{
       color: white !important;
     }
   }
