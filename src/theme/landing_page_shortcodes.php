@@ -248,8 +248,8 @@ function design_effect_shortcode()
             <div class="row align-items-center">
                 <div class="col-xl-12 col-md-12 col-24">
                     <div class="design_effect__img">
-                        <img src="<?php echo get_template_directory_uri() . '/img/design_effect.png' ?>"
-                             alt="design effect">
+                        <img src="<?php $design_effect_image = get_field( 'design_effect_image' ); echo esc_url( $design_effect_image['url'] ) ?>"
+                             alt="<?php echo esc_attr( $design_effect_image['alt'] ); ?>">
                     </div><!-- .img -->
                 </div><!-- .col-xl-12 -->
                 <div class="col-xl-12 col-md-12 col-24">
@@ -590,26 +590,29 @@ function portfolio_shortcode()
                         <div class="swiper-container">
                             <div class="swiper-wrapper">
                                 <?php
-                                $portfolio_items = get_field('portfolio_items');
-                                if ($portfolio_items) {
-                                    foreach ($portfolio_items as $item) {
+                                if (have_rows('portfolio_items')) {
+                                    while (have_rows('portfolio_items')) {
+                                        the_row();
                                         ?>
                                         <div class="swiper-slide">
                                             <div class="portfolio__wrapper__item">
-                                                <a href="<?php echo get_permalink($item); ?>">
-                                                    <?php echo get_the_post_thumbnail($item); ?>
+                                                <a href="<?php $portfolio_link = get_sub_field( 'portfolio_item_link' );  echo esc_url( $portfolio_link ); ?>">
+                                                    <img src="<?php $portfolio_image = get_sub_field( 'portfolio_item_image' ); echo esc_url( $portfolio_image['url'] ); ?>"
+                                                         alt="<?php echo esc_attr( $portfolio_image['alt'] ); ?>">
                                                 </a>
                                                 <h4>
-                                                    <a href="<?php echo get_permalink($item); ?>">
-                                                        <?php echo get_the_title($item); ?>
+                                                    <a href="<?php echo esc_url( $portfolio_link ); ?>">
+                                                        <?php $portfolio_item_title = get_sub_field( 'portfolio_item_title' ); echo esc_html( $portfolio_item_title ); ?>
                                                     </a>
                                                 </h4>
-                                                <p><?php echo get_the_excerpt($item); ?></p>
+                                                <p>
+                                                    <?php $portfolio_item_excerpt = get_sub_field( 'portfolio_item_excerpt' );
+                                                    echo $portfolio_item_excerpt; ?>
+                                                </p>
                                             </div>
                                         </div>
                                         <?php
                                     }
-                                    wp_reset_postdata();
                                 }
                                 ?>
                             </div><!-- .swiper-wrapper -->
