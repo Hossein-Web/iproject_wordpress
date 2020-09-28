@@ -198,6 +198,14 @@ body{
       color: white !important;
     }
   }
+  &--black{
+    margin-bottom: 0 !important;
+    h2{
+      font-weight: 900 !important;
+      line-height: 35px !important;
+      margin-bottom: 4px !important;
+    }
+  }
 }
 .web_design_sec, .design_effect, .ivahid_difference, .select_team, .services{
   ul{
@@ -887,12 +895,6 @@ body{
   &__description{
     margin-bottom: 65px;
     text-align: justify;
-    h4{
-      font-size: 24px;
-      font-weight: 900;
-      line-height: 35px;
-      margin-bottom: 4px;
-    }
     p{
       color: $text_color !important;
       line-height: 40px;

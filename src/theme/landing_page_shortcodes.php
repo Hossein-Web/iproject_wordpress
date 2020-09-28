@@ -595,8 +595,10 @@ function portfolio_shortcode()
                         <span></span>
                         <span></span>
                     </div>
-                    <div class="portfolio__description">
+                    <div class="title title--black">
                         <h2><?php the_field('portfolio_title'); ?></h2>
+                    </div><!-- .title -->
+                    <div class="portfolio__description">
                         <p><?php the_field('portfolio_description'); ?></p>
                     </div><!-- .portfolio__description -->
                     <div class="portfolio__wrapper">
