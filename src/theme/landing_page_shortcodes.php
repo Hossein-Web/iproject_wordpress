@@ -84,7 +84,7 @@ function your_position_shortcode()
             <div class="container">
                 <div class="text">
                     <div class="title">
-                        <h4><?php the_field('your_position_title_fa'); ?></h4>
+                        <h3><?php the_field('your_position_title_fa'); ?></h3>
                         <p><?php the_field('your_position_title_en'); ?></p>
                     </div><!-- .title -->
                     <p><?php the_field('your_position_description'); ?></p>
@@ -99,7 +99,7 @@ function your_position_shortcode()
                     <div class="inner_text_wrapper">
                         <div class="text">
                             <div class="title">
-                                <h4><?php the_field('your_position_title_fa'); ?></h4>
+                                <h3><?php the_field('your_position_title_fa'); ?></h3>
                                 <p><?php the_field('your_position_title_en'); ?></p>
                             </div><!-- .title -->
                             <p><?php the_field('your_position_description'); ?></p>
@@ -182,7 +182,7 @@ function services_shortcode()
                 <div class="col-24">
                     <div class="services__content">
                         <div class="title">
-                            <h4><?php the_field('services_title_fa'); ?></h4>
+                            <h2><?php the_field('services_title_fa'); ?></h2>
                             <p><?php the_field('services_title_en'); ?></p>
                         </div><!-- .title -->
                         <p><?php the_field('services_description'); ?></p>
@@ -306,7 +306,7 @@ function select_team_shortcode()
                         <div class="col-lg-12 col-24 mr-auto">
                             <div class="select_team__content">
                                 <div class="title">
-                                    <h4><?php the_field('select_team_title_fa') ?></h4>
+                                    <h3><?php the_field('select_team_title_fa') ?></h3>
                                     <p><?php the_field('select_team_title_en'); ?></p>
                                 </div><!-- .title -->
                                 <p><?php the_field('select_team_description'); ?></p>
@@ -348,7 +348,7 @@ function ivahid_difference_shortcode()
                 <div class="col-xl-15 col-lg-15 col-md-12">
                     <div class="ivahid_difference__content">
                         <div class="title">
-                            <h4><?php the_field('ivahid_difference_title_fa'); ?></h4>
+                            <h3><?php the_field('ivahid_difference_title_fa'); ?></h3>
                             <p><?php the_field('ivahid_difference_title_en'); ?></p>
                         </div><!-- .title -->
                         <p><?php the_field('ivahid_difference_description'); ?></p>
@@ -410,7 +410,7 @@ function portal_shortcode()
                         <div class="col-lg-12 col-24 mr-auto">
                             <div class="portal__content">
                                 <div class="title title--white">
-                                    <h4><?php the_field('portal_title'); ?></h4>
+                                    <h3><?php the_field('portal_title'); ?></h3>
                                 </div><!-- .title -->
                                 <p><?php the_field('portal_description'); ?></p>
                                 <div class="link">
@@ -443,7 +443,7 @@ function services_card_shortcode()
     <section class="services_card">
         <div class="container">
             <div class="title">
-                <h4><?php the_field('services_card_title_fa'); ?></h4>
+                <h3><?php the_field('services_card_title_fa'); ?></h3>
                 <p><?php the_field('services_card_title_en') ?></p>
             </div><!-- .title -->
             <div class="services_card__wrapper">
@@ -543,7 +543,7 @@ function customers_shortcode()
             <div class="customers__wrapper">
                 <div class="swiper-container">
                     <div class="title">
-                        <h4><?php the_field('customers_title_fa'); ?></h4>
+                        <h3><?php the_field('customers_title_fa'); ?></h3>
                         <p><?php the_field('customers_title_en'); ?></p>
                     </div><!-- .title -->
                     <div class="swiper-pagination"></div>
@@ -596,7 +596,7 @@ function portfolio_shortcode()
                         <span></span>
                     </div>
                     <div class="portfolio__description">
-                        <h4><?php the_field('portfolio_title'); ?></h4>
+                        <h2><?php the_field('portfolio_title'); ?></h2>
                         <p><?php the_field('portfolio_description'); ?></p>
                     </div><!-- .portfolio__description -->
                     <div class="portfolio__wrapper">
