@@ -755,7 +755,47 @@ body{
     //  margin-bottom: 0 !important;
     //}
   }
-
+&__free-consultation{
+  background-color: #13b348;
+  padding-top: 43px;
+  padding-bottom: 34px;
+  .consultation-content{
+    font-size: 31px;
+    font-weight: 700;
+    line-height: 29.24px;
+    text-transform: uppercase;
+    color: white;
+  }
+  .consultation-contact{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    &__button{
+      margin-bottom: 19px;
+      a{
+        color: #464646;
+        font-size: 21px;
+        font-weight: 700;
+        line-height: 29.24px;
+        padding: 19px 30px 14px 29px;
+        border-radius: 5px;
+        background-color: white;
+        display: inline-block;
+      }
+    }
+    &__tel{
+      span{
+        font-size: 31px;
+        font-weight: 400;
+        color: white;
+        line-height: 29.24px;
+      }
+      span:last-child{
+        font-weight: 900;
+      }
+    }
+  }
+}
 }
 
 /*----------- Portfolio -------------*/
@@ -1760,6 +1800,15 @@ body{
     &__content{
       padding-right: 0;
     }
+    &__free-consultation{
+      .consultation-content{
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      .consultation-contact{
+        align-items: center;
+      }
+    }
   }
 
   /*videos*/
@@ -1859,10 +1908,10 @@ body{
     }
   }
   /*Ivahid_difference*/
-  .ivahid_difference{
-    padding-left: 20px;
-    padding-right: 20px;
-  }
+  //.ivahid_difference{
+  //  padding-left: 20px;
+  //  padding-right: 20px;
+  //}
   .portal{
     margin-bottom: 40px;
   }
