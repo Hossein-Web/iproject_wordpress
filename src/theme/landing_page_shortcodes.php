@@ -218,8 +218,10 @@ function services_shortcode()
                                 </div><!-- .item_title_wrapper -->
                                 <div class="item_content">
                                     <p><?php echo get_sub_field('item_description'); ?></p>
+                                    <?php if( $item_link ){ ?>
                                     <a href="<?php echo esc_url($item_link['url']); ?>"
                                        class="read_more"><?php echo esc_html($item_link['title']); ?></a>
+                                    <?php }?>
                                 </div>
                             </div><!-- .services__item -->
                         </div><!-- .col-lg-8-->
@@ -461,7 +463,7 @@ function services_card_shortcode()
                                         <span><?php echo get_sub_field('services_card_title_en'); ?></span>
                                     </div><!-- .text_wrapper -->
                                 </div><!-- .item -->
-                            </div><!-- .col-lg-8 -->
+                            </div><!-- .col-lg-6 -->
                             <?php
                         }
                     }
