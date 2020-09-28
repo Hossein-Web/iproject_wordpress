@@ -354,6 +354,25 @@ function ivahid_difference_shortcode()
                 </div><!-- .col-xl-15 -->
             </div><!-- .row -->
         </div><!-- .container -->
+        <div class="ivahid_difference__free-consultation">
+            <div class="container">
+                <div class="row p30 align-items-center">
+                    <div class="col-md-13 col-24">
+                        <p class="consultation-content">نیاز به مشاوره و استعلام هزینه دارید</p>
+                    </div>
+                    <div class="col-md-11 col-24">
+                        <div class="consultation-contact">
+                            <div class="consultation-contact__button">
+                                <a href="#">درخواست مشاوره رایگان</a>
+                            </div>
+                            <p class="consultation-contact__tel">
+                                <span>021</span><span>28424421</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section><!-- .ivahid_difference -->
     <div class="container">
     <?php
