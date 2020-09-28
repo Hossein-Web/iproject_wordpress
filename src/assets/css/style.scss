@@ -1330,7 +1330,7 @@ body{
       flex-direction: column;
       justify-content: space-between;
       box-shadow: 0 15px 70px rgba(56, 66, 77, 0.04);
-      margin: 0 48px;
+      //margin: 0 48px;
       border-radius: 5px;
       height: 100%;
       background-color: white;
@@ -1765,8 +1765,8 @@ body{
   .services_card{
     &__wrapper{
       .item{
-        height: auto;
-        margin-bottom: 20px;
+        height: 98%;
+        //margin-bottom: 20px;
       }
     }
   }
@@ -2008,14 +2008,14 @@ body{
     padding-right: 10px !important;
   }
 
-  .services_card{
-    &__wrapper{
-      .item{
-        margin-left: 0;
-        margin-right: 0;
-      }
-    }
-  }
+  //.services_card{
+  //  &__wrapper{
+  //    .item{
+  //      margin-left: 0;
+  //      margin-right: 0;
+  //    }
+  //  }
+  //}
 
   .portfolio{
     .view_more{

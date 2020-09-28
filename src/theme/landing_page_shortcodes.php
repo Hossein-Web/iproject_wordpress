@@ -445,13 +445,13 @@ function services_card_shortcode()
                 <p><?php the_field('services_card_title_en') ?></p>
             </div><!-- .title -->
             <div class="services_card__wrapper">
-                <div class="row">
+                <div class="row p30">
                     <?php
                     if (have_rows('services_cards')) {
                         while (have_rows('services_cards')) {
                             the_row();
                             ?>
-                            <div class="col-md-24 col-lg-8">
+                            <div class="col-lg-6 col-md-12 col-24">
                                 <div class="item">
                                     <div class="img_wrapper">
                                         <?php echo get_sub_field('services_card_svg'); ?>
