@@ -32,7 +32,7 @@ function web_design_sec_shortcode()
     </div><!-- .container -->
     <section class="web_design_sec">
         <div class="container">
-            <div class="row align-items-center">
+            <div class="row align-items-end">
                 <div class="col-xl-9">
                     <div class="web_design_sec__content">
                         <div class="title title--red">
@@ -78,10 +78,12 @@ function web_design_sec_shortcode()
                     </div><!-- .web_design_sec__img_wrapper -->
                 </div><!-- .col-xl-15 -->
             </div><!-- .row -->
+            <div class="go_bottom_wrapper">
+                <a class="go_bottom" href="#">
+                    <span class="icon-arrow-down"></span>
+                </a><!-- .web_design_sec__go_bottom -->
+            </div><!-- .go_bottom_wrapper -->
         </div><!-- .container-->
-        <a class="web_design_sec__go_bottom" href="#">
-            <span class="icon-arrow-down"></span>
-        </a><!-- .web_design_sec__go_bottom -->
     </section><!-- .web_design_sec -->
     <div class="container">
     <?php
@@ -329,7 +331,7 @@ function design_effect_shortcode()
                         <?php if (get_field('design_effect_description')) { ?>
                             <p><?php the_field('design_effect_description'); ?></p>
                         <?php } ?>
-                    </div><!-- .design_effect_content -->
+                    </div><!-- .design_effect__content -->
                 </div>
             </div><!-- .row -->
         </div><!-- .container -->
@@ -467,13 +469,16 @@ function ivahid_difference_shortcode()
                                 <?php } ?>
                             </div>
                             <p class="consultation-contact__tel">
-                                <?php $ivahid_difference_bar_area_code = get_field('ivahid_difference_bar_area_code');
-                                if ($ivahid_difference_bar_area_code) { ?>
-                                    <span><?php echo esc_html($ivahid_difference_bar_area_code); ?></span>
-                                    <?php $ivahid_difference_bar_area_code ?>
+                                <?php $ivahid_difference_bar_area_code = get_field( 'ivahid_difference_bar_area_code' );
+                                if ( $ivahid_difference_bar_area_code ){ ?>
+                                    <span><?php echo esc_html( $ivahid_difference_bar_area_code ); ?></span>
+                                <?php } ?>
 
-                                    <?php $ivahid_difference_bar_phone_number = get_field('ivahid_difference_bar_phone_number'); ?>
-                                    <span><?php echo esc_html($ivahid_difference_bar_phone_number) ?></span>
+                                <?php
+                                    $ivahid_difference_bar_phone_number = get_field( 'ivahid_difference_bar_phone_number' );
+                                    if( $ivahid_difference_bar_phone_number ){
+                                ?>
+                                    <span><?php echo esc_html( $ivahid_difference_bar_phone_number ) ?></span>
                                 <?php } ?>
                             </p>
                         </div>
@@ -505,27 +510,22 @@ function portal_shortcode()
                         <div class="col-lg-12 col-24 mr-auto">
                             <div class="portal__content">
                                 <div class="title title--white">
-                                    <?php if (get_field('portal_title')) {
-                                        ?>
+                                    <?php if (get_field('portal_title')) { ?>
                                         <h3><?php the_field('portal_title'); ?></h3>
-                                        <?php
-                                    } ?>
+                                    <?php } ?>
                                 </div><!-- .title -->
-                                <?php if ( get_field('portal_description') ) {
-                                    ?>
+                                <?php if ( get_field('portal_description') ) { ?>
                                     <p><?php the_field('portal_description'); ?></p>
-                                    <?php
-                                } ?>
+                                <?php } ?>
                                 <div class="link">
                                     <?php
                                     $portal_link = get_field('portal_link');
                                     $url = $portal_link['url'];
                                     $title = $portal_link['title'];
                                     ?>
-                                    <?php if ( $portal_link ){?>
+                                    <?php if ( $portal_link ){ ?>
                                         <a href="<?php echo esc_url($url); ?>"><?php echo esc_html($title); ?></a>
-                                        <?php
-                                    } ?>
+                                    <?php } ?>
                                 </div>
                             </div><!-- .portal__content -->
                         </div><!-- .col-lg-12 -->
@@ -549,18 +549,15 @@ function services_card_shortcode()
     <section class="services_card">
         <div class="container">
             <div class="title">
-                <?php if ( get_field( 'services_card_title_fa' ) ){
-                    ?>
+
+                <?php if ( get_field( 'services_card_title_fa' ) ){ ?>
                     <h3><?php the_field('services_card_title_fa'); ?></h3>
-    <?php
-                } ?>
-                <?php
-                if ( get_field( 'services_card_title_en' ) ){
-                    ?>
+                <?php } ?>
+
+                <?php if ( get_field( 'services_card_title_en' ) ){ ?>
                     <p><?php the_field('services_card_title_en') ?></p>
-                    <?php
-                }
-                ?>
+                <?php } ?>
+
             </div><!-- .title -->
             <div class="services_card__wrapper">
                 <div class="row p30">
@@ -613,18 +610,16 @@ function podcast_shortcode()
                             $podcast_title_link = get_field('podcast_title_link');
                             $podcast_topic_link = get_field('podcast_topic_link');
                             ?>
-                            <?php if ( $podcast_title_link ){
-                                ?>
+                            <?php if ( $podcast_title_link ){ ?>
                                 <h4>
                                     <a href="<?php echo esc_url($podcast_title_link['url']); ?>"><?php echo esc_html($podcast_title_link['title']); ?></a>
                                 </h4>
-    <?php
-                            } ?>
-                            <?php if ( $podcast_topic_link ) {
-                                ?>
-                                <span><a href="<?php echo esc_url($podcast_topic_link['url']) ?>"><?php echo esc_html($podcast_topic_link['title']) ?></a></span>
-                                <?php
-                            }?>
+                            <?php } ?>
+
+                            <?php if ( $podcast_topic_link ) { ?>
+                                <span><a href="<?php echo esc_url($podcast_topic_link['url']); ?>"><?php echo esc_html($podcast_topic_link['title']); ?></a></span>
+                            <?php } ?>
+
                         </div><!-- .podcast_title -->
                         <button class="podcast_button paused">
                             <span class="icon-play"></span>
@@ -667,18 +662,15 @@ function customers_shortcode()
             <div class="customers__wrapper">
                 <div class="swiper-container">
                     <div class="title">
-                        <?php if ( get_field( 'customers_title_fa' ) ){
-                            ?>
+
+                        <?php if ( get_field( 'customers_title_fa' ) ){ ?>
                             <h3><?php the_field('customers_title_fa'); ?></h3>
-    <?php
-                        } ?>
-                        <?php
-                        if ( get_field( 'customers_title_en' ) ){
-                            ?>
+                        <?php } ?>
+
+                        <?php if ( get_field( 'customers_title_en' ) ){ ?>
                             <p><?php the_field('customers_title_en'); ?></p>
-                            <?php
-                        }
-                        ?>
+                        <?php } ?>
+
                     </div><!-- .title -->
                     <div class="swiper-pagination"></div>
                     <div class="swiper-wrapper">
@@ -730,18 +722,16 @@ function portfolio_shortcode()
                         <span></span>
                     </div>
                     <div class="title title--black">
-                        <?php if ( get_field( 'portfolio_title' ) ) {
-                            ?>
+
+                        <?php if ( get_field( 'portfolio_title' ) ) { ?>
                             <h2><?php the_field('portfolio_title'); ?></h2>
-    <?php
-                        }?>
+                        <?php } ?>
+
                     </div><!-- .title -->
                     <div class="portfolio__description">
-                        <?php if ( get_field( 'portfolio_description' ) ){
-                            ?>
+                        <?php if ( get_field( 'portfolio_description' ) ){ ?>
                             <p><?php the_field('portfolio_description'); ?></p>
-    <?php
-                        } ?>
+                        <?php } ?>
                     </div><!-- .portfolio__description -->
                     <div class="portfolio__wrapper">
                         <div class="swiper-container">
@@ -809,18 +799,13 @@ function order_shortcode()
             <div class="row align-items-center">
                 <div class="col-xl-10 col-md-10">
                     <div class="title">
-                        <?php if ( get_field( 'order_title_fa' ) ) {
-                            ?>
+                        <?php if ( get_field( 'order_title_fa' ) ) { ?>
                             <h4><?php the_field('order_title_fa'); ?></h4>
-    <?php
-                        }?>
-                        <?php
-                        if ( get_field( 'order_title_en' ) ){
-                            ?>
+                        <?php } ?>
+
+                        <?php if ( get_field( 'order_title_en' ) ){ ?>
                             <p><?php the_field('order_title_en'); ?></p>
-                            <?php
-                        }
-                        ?>
+                        <?php } ?>
                     </div><!-- .title -->
                 </div><!-- .col-xl-10 -->
                 <div class="col-xl-14 col-md-14">
@@ -864,18 +849,14 @@ function videos_shortcode()
                     <div class="videos__wrapper">
                         <div class="swiper-container">
                             <div class="title">
-                                <?php
-                                if ( get_field( 'videos_title_fa' ) ){
-                                    ?>
+                                <?php if ( get_field( 'videos_title_fa' ) ){ ?>
                                     <h4><?php the_field('videos_title_fa'); ?></h4>
-                                    <?php
-                                }
-                                ?>
-                                <?php if ( get_field( 'videos_title_en' ) ) {
-                                    ?>
+                                <?php } ?>
+
+                                <?php if ( get_field( 'videos_title_en' ) ) { ?>
                                     <p><?php the_field('videos_title_en'); ?></p>
-    <?php
-                                }?>
+                                <?php } ?>
+
                             </div><!-- .title -->
                             <div class="swiper-pagination"></div>
                             <div class="swiper-wrapper">
@@ -887,7 +868,7 @@ function videos_shortcode()
                                         ?>
                                         <div class="swiper-slide">
                                             <div class="item">
-                                                <a class="video_link" href="#"><span class="icon-play"></span></a>
+                                                <a class="video_link" href="<?php echo esc_url( get_sub_field( 'item_link' ) ); ?>"><span class="icon-play"></span></a>
                                                 <?php
                                                 if (!empty($item_img)) {
                                                     ?>
@@ -941,18 +922,15 @@ function blog_shortcode($atts)
             <div class="blog__wrapper">
                 <div class="swiper-container">
                     <div class="title">
-                        <?php if ( get_field( 'blog_title_fa' ) ){
-                            ?>
+
+                        <?php if ( get_field( 'blog_title_fa' ) ){ ?>
                             <h4><?php the_field('blog_title_fa'); ?></h4>
-    <?php
-                        } ?>
-                        <?php
-                        if ( get_field( 'blog_title_en' ) ){
-                            ?>
+                        <?php } ?>
+
+                        <?php if ( get_field( 'blog_title_en' ) ){ ?>
                             <p><?php the_field('blog_title_en'); ?></p>
-                            <?php
-                        }
-                        ?>
+                        <?php } ?>
+
                     </div><!-- .title -->
                     <div class="swiper-pagination"></div>
                     <div class="swiper-wrapper">
