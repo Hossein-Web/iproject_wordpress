@@ -36,26 +36,26 @@ function web_design_sec_shortcode()
                 <div class="col-xl-9">
                     <div class="web_design_sec__content">
                         <div class="title title--red">
-                            <?php if(get_field('web_design_sec_title_fa')){ ?>
-                            <h1><?php the_field('web_design_sec_title_fa'); ?></h1>
+                            <?php if (get_field('web_design_sec_title_fa')) { ?>
+                                <h1><?php the_field('web_design_sec_title_fa'); ?></h1>
                             <?php } ?>
 
-                            <?php if(get_field('web_design_sec_title_en')){ ?>
-                            <p><?php the_field('web_design_sec_title_en'); ?></p>
+                            <?php if (get_field('web_design_sec_title_en')) { ?>
+                                <p><?php the_field('web_design_sec_title_en'); ?></p>
                             <?php } ?>
                         </div><!-- .title -->
 
-                        <?php if(get_field('web_design_sec_description')){ ?>
-                        <p><?php the_field('web_design_sec_description'); ?></p>
+                        <?php if (get_field('web_design_sec_description')) { ?>
+                            <p><?php the_field('web_design_sec_description'); ?></p>
                         <?php } ?>
                     </div><!-- .web_design_sec__content -->
                     <div class="text-center">
                         <?php
-                            $web_design_sec_link = get_field( 'web_design_sec_link' );
-                            if( $web_design_sec_link ){
-                        ?>
-                            <a href="<?php echo esc_url( $web_design_sec_link['url'] ); ?>"
-                               class="web_design_sec_link"><?php echo esc_html( $web_design_sec_link['title'] ); ?></a>
+                        $web_design_sec_link = get_field('web_design_sec_link');
+                        if ($web_design_sec_link) {
+                            ?>
+                            <a href="<?php echo esc_url($web_design_sec_link['url']); ?>"
+                               class="web_design_sec_link"><?php echo esc_html($web_design_sec_link['title']); ?></a>
                         <?php } ?>
                     </div>
                 </div><!-- .col-xl-9 -->
@@ -65,8 +65,9 @@ function web_design_sec_shortcode()
                              alt="web design">
                         <div class="web_design_sec_video_wrapper">
                             <video id="web_design_sec_video">
-                                <?php $video_link = get_field( 'web_design_sec_video' ); if( $video_link ){ ?>
-                                    <source src="<?php echo esc_url( $video_link ); ?>" type="video/mp4">
+                                <?php $video_link = get_field('web_design_sec_video');
+                                if ($video_link) { ?>
+                                    <source src="<?php echo esc_url($video_link); ?>" type="video/mp4">
                                 <?php } ?>
                                 Your browser does not support HTML video.
                             </video>
@@ -100,17 +101,17 @@ function your_position_shortcode()
                 <div class="text">
                     <div class="title">
 
-                        <?php if( get_field( 'your_position_title_fa' ) ){ ?>
-                        <h3><?php the_field('your_position_title_fa'); ?></h3>
+                        <?php if (get_field('your_position_title_fa')) { ?>
+                            <h3><?php the_field('your_position_title_fa'); ?></h3>
                         <?php } ?>
 
-                        <?php if( get_field( 'your_position_title_en' ) ){ ?>
-                        <p><?php the_field('your_position_title_en'); ?></p>
+                        <?php if (get_field('your_position_title_en')) { ?>
+                            <p><?php the_field('your_position_title_en'); ?></p>
                         <?php } ?>
 
                     </div><!-- .title -->
 
-                    <?php if( get_field( 'your_position_description' ) ){ ?>
+                    <?php if (get_field('your_position_description')) { ?>
                         <p><?php the_field('your_position_description'); ?></p>
                     <?php } ?>
                 </div><!-- .text -->
@@ -125,17 +126,17 @@ function your_position_shortcode()
                         <div class="text">
                             <div class="title">
 
-                                <?php if( get_field( 'your_position_title_fa' ) ){ ?>
+                                <?php if (get_field('your_position_title_fa')) { ?>
                                     <h3><?php the_field('your_position_title_fa'); ?></h3>
                                 <?php } ?>
 
-                                <?php if( get_field( 'your_position_title_en' ) ){ ?>
+                                <?php if (get_field('your_position_title_en')) { ?>
                                     <p><?php the_field('your_position_title_en'); ?></p>
                                 <?php } ?>
 
                             </div><!-- .title -->
 
-                            <?php if( get_field( 'your_position_description' ) ){ ?>
+                            <?php if (get_field('your_position_description')) { ?>
                                 <p><?php the_field('your_position_description'); ?></p>
                             <?php } ?>
                         </div><!-- .text -->
@@ -218,70 +219,70 @@ function services_shortcode()
                     <div class="services__content">
                         <div class="title">
 
-                            <?php if( get_field( 'services_title_fa' ) ){ ?>
+                            <?php if (get_field('services_title_fa')) { ?>
                                 <h2><?php the_field('services_title_fa'); ?></h2>
                             <?php } ?>
 
-                            <?php if( get_field( 'services_title_en' ) ){ ?>
+                            <?php if (get_field('services_title_en')) { ?>
                                 <p><?php the_field('services_title_en'); ?></p>
                             <?php } ?>
 
                         </div><!-- .title -->
 
-                        <?php if( get_field( 'services_description' ) ){ ?>
+                        <?php if (get_field('services_description')) { ?>
                             <p><?php the_field('services_description'); ?></p>
                         <?php } ?>
 
                     </div><!-- .services_content -->
                 </div><!-- .col-24 -->
                 <?php
-                if (have_rows('services_list')) {?>
+                if (have_rows('services_list')) { ?>
                     <div class="row p30">
-                    <?php
-                    while (have_rows('services_list')) {
-                        the_row();
-                        ?>
-                        <div class="col-lg-8 col-md-12 col-24">
-                            <div class="services__item">
-                                <div class="item_title_wrapper">
-                                    <div class="services_icon">
-                                        <img src="<?php echo get_template_directory_uri() . '/img/wordpress-Logo.png' ?>"
-                                             alt="wordpress logo">
-                                    </div>
-                                    <div class="title">
-                                        <?php
-                                        $main_title_link = get_sub_field('main_title_link');
-                                        $subtitle_link = get_sub_field('subtitle_link');
-                                        $item_link = get_sub_field('item_link');
-                                        ?>
-                                        <p>
-                                            <?php if ( $main_title_link ){ ?>
-                                                <a href="<?php echo esc_url($main_title_link['url']); ?>"><?php echo esc_html($main_title_link['title']); ?></a>
-                                            <?php } ?>
-                                        </p>
-                                        <p>
-                                            <?php if ( $subtitle_link ){ ?>
-                                                <a href="<?php echo esc_url($subtitle_link['url']); ?>"><?php echo esc_html($subtitle_link['title']); ?></a>
-                                            <?php } ?>
-                                        </p>
-                                    </div>
-                                </div><!-- .item_title_wrapper -->
-                                <div class="item_content">
-
-                                    <?php if (get_sub_field( 'item_description' )){ ?>
-                                        <p><?php echo get_sub_field('item_description'); ?></p>
-                                    <?php } ?>
-
-                                    <?php if( $item_link ){ ?>
-                                        <a href="<?php echo esc_url($item_link['url']); ?>"
-                                           class="read_more"><?php echo esc_html($item_link['title']); ?></a>
-                                    <?php }?>
-
-                                </div>
-                            </div><!-- .services__item -->
-                        </div><!-- .col-lg-8-->
                         <?php
-                    }?>
+                        while (have_rows('services_list')) {
+                            the_row();
+                            ?>
+                            <div class="col-lg-8 col-md-12 col-24">
+                                <div class="services__item">
+                                    <div class="item_title_wrapper">
+                                        <div class="services_icon">
+                                            <img src="<?php echo get_template_directory_uri() . '/img/wordpress-Logo.png' ?>"
+                                                 alt="wordpress logo">
+                                        </div>
+                                        <div class="title">
+                                            <?php
+                                            $main_title_link = get_sub_field('main_title_link');
+                                            $subtitle_link = get_sub_field('subtitle_link');
+                                            $item_link = get_sub_field('item_link');
+                                            ?>
+                                            <p>
+                                                <?php if ($main_title_link) { ?>
+                                                    <a href="<?php echo esc_url($main_title_link['url']); ?>"><?php echo esc_html($main_title_link['title']); ?></a>
+                                                <?php } ?>
+                                            </p>
+                                            <p>
+                                                <?php if ($subtitle_link) { ?>
+                                                    <a href="<?php echo esc_url($subtitle_link['url']); ?>"><?php echo esc_html($subtitle_link['title']); ?></a>
+                                                <?php } ?>
+                                            </p>
+                                        </div>
+                                    </div><!-- .item_title_wrapper -->
+                                    <div class="item_content">
+
+                                        <?php if (get_sub_field('item_description')) { ?>
+                                            <p><?php echo get_sub_field('item_description'); ?></p>
+                                        <?php } ?>
+
+                                        <?php if ($item_link) { ?>
+                                            <a href="<?php echo esc_url($item_link['url']); ?>"
+                                               class="read_more"><?php echo esc_html($item_link['title']); ?></a>
+                                        <?php } ?>
+
+                                    </div>
+                                </div><!-- .services__item -->
+                            </div><!-- .col-lg-8-->
+                            <?php
+                        } ?>
                     </div><!-- .row -->
                     <?php
                 }
@@ -305,9 +306,10 @@ function design_effect_shortcode()
             <div class="row align-items-center">
                 <div class="col-xl-12 col-md-12 col-24">
                     <div class="design_effect__img">
-                        <?php $design_effect_image = get_field( 'design_effect_image' ); if ( $design_effect_image ){ ?>
-                            <img src="<?php echo esc_url( $design_effect_image['url'] ) ?>"
-                                 alt="<?php echo esc_attr( $design_effect_image['alt'] ); ?>">
+                        <?php $design_effect_image = get_field('design_effect_image');
+                        if ($design_effect_image) { ?>
+                            <img src="<?php echo esc_url($design_effect_image['url']) ?>"
+                                 alt="<?php echo esc_attr($design_effect_image['alt']); ?>">
                         <?php } ?>
                     </div><!-- .img -->
                 </div><!-- .col-xl-12 -->
@@ -315,16 +317,16 @@ function design_effect_shortcode()
                     <div class="design_effect__content">
                         <div class="title title--red">
 
-                            <?php if (get_field( 'design_effect_title_fa' )){ ?>
+                            <?php if (get_field('design_effect_title_fa')) { ?>
                                 <h3><?php the_field('design_effect_title_fa'); ?></h3>
                             <?php } ?>
 
-                            <?php if (get_field( 'design_effect_title_en' )){ ?>
+                            <?php if (get_field('design_effect_title_en')) { ?>
                                 <p><?php the_field('design_effect_title_en'); ?></p>
                             <?php } ?>
                         </div><!-- .title -->
 
-                        <?php if (get_field( 'design_effect_description' )){ ?>
+                        <?php if (get_field('design_effect_description')) { ?>
                             <p><?php the_field('design_effect_description'); ?></p>
                         <?php } ?>
                     </div><!-- .design_effect_content -->
@@ -372,16 +374,16 @@ function select_team_shortcode()
                         <div class="col-lg-12 col-24 mr-auto">
                             <div class="select_team__content">
                                 <div class="title">
-                                    <?php if ( get_field('select_team_title_fa') ){ ?>
+                                    <?php if (get_field('select_team_title_fa')) { ?>
                                         <h3><?php the_field('select_team_title_fa') ?></h3>
                                     <?php } ?>
 
-                                    <?php if ( get_field('select_team_title_en') ){ ?>
+                                    <?php if (get_field('select_team_title_en')) { ?>
                                         <p><?php the_field('select_team_title_en'); ?></p>
                                     <?php } ?>
                                 </div><!-- .title -->
 
-                                <?php if ( get_field('select_team_description') ){ ?>
+                                <?php if (get_field('select_team_description')) { ?>
                                     <p><?php the_field('select_team_description'); ?></p>
                                 <?php } ?>
                             </div><!-- .select_team__content -->
@@ -444,9 +446,9 @@ function ivahid_difference_shortcode()
                 <div class="row p30 align-items-center">
                     <div class="col-md-13 col-24">
                         <?php
-                            $ivahid_difference_bar_title = get_field( 'ivahid_difference_bar_title' );
-                            if ( $ivahid_difference_bar_title ){
-                        ?>
+                        $ivahid_difference_bar_title = get_field( 'ivahid_difference_bar_title' );
+                        if ( $ivahid_difference_bar_title ){
+                            ?>
                             <p class="consultation-content">
                                 <?php
                                 echo esc_html( $ivahid_difference_bar_title );
@@ -457,21 +459,21 @@ function ivahid_difference_shortcode()
                     <div class="col-md-11 col-24">
                         <div class="consultation-contact">
                             <div class="consultation-contact__button">
-                                <?php $ivahid_difference_bar_link = get_field( 'ivahid_difference_bar_link' );
-                                      if (  $ivahid_difference_bar_link ){ ?>
-                                    <a href="<?php echo esc_url( $ivahid_difference_bar_link['url'] ); ?>">
-                                        <?php echo esc_html( $ivahid_difference_bar_link['title'] ) ?>
+                                <?php $ivahid_difference_bar_link = get_field('ivahid_difference_bar_link');
+                                if ($ivahid_difference_bar_link) { ?>
+                                    <a href="<?php echo esc_url($ivahid_difference_bar_link['url']); ?>">
+                                        <?php echo esc_html($ivahid_difference_bar_link['title']) ?>
                                     </a>
                                 <?php } ?>
                             </div>
                             <p class="consultation-contact__tel">
-                                <?php $ivahid_difference_bar_area_code = get_field( 'ivahid_difference_bar_area_code' );
-                                if ( $ivahid_difference_bar_area_code ){ ?>
-                                    <span><?php echo esc_html( $ivahid_difference_bar_area_code ); ?></span>
-                                <?php $ivahid_difference_bar_area_code ?>
+                                <?php $ivahid_difference_bar_area_code = get_field('ivahid_difference_bar_area_code');
+                                if ($ivahid_difference_bar_area_code) { ?>
+                                    <span><?php echo esc_html($ivahid_difference_bar_area_code); ?></span>
+                                    <?php $ivahid_difference_bar_area_code ?>
 
-                                <?php $ivahid_difference_bar_phone_number = get_field( 'ivahid_difference_bar_phone_number' ); ?>
-                                    <span><?php echo esc_html( $ivahid_difference_bar_phone_number ) ?></span>
+                                    <?php $ivahid_difference_bar_phone_number = get_field('ivahid_difference_bar_phone_number'); ?>
+                                    <span><?php echo esc_html($ivahid_difference_bar_phone_number) ?></span>
                                 <?php } ?>
                             </p>
                         </div>
@@ -503,16 +505,27 @@ function portal_shortcode()
                         <div class="col-lg-12 col-24 mr-auto">
                             <div class="portal__content">
                                 <div class="title title--white">
-                                    <h3><?php the_field('portal_title'); ?></h3>
+                                    <?php if (get_field('portal_title')) {
+                                        ?>
+                                        <h3><?php the_field('portal_title'); ?></h3>
+                                        <?php
+                                    } ?>
                                 </div><!-- .title -->
-                                <p><?php the_field('portal_description'); ?></p>
+                                <?php if ( get_field('portal_description') ) {
+                                    ?>
+                                    <p><?php the_field('portal_description'); ?></p>
+                                    <?php
+                                } ?>
                                 <div class="link">
                                     <?php
                                     $portal_link = get_field('portal_link');
                                     $url = $portal_link['url'];
                                     $title = $portal_link['title'];
                                     ?>
-                                    <a href="<?php echo esc_url($url); ?>"><?php echo esc_html($title); ?></a>
+                                    <?php if ( $portal_link ){?>
+                                        <a href="<?php echo esc_url($url); ?>"><?php echo esc_html($title); ?></a>
+                                        <?php
+                                    } ?>
                                 </div>
                             </div><!-- .portal__content -->
                         </div><!-- .col-lg-12 -->
@@ -536,8 +549,18 @@ function services_card_shortcode()
     <section class="services_card">
         <div class="container">
             <div class="title">
-                <h3><?php the_field('services_card_title_fa'); ?></h3>
-                <p><?php the_field('services_card_title_en') ?></p>
+                <?php if ( get_field( 'services_card_title_fa' ) ){
+                    ?>
+                    <h3><?php the_field('services_card_title_fa'); ?></h3>
+    <?php
+                } ?>
+                <?php
+                if ( get_field( 'services_card_title_en' ) ){
+                    ?>
+                    <p><?php the_field('services_card_title_en') ?></p>
+                    <?php
+                }
+                ?>
             </div><!-- .title -->
             <div class="services_card__wrapper">
                 <div class="row p30">
@@ -590,10 +613,18 @@ function podcast_shortcode()
                             $podcast_title_link = get_field('podcast_title_link');
                             $podcast_topic_link = get_field('podcast_topic_link');
                             ?>
-                            <h4>
-                                <a href="<?php echo esc_url($podcast_title_link['url']); ?>"><?php echo esc_html($podcast_title_link['title']); ?></a>
-                            </h4>
-                            <span><a href="<?php echo esc_url($podcast_topic_link['url']) ?>"><?php echo esc_html($podcast_topic_link['title']) ?></a></span>
+                            <?php if ( $podcast_title_link ){
+                                ?>
+                                <h4>
+                                    <a href="<?php echo esc_url($podcast_title_link['url']); ?>"><?php echo esc_html($podcast_title_link['title']); ?></a>
+                                </h4>
+    <?php
+                            } ?>
+                            <?php if ( $podcast_topic_link ) {
+                                ?>
+                                <span><a href="<?php echo esc_url($podcast_topic_link['url']) ?>"><?php echo esc_html($podcast_topic_link['title']) ?></a></span>
+                                <?php
+                            }?>
                         </div><!-- .podcast_title -->
                         <button class="podcast_button paused">
                             <span class="icon-play"></span>
@@ -636,8 +667,18 @@ function customers_shortcode()
             <div class="customers__wrapper">
                 <div class="swiper-container">
                     <div class="title">
-                        <h3><?php the_field('customers_title_fa'); ?></h3>
-                        <p><?php the_field('customers_title_en'); ?></p>
+                        <?php if ( get_field( 'customers_title_fa' ) ){
+                            ?>
+                            <h3><?php the_field('customers_title_fa'); ?></h3>
+    <?php
+                        } ?>
+                        <?php
+                        if ( get_field( 'customers_title_en' ) ){
+                            ?>
+                            <p><?php the_field('customers_title_en'); ?></p>
+                            <?php
+                        }
+                        ?>
                     </div><!-- .title -->
                     <div class="swiper-pagination"></div>
                     <div class="swiper-wrapper">
@@ -689,10 +730,18 @@ function portfolio_shortcode()
                         <span></span>
                     </div>
                     <div class="title title--black">
-                        <h2><?php the_field('portfolio_title'); ?></h2>
+                        <?php if ( get_field( 'portfolio_title' ) ) {
+                            ?>
+                            <h2><?php the_field('portfolio_title'); ?></h2>
+    <?php
+                        }?>
                     </div><!-- .title -->
                     <div class="portfolio__description">
-                        <p><?php the_field('portfolio_description'); ?></p>
+                        <?php if ( get_field( 'portfolio_description' ) ){
+                            ?>
+                            <p><?php the_field('portfolio_description'); ?></p>
+    <?php
+                        } ?>
                     </div><!-- .portfolio__description -->
                     <div class="portfolio__wrapper">
                         <div class="swiper-container">
@@ -704,17 +753,20 @@ function portfolio_shortcode()
                                         ?>
                                         <div class="swiper-slide">
                                             <div class="portfolio__wrapper__item">
-                                                <a href="<?php $portfolio_link = get_sub_field( 'portfolio_item_link' );  echo esc_url( $portfolio_link ); ?>">
-                                                    <img src="<?php $portfolio_image = get_sub_field( 'portfolio_item_image' ); echo esc_url( $portfolio_image['url'] ); ?>"
-                                                         alt="<?php echo esc_attr( $portfolio_image['alt'] ); ?>">
+                                                <a href="<?php $portfolio_link = get_sub_field('portfolio_item_link');
+                                                echo esc_url($portfolio_link); ?>">
+                                                    <img src="<?php $portfolio_image = get_sub_field('portfolio_item_image');
+                                                    echo esc_url($portfolio_image['url']); ?>"
+                                                         alt="<?php echo esc_attr($portfolio_image['alt']); ?>">
                                                 </a>
                                                 <h4>
-                                                    <a href="<?php echo esc_url( $portfolio_link ); ?>">
-                                                        <?php $portfolio_item_title = get_sub_field( 'portfolio_item_title' ); echo esc_html( $portfolio_item_title ); ?>
+                                                    <a href="<?php echo esc_url($portfolio_link); ?>">
+                                                        <?php $portfolio_item_title = get_sub_field('portfolio_item_title');
+                                                        echo esc_html($portfolio_item_title); ?>
                                                     </a>
                                                 </h4>
                                                 <p>
-                                                    <?php $portfolio_item_excerpt = get_sub_field( 'portfolio_item_excerpt' );
+                                                    <?php $portfolio_item_excerpt = get_sub_field('portfolio_item_excerpt');
                                                     echo $portfolio_item_excerpt; ?>
                                                 </p>
                                             </div>
@@ -729,7 +781,11 @@ function portfolio_shortcode()
                             <?php
                             $portfolio_link = get_field('portfolio_link');
                             ?>
-                            <a href="<?php echo esc_url($portfolio_link['url']); ?>"><?php echo esc_html($portfolio_link['title']); ?></a>
+                            <?php if ( $portfolio_link ){
+                                ?>
+                                <a href="<?php echo esc_url($portfolio_link['url']); ?>"><?php echo esc_html($portfolio_link['title']); ?></a>
+                                <?php
+                            } ?>
                         </div><!-- .view_more -->
                     </div><!-- .portfolio__wrapper -->
                 </div><!-- .col-24 -->
@@ -753,8 +809,18 @@ function order_shortcode()
             <div class="row align-items-center">
                 <div class="col-xl-10 col-md-10">
                     <div class="title">
-                        <h4><?php the_field('order_title_fa'); ?></h4>
-                        <p><?php the_field('order_title_en'); ?></p>
+                        <?php if ( get_field( 'order_title_fa' ) ) {
+                            ?>
+                            <h4><?php the_field('order_title_fa'); ?></h4>
+    <?php
+                        }?>
+                        <?php
+                        if ( get_field( 'order_title_en' ) ){
+                            ?>
+                            <p><?php the_field('order_title_en'); ?></p>
+                            <?php
+                        }
+                        ?>
                     </div><!-- .title -->
                 </div><!-- .col-xl-10 -->
                 <div class="col-xl-14 col-md-14">
@@ -798,8 +864,18 @@ function videos_shortcode()
                     <div class="videos__wrapper">
                         <div class="swiper-container">
                             <div class="title">
-                                <h4><?php the_field('videos_title_fa'); ?></h4>
-                                <p><?php the_field('videos_title_en'); ?></p>
+                                <?php
+                                if ( get_field( 'videos_title_fa' ) ){
+                                    ?>
+                                    <h4><?php the_field('videos_title_fa'); ?></h4>
+                                    <?php
+                                }
+                                ?>
+                                <?php if ( get_field( 'videos_title_en' ) ) {
+                                    ?>
+                                    <p><?php the_field('videos_title_en'); ?></p>
+    <?php
+                                }?>
                             </div><!-- .title -->
                             <div class="swiper-pagination"></div>
                             <div class="swiper-wrapper">
@@ -865,8 +941,18 @@ function blog_shortcode($atts)
             <div class="blog__wrapper">
                 <div class="swiper-container">
                     <div class="title">
-                        <h4><?php the_field('blog_title_fa'); ?></h4>
-                        <p><?php the_field('blog_title_en'); ?></p>
+                        <?php if ( get_field( 'blog_title_fa' ) ){
+                            ?>
+                            <h4><?php the_field('blog_title_fa'); ?></h4>
+    <?php
+                        } ?>
+                        <?php
+                        if ( get_field( 'blog_title_en' ) ){
+                            ?>
+                            <p><?php the_field('blog_title_en'); ?></p>
+                            <?php
+                        }
+                        ?>
                     </div><!-- .title -->
                     <div class="swiper-pagination"></div>
                     <div class="swiper-wrapper">
