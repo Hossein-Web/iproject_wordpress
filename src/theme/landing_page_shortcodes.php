@@ -866,7 +866,7 @@ function videos_shortcode()
                                         ?>
                                         <div class="swiper-slide">
                                             <div class="item">
-                                                <a class="video_link" href="#"><span class="icon-play"></span></a>
+                                                <a class="video_link" href="<?php echo esc_url( get_sub_field( 'item_link' ) ); ?>"><span class="icon-play"></span></a>
                                                 <?php
                                                 if (!empty($item_img)) {
                                                     ?>
