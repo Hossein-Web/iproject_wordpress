@@ -32,7 +32,7 @@ function web_design_sec_shortcode()
     </div><!-- .container -->
     <section class="web_design_sec">
         <div class="container">
-            <div class="row align-items-center">
+            <div class="row align-items-end">
                 <div class="col-xl-9">
                     <div class="web_design_sec__content">
                         <div class="title title--red">
@@ -78,10 +78,12 @@ function web_design_sec_shortcode()
                     </div><!-- .web_design_sec__img_wrapper -->
                 </div><!-- .col-xl-15 -->
             </div><!-- .row -->
+            <div class="go_bottom_wrapper">
+                <a class="go_bottom" href="#">
+                    <span class="icon-arrow-down"></span>
+                </a><!-- .web_design_sec__go_bottom -->
+            </div><!-- .go_bottom_wrapper -->
         </div><!-- .container-->
-        <a class="web_design_sec__go_bottom" href="#">
-            <span class="icon-arrow-down"></span>
-        </a><!-- .web_design_sec__go_bottom -->
     </section><!-- .web_design_sec -->
     <div class="container">
     <?php
