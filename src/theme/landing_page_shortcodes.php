@@ -36,14 +36,27 @@ function web_design_sec_shortcode()
                 <div class="col-xl-9">
                     <div class="web_design_sec__content">
                         <div class="title title--red">
+                            <?php if(get_field('web_design_sec_title_fa')){ ?>
                             <h1><?php the_field('web_design_sec_title_fa'); ?></h1>
+                            <?php } ?>
+
+                            <?php if(get_field('web_design_sec_title_en')){ ?>
                             <p><?php the_field('web_design_sec_title_en'); ?></p>
+                            <?php } ?>
                         </div><!-- .title -->
+
+                        <?php if(get_field('web_design_sec_description')){ ?>
                         <p><?php the_field('web_design_sec_description'); ?></p>
+                        <?php } ?>
                     </div><!-- .web_design_sec__content -->
                     <div class="text-center">
-                        <a href="<?php $web_design_sec_link = get_field( 'web_design_sec_link' ); echo esc_url( $web_design_sec_link['url'] ); ?>"
-                           class="web_design_sec_link"><?php echo esc_html( $web_design_sec_link['title'] ); ?></a>
+                        <?php
+                            $web_design_sec_link = get_field( 'web_design_sec_link' );
+                            if( $web_design_sec_link ){
+                        ?>
+                            <a href="<?php echo esc_url( $web_design_sec_link['url'] ); ?>"
+                               class="web_design_sec_link"><?php echo esc_html( $web_design_sec_link['title'] ); ?></a>
+                        <?php } ?>
                     </div>
                 </div><!-- .col-xl-9 -->
                 <div class="col-xl-15">
@@ -52,7 +65,9 @@ function web_design_sec_shortcode()
                              alt="web design">
                         <div class="web_design_sec_video_wrapper">
                             <video id="web_design_sec_video">
-                                <source src="<?php $video_link = get_field( 'web_design_sec_video' ); echo esc_url( $video_link ); ?>" type="video/mp4">
+                                <?php $video_link = get_field( 'web_design_sec_video' ); if( $video_link ){ ?>
+                                    <source src="<?php echo esc_url( $video_link ); ?>" type="video/mp4">
+                                <?php } ?>
                                 Your browser does not support HTML video.
                             </video>
                             <button class="web_design_sec_video_btn btn_visible paused">
@@ -84,10 +99,20 @@ function your_position_shortcode()
             <div class="container">
                 <div class="text">
                     <div class="title">
+
+                        <?php if( get_field( 'your_position_title_fa' ) ){ ?>
                         <h3><?php the_field('your_position_title_fa'); ?></h3>
+                        <?php } ?>
+
+                        <?php if( get_field( 'your_position_title_en' ) ){ ?>
                         <p><?php the_field('your_position_title_en'); ?></p>
+                        <?php } ?>
+
                     </div><!-- .title -->
-                    <p><?php the_field('your_position_description'); ?></p>
+
+                    <?php if( get_field( 'your_position_description' ) ){ ?>
+                        <p><?php the_field('your_position_description'); ?></p>
+                    <?php } ?>
                 </div><!-- .text -->
             </div><!-- .container -->
         </div><!-- .outer_text_wrapper -->
@@ -99,10 +124,20 @@ function your_position_shortcode()
                     <div class="inner_text_wrapper">
                         <div class="text">
                             <div class="title">
-                                <h3><?php the_field('your_position_title_fa'); ?></h3>
-                                <p><?php the_field('your_position_title_en'); ?></p>
+
+                                <?php if( get_field( 'your_position_title_fa' ) ){ ?>
+                                    <h3><?php the_field('your_position_title_fa'); ?></h3>
+                                <?php } ?>
+
+                                <?php if( get_field( 'your_position_title_en' ) ){ ?>
+                                    <p><?php the_field('your_position_title_en'); ?></p>
+                                <?php } ?>
+
                             </div><!-- .title -->
-                            <p><?php the_field('your_position_description'); ?></p>
+
+                            <?php if( get_field( 'your_position_description' ) ){ ?>
+                                <p><?php the_field('your_position_description'); ?></p>
+                            <?php } ?>
                         </div><!-- .text -->
                     </div><!-- .inner_text_wrapper -->
                 </div><!-- .col-lg-21 -->
@@ -182,10 +217,21 @@ function services_shortcode()
                 <div class="col-24">
                     <div class="services__content">
                         <div class="title">
-                            <h2><?php the_field('services_title_fa'); ?></h2>
-                            <p><?php the_field('services_title_en'); ?></p>
+
+                            <?php if( get_field( 'services_title_fa' ) ){ ?>
+                                <h2><?php the_field('services_title_fa'); ?></h2>
+                            <?php } ?>
+
+                            <?php if( get_field( 'services_title_en' ) ){ ?>
+                                <p><?php the_field('services_title_en'); ?></p>
+                            <?php } ?>
+
                         </div><!-- .title -->
-                        <p><?php the_field('services_description'); ?></p>
+
+                        <?php if( get_field( 'services_description' ) ){ ?>
+                            <p><?php the_field('services_description'); ?></p>
+                        <?php } ?>
+
                     </div><!-- .services_content -->
                 </div><!-- .col-24 -->
                 <?php
@@ -209,19 +255,28 @@ function services_shortcode()
                                         $item_link = get_sub_field('item_link');
                                         ?>
                                         <p>
-                                            <a href="<?php echo esc_url($main_title_link['url']); ?>"><?php echo esc_html($main_title_link['title']); ?></a>
+                                            <?php if ( $main_title_link ){ ?>
+                                                <a href="<?php echo esc_url($main_title_link['url']); ?>"><?php echo esc_html($main_title_link['title']); ?></a>
+                                            <?php } ?>
                                         </p>
                                         <p>
-                                            <a href="<?php echo esc_url($subtitle_link['url']); ?>"><?php echo esc_html($subtitle_link['title']); ?></a>
+                                            <?php if ( $subtitle_link ){ ?>
+                                                <a href="<?php echo esc_url($subtitle_link['url']); ?>"><?php echo esc_html($subtitle_link['title']); ?></a>
+                                            <?php } ?>
                                         </p>
                                     </div>
                                 </div><!-- .item_title_wrapper -->
                                 <div class="item_content">
-                                    <p><?php echo get_sub_field('item_description'); ?></p>
+
+                                    <?php if (get_sub_field( 'item_description' )){ ?>
+                                        <p><?php echo get_sub_field('item_description'); ?></p>
+                                    <?php } ?>
+
                                     <?php if( $item_link ){ ?>
-                                    <a href="<?php echo esc_url($item_link['url']); ?>"
-                                       class="read_more"><?php echo esc_html($item_link['title']); ?></a>
+                                        <a href="<?php echo esc_url($item_link['url']); ?>"
+                                           class="read_more"><?php echo esc_html($item_link['title']); ?></a>
                                     <?php }?>
+
                                 </div>
                             </div><!-- .services__item -->
                         </div><!-- .col-lg-8-->
@@ -250,17 +305,28 @@ function design_effect_shortcode()
             <div class="row align-items-center">
                 <div class="col-xl-12 col-md-12 col-24">
                     <div class="design_effect__img">
-                        <img src="<?php $design_effect_image = get_field( 'design_effect_image' ); echo esc_url( $design_effect_image['url'] ) ?>"
-                             alt="<?php echo esc_attr( $design_effect_image['alt'] ); ?>">
+                        <?php $design_effect_image = get_field( 'design_effect_image' ); if ( $design_effect_image ){ ?>
+                            <img src="<?php echo esc_url( $design_effect_image['url'] ) ?>"
+                                 alt="<?php echo esc_attr( $design_effect_image['alt'] ); ?>">
+                        <?php } ?>
                     </div><!-- .img -->
                 </div><!-- .col-xl-12 -->
                 <div class="col-xl-12 col-md-12 col-24">
                     <div class="design_effect__content">
                         <div class="title title--red">
-                            <h3><?php the_field('design_effect_title_fa'); ?></h3>
-                            <p><?php the_field('design_effect_title_en'); ?></p>
+
+                            <?php if (get_field( 'design_effect_title_fa' )){ ?>
+                                <h3><?php the_field('design_effect_title_fa'); ?></h3>
+                            <?php } ?>
+
+                            <?php if (get_field( 'design_effect_title_en' )){ ?>
+                                <p><?php the_field('design_effect_title_en'); ?></p>
+                            <?php } ?>
                         </div><!-- .title -->
-                        <p><?php the_field('design_effect_description'); ?></p>
+
+                        <?php if (get_field( 'design_effect_description' )){ ?>
+                            <p><?php the_field('design_effect_description'); ?></p>
+                        <?php } ?>
                     </div><!-- .design_effect_content -->
                 </div>
             </div><!-- .row -->
@@ -306,10 +372,18 @@ function select_team_shortcode()
                         <div class="col-lg-12 col-24 mr-auto">
                             <div class="select_team__content">
                                 <div class="title">
-                                    <h3><?php the_field('select_team_title_fa') ?></h3>
-                                    <p><?php the_field('select_team_title_en'); ?></p>
+                                    <?php if ( get_field('select_team_title_fa') ){ ?>
+                                        <h3><?php the_field('select_team_title_fa') ?></h3>
+                                    <?php } ?>
+
+                                    <?php if ( get_field('select_team_title_en') ){ ?>
+                                        <p><?php the_field('select_team_title_en'); ?></p>
+                                    <?php } ?>
                                 </div><!-- .title -->
-                                <p><?php the_field('select_team_description'); ?></p>
+
+                                <?php if ( get_field('select_team_description') ){ ?>
+                                    <p><?php the_field('select_team_description'); ?></p>
+                                <?php } ?>
                             </div><!-- .select_team__content -->
                         </div><!-- .col-lg-12 -->
                     </div><!-- .row -->
@@ -348,10 +422,19 @@ function ivahid_difference_shortcode()
                 <div class="col-xl-15 col-lg-15 col-md-12">
                     <div class="ivahid_difference__content">
                         <div class="title">
-                            <h3><?php the_field('ivahid_difference_title_fa'); ?></h3>
-                            <p><?php the_field('ivahid_difference_title_en'); ?></p>
+                            <?php if (get_field('ivahid_difference_title_fa')){ ?>
+                                <h3><?php the_field('ivahid_difference_title_fa'); ?></h3>
+                            <?php } ?>
+
+                            <?php if (get_field('ivahid_difference_title_en')){ ?>
+                                <p><?php the_field('ivahid_difference_title_en'); ?></p>
+                            <?php } ?>
+
                         </div><!-- .title -->
-                        <p><?php the_field('ivahid_difference_description'); ?></p>
+
+                        <?php if (get_field('ivahid_difference_description')){ ?>
+                            <p><?php the_field('ivahid_difference_description'); ?></p>
+                        <?php } ?>
                     </div><!-- .ivahid_difference__content -->
                 </div><!-- .col-xl-15 -->
             </div><!-- .row -->
@@ -360,26 +443,36 @@ function ivahid_difference_shortcode()
             <div class="container">
                 <div class="row p30 align-items-center">
                     <div class="col-md-13 col-24">
-                        <p class="consultation-content">
-                            <?php
+                        <?php
                             $ivahid_difference_bar_title = get_field( 'ivahid_difference_bar_title' );
-                            echo esc_html( $ivahid_difference_bar_title );
-                            ?>
-                        </p>
+                            if ( $ivahid_difference_bar_title ){
+                        ?>
+                            <p class="consultation-content">
+                                <?php
+                                echo esc_html( $ivahid_difference_bar_title );
+                                ?>
+                            </p>
+                        <?php } ?>
                     </div>
                     <div class="col-md-11 col-24">
                         <div class="consultation-contact">
                             <div class="consultation-contact__button">
-                                <a href="<?php $ivahid_difference_bar_link = get_field( 'ivahid_difference_bar_link' );
-                                        echo esc_url( $ivahid_difference_bar_link['url'] ); ?>"><?php echo esc_html( $ivahid_difference_bar_link['title'] ) ?></a>
+                                <?php $ivahid_difference_bar_link = get_field( 'ivahid_difference_bar_link' );
+                                      if (  $ivahid_difference_bar_link ){ ?>
+                                    <a href="<?php echo esc_url( $ivahid_difference_bar_link['url'] ); ?>">
+                                        <?php echo esc_html( $ivahid_difference_bar_link['title'] ) ?>
+                                    </a>
+                                <?php } ?>
                             </div>
                             <p class="consultation-contact__tel">
-                                <span><?php $ivahid_difference_bar_area_code = get_field( 'ivahid_difference_bar_area_code' );
-                                            echo esc_html( $ivahid_difference_bar_area_code ); ?>
-                                </span>
-                                <span><?php $ivahid_difference_bar_phone_number = get_field( 'ivahid_difference_bar_phone_number' );
-                                            echo esc_html( $ivahid_difference_bar_phone_number ) ?>
-                                </span>
+                                <?php $ivahid_difference_bar_area_code = get_field( 'ivahid_difference_bar_area_code' );
+                                if ( $ivahid_difference_bar_area_code ){ ?>
+                                    <span><?php echo esc_html( $ivahid_difference_bar_area_code ); ?></span>
+                                <?php $ivahid_difference_bar_area_code ?>
+
+                                <?php $ivahid_difference_bar_phone_number = get_field( 'ivahid_difference_bar_phone_number' ); ?>
+                                    <span><?php echo esc_html( $ivahid_difference_bar_phone_number ) ?></span>
+                                <?php } ?>
                             </p>
                         </div>
                     </div>
