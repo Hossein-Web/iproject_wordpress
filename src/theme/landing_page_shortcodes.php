@@ -327,7 +327,7 @@ function design_effect_shortcode()
                         <?php if (get_field( 'design_effect_description' )){ ?>
                             <p><?php the_field('design_effect_description'); ?></p>
                         <?php } ?>
-                    </div><!-- .design_effect_content -->
+                    </div><!-- .design_effect__content -->
                 </div>
             </div><!-- .row -->
         </div><!-- .container -->
@@ -468,9 +468,12 @@ function ivahid_difference_shortcode()
                                 <?php $ivahid_difference_bar_area_code = get_field( 'ivahid_difference_bar_area_code' );
                                 if ( $ivahid_difference_bar_area_code ){ ?>
                                     <span><?php echo esc_html( $ivahid_difference_bar_area_code ); ?></span>
-                                <?php $ivahid_difference_bar_area_code ?>
+                                <?php } ?>
 
-                                <?php $ivahid_difference_bar_phone_number = get_field( 'ivahid_difference_bar_phone_number' ); ?>
+                                <?php
+                                    $ivahid_difference_bar_phone_number = get_field( 'ivahid_difference_bar_phone_number' );
+                                    if( $ivahid_difference_bar_phone_number ){
+                                ?>
                                     <span><?php echo esc_html( $ivahid_difference_bar_phone_number ) ?></span>
                                 <?php } ?>
                             </p>
