@@ -719,15 +719,13 @@ body{
 .services{
   position: relative;
   margin-bottom: 40px;
-  padding-top: 160px;
-  padding-bottom: 160px;
   &::before{
     position: absolute;
     display: block;
     content: '';
     box-shadow: 0 15px 70px rgba(56, 66, 77, 0.04);
     background-color: white;
-    width: 100%;
+    width: 80%;
     height: 100%;
     right: -50%;
     top: 0;
