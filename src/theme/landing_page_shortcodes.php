@@ -25,6 +25,65 @@ function StrToArr($str, $delimiter)
 }
 
 // shortcodes
+// contact bar
+function contact_bar_shortcode($atts){
+    ob_start();
+    $attributes = shortcode_atts(
+        array(
+            'text'         => '',
+            'button_title' => '',
+            'button_url'   => '',
+            'area_code'    => '',
+            'tel'          => ''
+        ),
+        $atts
+    );
+    ?>
+    </div><!-- .container -->
+        <div class="free-consultation">
+        <div class="container">
+            <div class="row p30 align-items-center">
+                <div class="col-md-13 col-24">
+                    <?php
+                    if ( $attributes['text'] ){
+                        ?>
+                        <p class="consultation-content">
+                            <?php
+                            echo esc_html( $attributes['text'] );
+                            ?>
+                        </p>
+                    <?php } ?>
+                </div>
+                <div class="col-md-11 col-24">
+                    <div class="consultation-contact">
+                        <div class="consultation-contact__button">
+                            <?php if ( $attributes['button_url'] ) { ?>
+                                <a href="<?php echo esc_url( $attributes['button_url'] ); ?>">
+                                    <?php echo esc_html( $attributes['button_title'] ); ?>
+                                </a>
+                            <?php } ?>
+                        </div>
+                        <p class="consultation-contact__tel">
+                            <?php if ( $attributes['area_code'] ){ ?>
+                                <span><?php echo esc_html( $attributes['area_code'] ); ?></span>
+                            <?php } ?>
+
+                            <?php if( $attributes['tel'] ){
+                                ?>
+                                <span><?php echo esc_html( $attributes['tel'] ); ?></span>
+                            <?php } ?>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+    <?php
+    return ob_get_clean();
+}
+add_shortcode('contact_bar', 'contact_bar_shortcode');
+
 //web design sec
 function web_design_sec_shortcode()
 {
@@ -445,49 +504,6 @@ function ivahid_difference_shortcode()
                 </div><!-- .col-xl-15 -->
             </div><!-- .row -->
         </div><!-- .container -->
-        <div class="ivahid_difference__free-consultation">
-            <div class="container">
-                <div class="row p30 align-items-center">
-                    <div class="col-md-13 col-24">
-                        <?php
-                        $ivahid_difference_bar_title = get_field( 'ivahid_difference_bar_title' );
-                        if ( $ivahid_difference_bar_title ){
-                            ?>
-                            <p class="consultation-content">
-                                <?php
-                                echo esc_html( $ivahid_difference_bar_title );
-                                ?>
-                            </p>
-                        <?php } ?>
-                    </div>
-                    <div class="col-md-11 col-24">
-                        <div class="consultation-contact">
-                            <div class="consultation-contact__button">
-                                <?php $ivahid_difference_bar_link = get_field('ivahid_difference_bar_link');
-                                if ($ivahid_difference_bar_link) { ?>
-                                    <a href="<?php echo esc_url($ivahid_difference_bar_link['url']); ?>">
-                                        <?php echo esc_html($ivahid_difference_bar_link['title']) ?>
-                                    </a>
-                                <?php } ?>
-                            </div>
-                            <p class="consultation-contact__tel">
-                                <?php $ivahid_difference_bar_area_code = get_field( 'ivahid_difference_bar_area_code' );
-                                if ( $ivahid_difference_bar_area_code ){ ?>
-                                    <span><?php echo esc_html( $ivahid_difference_bar_area_code ); ?></span>
-                                <?php } ?>
-
-                                <?php
-                                    $ivahid_difference_bar_phone_number = get_field( 'ivahid_difference_bar_phone_number' );
-                                    if( $ivahid_difference_bar_phone_number ){
-                                ?>
-                                    <span><?php echo esc_html( $ivahid_difference_bar_phone_number ) ?></span>
-                                <?php } ?>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </section><!-- .ivahid_difference -->
     <div class="container">
     <?php
