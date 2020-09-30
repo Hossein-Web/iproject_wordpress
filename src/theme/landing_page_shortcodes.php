@@ -31,59 +31,61 @@ function web_design_sec_shortcode()
     ob_start(); ?>
     </div><!-- .container -->
     <section class="web_design_sec">
-        <div class="container">
-            <div class="row align-items-end">
-                <div class="col-xl-9">
-                    <div class="web_design_sec__content">
-                        <div class="title title--red">
-                            <?php if (get_field('web_design_sec_title_fa')) { ?>
-                                <h1><?php the_field('web_design_sec_title_fa'); ?></h1>
-                            <?php } ?>
-
-                            <?php if (get_field('web_design_sec_title_en')) { ?>
-                                <p><?php the_field('web_design_sec_title_en'); ?></p>
-                            <?php } ?>
-                        </div><!-- .title -->
-
-                        <?php if (get_field('web_design_sec_description')) { ?>
-                            <p><?php the_field('web_design_sec_description'); ?></p>
-                        <?php } ?>
-                    </div><!-- .web_design_sec__content -->
-                    <div class="text-center">
-                        <?php
-                        $web_design_sec_link = get_field('web_design_sec_link');
-                        if ($web_design_sec_link) {
-                            ?>
-                            <a href="<?php echo esc_url($web_design_sec_link['url']); ?>"
-                               class="web_design_sec_link"><?php echo esc_html($web_design_sec_link['title']); ?></a>
-                        <?php } ?>
-                    </div>
-                </div><!-- .col-xl-9 -->
-                <div class="col-xl-15">
-                    <div class="web_design_sec__img_wrapper">
-                        <img src="<?php echo get_template_directory_uri() . '/img/web_design_sec.png' ?>"
-                             alt="web design">
-                        <div class="web_design_sec_video_wrapper">
-                            <video id="web_design_sec_video">
-                                <?php $video_link = get_field('web_design_sec_video');
-                                if ($video_link) { ?>
-                                    <source src="<?php echo esc_url($video_link); ?>" type="video/mp4">
+        <div class="web_design_sec__content_wrapper">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-xl-9">
+                        <div class="web_design_sec__content">
+                            <div class="title title--red">
+                                <?php if (get_field('web_design_sec_title_fa')) { ?>
+                                    <h1><?php the_field('web_design_sec_title_fa'); ?></h1>
                                 <?php } ?>
-                                Your browser does not support HTML video.
-                            </video>
-                            <button class="web_design_sec_video_btn btn_visible paused">
-                                <span class="icon-play"></span>
-                            </button><!-- .web_design_sec_video_btn -->
-                        </div><!-- .web_design_sec_slider -->
-                    </div><!-- .web_design_sec__img_wrapper -->
-                </div><!-- .col-xl-15 -->
-            </div><!-- .row -->
-            <div class="go_bottom_wrapper">
-                <a class="go_bottom" href="#">
-                    <span class="icon-arrow-down"></span>
-                </a><!-- .web_design_sec__go_bottom -->
-            </div><!-- .go_bottom_wrapper -->
-        </div><!-- .container-->
+
+                                <?php if (get_field('web_design_sec_title_en')) { ?>
+                                    <p><?php the_field('web_design_sec_title_en'); ?></p>
+                                <?php } ?>
+                            </div><!-- .title -->
+
+                            <?php if (get_field('web_design_sec_description')) { ?>
+                                <p><?php the_field('web_design_sec_description'); ?></p>
+                            <?php } ?>
+                        </div><!-- .web_design_sec__content -->
+                        <div class="text-center">
+                            <?php
+                            $web_design_sec_link = get_field('web_design_sec_link');
+                            if ($web_design_sec_link) {
+                                ?>
+                                <a href="<?php echo esc_url($web_design_sec_link['url']); ?>"
+                                   class="web_design_sec_link"><?php echo esc_html($web_design_sec_link['title']); ?></a>
+                            <?php } ?>
+                        </div>
+                    </div><!-- .col-xl-9 -->
+                    <div class="col-xl-15">
+                        <div class="web_design_sec__img_wrapper">
+                            <img src="<?php echo get_template_directory_uri() . '/img/web_design_sec.png' ?>"
+                                 alt="web design">
+                            <div class="web_design_sec_video_wrapper">
+                                <video id="web_design_sec_video">
+                                    <?php $video_link = get_field('web_design_sec_video');
+                                    if ($video_link) { ?>
+                                        <source src="<?php echo esc_url($video_link); ?>" type="video/mp4">
+                                    <?php } ?>
+                                    Your browser does not support HTML video.
+                                </video>
+                                <button class="web_design_sec_video_btn btn_visible paused">
+                                    <span class="icon-play"></span>
+                                </button><!-- .web_design_sec_video_btn -->
+                            </div><!-- .web_design_sec_slider -->
+                        </div><!-- .web_design_sec__img_wrapper -->
+                    </div><!-- .col-xl-15 -->
+                </div><!-- .row -->
+            </div><!-- .container-->
+        </div><!-- .web_design_sec__content_wrapper -->
+        <div class="go_bottom_wrapper">
+            <a class="go_bottom" href="#">
+                <span class="icon-arrow-bottom"></span>
+            </a><!-- .web_design_sec__go_bottom -->
+        </div><!-- .go_bottom_wrapper -->
     </section><!-- .web_design_sec -->
     <div class="container">
     <?php
