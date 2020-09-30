@@ -1230,7 +1230,6 @@ body{
       color: $text_color !important;
     }
     a{
-      //opacity: 1;
       display: inline-block;
       position: absolute;
       top: 20%;
@@ -1238,7 +1237,6 @@ body{
       transform: translatex(50%);
       border-radius: 50%;
       background-color: $accent_color;
-      //transition: opacity 0.3s;
       padding: 30px;
       &::before{
         content: '';
