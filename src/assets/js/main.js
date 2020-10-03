@@ -34,10 +34,10 @@ $( '.web_design_sec_video_btn' ).on( 'click', function (e) {
 });
 
 // 'web_design_sec' go bottom function
-$( '.web_design_sec__go_bottom' ).on( 'click', function(e) {
+$('.go_bottom').on('click', function (e) {
 	e.preventDefault();
-	var dest = $( '.design_effect' );
-	$('html, body').animate({scrollTop: dest.offset().top}, '300');
+	var dest = $('.ivahid_difference');
+	$('html, body').animate({ scrollTop: dest.offset().top }, '300');
 } );
 
 // 'your position' section sliders
