@@ -809,7 +809,7 @@ body{
 
 /*----------- Portfolio -------------*/
 .portfolio{
-  margin-bottom: 40px;
+  //margin-bottom: 40px;
   //padding-bottom: 300px;
   padding-bottom: 75px;
   padding-top: 30px;
@@ -1214,13 +1214,13 @@ body{
     padding-left: 20px;
   }
   .item{
-    position: relative;
     text-align: center;
     box-shadow: 0 15px 18px rgba(56, 66, 77, 0.1);
     border-radius: 8px;
     background-color: white;
     padding: 34px 30px;
-    img{
+    &__video_image_wrapper{
+      position: relative;
       margin-bottom: 15px;
     }
     p{
@@ -1233,9 +1233,9 @@ body{
     a{
       display: inline-block;
       position: absolute;
-      top: 20%;
+      top: 50%;
       right: 50%;
-      transform: translatex(50%);
+      transform: translate( 50%, -50% );
       border-radius: 50%;
       background-color: $accent_color;
       padding: 30px;
@@ -1672,6 +1672,7 @@ body{
   }
   /*portfolio*/
   .portfolio{
+    margin-bottom: 20px;
     padding-top: 0;
     padding-bottom: 0;
     &__background{

@@ -890,17 +890,20 @@ if ( class_exists( 'ACF' ) ) {
                                             ?>
                                             <div class="swiper-slide">
                                                 <div class="item">
-                                                    <a class="video_link" target="_blank"
-                                                       href="<?php echo esc_url(get_sub_field('item_link')); ?>"><span
-                                                                class="icon-play"></span></a>
-                                                    <?php
-                                                    if (!empty($item_img)) {
-                                                        ?>
-                                                        <img src="<?php echo esc_url($item_img['url']); ?>"
-                                                             alt="<?php echo esc_attr($item_img['alt']); ?>>">
+                                                    <div class="item__video_image_wrapper">
+                                                        <a class="video_link" target="_blank"
+                                                           href="<?php echo esc_url(get_sub_field('item_link')); ?>"><span
+                                                                    class="icon-play"></span>
+                                                        </a>
                                                         <?php
-                                                    }
-                                                    ?>
+                                                        if (!empty($item_img)) {
+                                                            ?>
+                                                            <img src="<?php echo esc_url($item_img['url']); ?>"
+                                                                 alt="<?php echo esc_attr($item_img['alt']); ?>">
+                                                            <?php
+                                                        }
+                                                        ?>
+                                                    </div><!-- .video_image_wrapper -->
                                                     <p><?php echo get_sub_field('item_description') ?></p>
                                                 </div>
                                             </div>
