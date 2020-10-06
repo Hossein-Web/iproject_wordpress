@@ -516,6 +516,55 @@ if ( class_exists( 'ACF' ) ) {
 
     add_shortcode('ivahid_difference', 'ivahid_difference_shortcode');
 
+    function ivahid_difference_shortcode2()
+    {
+        ob_start();
+        ?>
+        </div><!-- .container -->
+        <section class="ivahid_difference">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-9 col-lg-9 col-md-12">
+                        <div class="ivahid_difference__img">
+                            <?php
+                            $ivahid_difference_img = get_field('ivahid_difference_img2');
+                            if (!empty($ivahid_difference_img)) {
+                                ?>
+                                <img src="<?php echo esc_url($ivahid_difference_img['url']); ?>"
+                                     alt="<?php echo esc_attr($ivahid_difference_img['alt']); ?>">
+                                <?php
+                            }
+                            ?>
+                        </div><!-- .ivahid_difference__img -->
+                    </div><!-- .col-xl-9 -->
+                    <div class="col-xl-15 col-lg-15 col-md-12">
+                        <div class="ivahid_difference__content">
+                            <div class="title">
+                                <?php if (get_field('ivahid_difference_title_fa2')) { ?>
+                                    <h3><?php the_field('ivahid_difference_title_fa2'); ?></h3>
+                                <?php } ?>
+
+                                <?php if (get_field('ivahid_difference_title_en2')) { ?>
+                                    <p><?php the_field('ivahid_difference_title_en2'); ?></p>
+                                <?php } ?>
+
+                            </div><!-- .title -->
+
+                            <?php if (get_field('ivahid_difference_description2')) { ?>
+                                <p><?php the_field('ivahid_difference_description2'); ?></p>
+                            <?php } ?>
+                        </div><!-- .ivahid_difference__content -->
+                    </div><!-- .col-xl-15 -->
+                </div><!-- .row -->
+            </div><!-- .container -->
+        </section><!-- .ivahid_difference -->
+        <div class="container">
+        <?php
+        return ob_get_clean();
+    }
+
+    add_shortcode('ivahid_difference2', 'ivahid_difference_shortcode2');
+
     function portal_shortcode()
     {
         ob_start();
