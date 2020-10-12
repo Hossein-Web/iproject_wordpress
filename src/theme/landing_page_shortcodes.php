@@ -560,7 +560,7 @@ if ( class_exists( 'ACF' ) ) {
         return ob_get_clean();
     }
 
-    add_shortcode('ivahid_difference2', 'ivahid_difference_shortcode2');
+    add_shortcode('new_section', 'ivahid_difference_shortcode2');
 
     function portal_shortcode()
     {
