@@ -891,6 +891,10 @@ body{
   }
   &__wrapper{
     &__item{
+      flex: 1 0 auto;
+      >a{
+        display: block;
+      }
       padding: 36px 0 28px 0;
       img{
         padding-bottom: 10px;
@@ -901,9 +905,7 @@ body{
         font-size: 24px;
         margin-bottom: 20px;
         text-align: center;
-        a{
-          color: $accent_color;
-        }
+        color: $accent_color;
       }
       p{
         line-height: 40px;
@@ -1714,7 +1716,7 @@ body{
   .categories_title_list{
     .slide_info{
       span{
-        padding: 10px 15px !important;
+        padding: 10px !important;
         font-size: 16px;
       }
     }

@@ -127,7 +127,12 @@ if ( class_exists( 'ACF' ) ) {
                                 <img src="<?php echo get_template_directory_uri() . '/img/web_design_sec.png' ?>"
                                      alt="web design">
                                 <div class="web_design_sec_video_wrapper">
-                                    <video id="web_design_sec_video">
+                                    <video id="web_design_sec_video"
+                                        <?php $video_poster_link = get_field( 'web_design_sec_video_poster' ); ?>
+                                        <?php if ( $video_poster_link ){ ?>
+                                            poster="<?php echo esc_url( $video_poster_link ); ?>"
+                                        <?php } ?>>
+
                                         <?php $video_link = get_field('web_design_sec_video');
                                         if ($video_link) { ?>
                                             <source src="<?php echo esc_url($video_link); ?>" type="video/mp4">
@@ -295,11 +300,7 @@ if ( class_exists( 'ACF' ) ) {
                                 <?php } ?>
 
                             </div><!-- .title -->
-
-                            <?php if (get_field('services_description')) { ?>
-                                <p><?php the_field('services_description'); ?></p>
-                            <?php } ?>
-
+                            <?php the_field('services_description'); ?>
                         </div><!-- .services_content -->
                     </div><!-- .col-24 -->
                     <?php
@@ -392,10 +393,7 @@ if ( class_exists( 'ACF' ) ) {
                                     <p><?php the_field('design_effect_title_en'); ?></p>
                                 <?php } ?>
                             </div><!-- .title -->
-
-                            <?php if (get_field('design_effect_description')) { ?>
-                                <p><?php the_field('design_effect_description'); ?></p>
-                            <?php } ?>
+                            <?php the_field('design_effect_description'); ?>
                         </div><!-- .design_effect__content -->
                     </div>
                 </div><!-- .row -->
@@ -449,10 +447,7 @@ if ( class_exists( 'ACF' ) ) {
                                             <p><?php the_field('select_team_title_en'); ?></p>
                                         <?php } ?>
                                     </div><!-- .title -->
-
-                                    <?php if (get_field('select_team_description')) { ?>
-                                        <p><?php the_field('select_team_description'); ?></p>
-                                    <?php } ?>
+                                    <?php the_field('select_team_description'); ?>
                                 </div><!-- .select_team__content -->
                             </div><!-- .col-lg-12 -->
                         </div><!-- .row -->
@@ -500,10 +495,7 @@ if ( class_exists( 'ACF' ) ) {
                                 <?php } ?>
 
                             </div><!-- .title -->
-
-                            <?php if (get_field('ivahid_difference_description')) { ?>
-                                <p><?php the_field('ivahid_difference_description'); ?></p>
-                            <?php } ?>
+                            <?php the_field('ivahid_difference_description'); ?>
                         </div><!-- .ivahid_difference__content -->
                     </div><!-- .col-xl-15 -->
                 </div><!-- .row -->
@@ -549,10 +541,7 @@ if ( class_exists( 'ACF' ) ) {
                                 <?php } ?>
 
                             </div><!-- .title -->
-
-                            <?php if (get_field('ivahid_difference_description2')) { ?>
-                                <p><?php the_field('ivahid_difference_description2'); ?></p>
-                            <?php } ?>
+                            <?php the_field('ivahid_difference_description2'); ?>
                         </div><!-- .ivahid_difference__content -->
                     </div><!-- .col-xl-15 -->
                 </div><!-- .row -->
@@ -585,9 +574,7 @@ if ( class_exists( 'ACF' ) ) {
                                             <h3><?php the_field('portal_title'); ?></h3>
                                         <?php } ?>
                                     </div><!-- .title -->
-                                    <?php if (get_field('portal_description')) { ?>
-                                        <p><?php the_field('portal_description'); ?></p>
-                                    <?php } ?>
+                                    <?php the_field('portal_description'); ?>
                                     <div class="link">
                                         <?php
                                         $portal_link = get_field('portal_link');
@@ -800,9 +787,7 @@ if ( class_exists( 'ACF' ) ) {
 
                         </div><!-- .title -->
                         <div class="portfolio__description">
-                            <?php if (get_field('portfolio_description')) { ?>
-                                <p><?php the_field('portfolio_description'); ?></p>
-                            <?php } ?>
+                            <?php the_field('portfolio_description'); ?>
                         </div><!-- .portfolio__description -->
                         <div class="portfolio__wrapper">
                             <div class="swiper-container">
@@ -819,17 +804,13 @@ if ( class_exists( 'ACF' ) ) {
                                                         <img src="<?php $portfolio_image = get_sub_field('portfolio_item_image');
                                                         echo esc_url($portfolio_image['url']); ?>"
                                                              alt="<?php echo esc_attr($portfolio_image['alt']); ?>">
-                                                    </a>
-                                                    <h4>
-                                                        <a href="<?php echo esc_url($portfolio_link); ?>">
+                                                        <h4>
                                                             <?php $portfolio_item_title = get_sub_field('portfolio_item_title');
                                                             echo esc_html($portfolio_item_title); ?>
-                                                        </a>
-                                                    </h4>
-                                                    <p>
+                                                        </h4>
                                                         <?php $portfolio_item_excerpt = get_sub_field('portfolio_item_excerpt');
                                                         echo $portfolio_item_excerpt; ?>
-                                                    </p>
+                                                    </a>
                                                 </div>
                                             </div>
                                             <?php
