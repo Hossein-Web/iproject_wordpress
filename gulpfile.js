@@ -66,7 +66,8 @@ Header & Footer JavaScript Boundles
 -------------------------------------------------------------------------------------------------- */
 const headerJS = ['./node_modules/jquery/dist/jquery.js',
 				  './node_modules/swiper/swiper-bundle.js',
-				  './node_modules/wavesurfer.js/dist/wavesurfer.min.js',];
+				  './node_modules/wavesurfer.js/dist/wavesurfer.min.js',
+					'./node_modules/simplebar/dist/simplebar.min.js'];
 
 const footerJS = ['./src/assets/js/**'];
 

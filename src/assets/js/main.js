@@ -231,26 +231,26 @@ var videos_swiper = new Swiper('.videos__wrapper > .swiper-container', {
 	}
 });
 // 'podcast' section audio player
-var progress_percent = 0;
-var formatTime = function (time) {
-	return [
-		Math.floor((time % 3600) / 60), // minutes
-		('00' + Math.floor(time % 60)).slice(-2) // seconds
-	].join(':');
-};
-
-var circle = document.querySelector('.progress-ring__circle');
-var radius = circle.r.baseVal.value;
-if ( window.matchMedia("(max-width: 576px)").matches ) {
-	radius = 25;
-}
-var circumference = radius * 2 * Math.PI;
-circle.style.strokeDasharray = `${circumference} ${circumference}`;
-circle.style.strokeDashoffset = `${circumference}`;
-function setProgress(percent) {
-	const offset = circumference - percent / 100 * circumference;
-	circle.style.strokeDashoffset = offset;
-}
+if ( $( '.podcast' ).length ){
+	var progress_percent = 0;
+	var formatTime = function (time) {
+		return [
+			Math.floor((time % 3600) / 60), // minutes
+			('00' + Math.floor(time % 60)).slice(-2) // seconds
+		].join(':');
+	};
+	var circle = document.querySelector('.progress-ring__circle');
+	var radius = circle.r.baseVal.value;
+	if ( window.matchMedia("(max-width: 576px)").matches ) {
+		radius = 25;
+	}
+	var circumference = radius * 2 * Math.PI;
+	circle.style.strokeDasharray = `${circumference} ${circumference}`;
+	circle.style.strokeDashoffset = `${circumference}`;
+	function setProgress(percent) {
+		const offset = circumference - percent / 100 * circumference;
+		circle.style.strokeDashoffset = offset;
+	}
 
 //   var audio_url = '';
 //   var xhr = new XMLHttpRequest();
@@ -307,46 +307,53 @@ function setProgress(percent) {
 //   }
 
 
-var wavesurfer = WaveSurfer.create({
-	container: '#waveform',
-	mediaType: 'audio',
-	waveColor: '#f0f1f7',
-	barWidth: 3,
-	cursorColor: 'transparent',
-	backend: 'MediaElement',
-	progressColor: '#ff4342',
-	barGap: 4,
-	responsive: true,
-	height: 66
-});
+	var wavesurfer = WaveSurfer.create({
+		container: '#waveform',
+		mediaType: 'audio',
+		waveColor: '#f0f1f7',
+		barWidth: 3,
+		cursorColor: 'transparent',
+		backend: 'MediaElement',
+		progressColor: '#ff4342',
+		barGap: 4,
+		responsive: true,
+		height: 66
+	});
 
-var audio_link = $( '.podcast_wrapper' ).data( 'audio-link' );
+	var audio_link = $( '.podcast_wrapper' ).data( 'audio-link' );
 
-wavesurfer.load( audio_link );
+	wavesurfer.load( audio_link );
 
-wavesurfer.on('ready', function () {
-	$( '.duration' ).html( formatTime( wavesurfer.getDuration() ) );
-	$( '.podcast_button' ).on( 'click', function(){
-		var icon_element = $( this ).find('span');
-		if( icon_element.hasClass('icon-play') ) {
-			icon_element.removeClass( 'icon-play' );
-			icon_element.addClass( 'icon-pause' );
-			wavesurfer.play();
-		}else{
-			icon_element.removeClass( 'icon-pause' );
-			icon_element.addClass( 'icon-play' );
-			wavesurfer.pause();
+	wavesurfer.on('ready', function () {
+		$( '.duration' ).html( formatTime( wavesurfer.getDuration() ) );
+		$( '.podcast_button' ).on( 'click', function(){
+			var icon_element = $( this ).find('span');
+			if( icon_element.hasClass('icon-play') ) {
+				icon_element.removeClass( 'icon-play' );
+				icon_element.addClass( 'icon-pause' );
+				wavesurfer.play();
+			}else{
+				icon_element.removeClass( 'icon-pause' );
+				icon_element.addClass( 'icon-play' );
+				wavesurfer.pause();
+			}
+		} );
+	});
+
+
+	wavesurfer.on( 'audioprocess', function() {
+		progress_percent = wavesurfer.getCurrentTime()*100/wavesurfer.getDuration();
+		$( '.current_time' ).html( formatTime( wavesurfer.getCurrentTime() ) );
+		setProgress( progress_percent );
+		if ( progress_percent > 99.99 ) {
+			$( '.podcast_button' ).find( 'span' ).removeClass( 'icon-pause' );
+			$( '.podcast_button' ).find( 'span' ).addClass( 'icon-play' );
 		}
 	} );
-});
+}
 
-
-wavesurfer.on( 'audioprocess', function() {
-	progress_percent = wavesurfer.getCurrentTime()*100/wavesurfer.getDuration();
-	$( '.current_time' ).html( formatTime( wavesurfer.getCurrentTime() ) );
-	setProgress( progress_percent );
-	if ( progress_percent > 99.99 ) {
-		$( '.podcast_button' ).find( 'span' ).removeClass( 'icon-pause' );
-		$( '.podcast_button' ).find( 'span' ).addClass( 'icon-play' );
-	}
-} );
+//scroll bar
+if ( $('.order__content').length ) {
+	let scrollbar = new SimpleBar($('.order__content')[0],{
+	});
+}
