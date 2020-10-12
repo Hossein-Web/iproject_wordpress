@@ -8,6 +8,8 @@
 
 @import './reset';
 
+@import '../../../node_modules/simplebar/dist/simplebar.min';
+
 /*
 Table of content
 -Fonts
@@ -474,16 +476,28 @@ body{
     position: relative;
     padding-right: 8px;
     &::before{
+      //content: "";
+      //position: absolute;
+      //right: -250px;
+      //bottom: -20px;
+      //background: rgba(113, 108, 108, 0.4);
+      //transform: rotate(-9deg) skew(75deg);
+      //filter: blur(20px);
+      //z-index: -1;
+      //height: 10%;
+      //width: 90%;
+
       content: "";
       position: absolute;
-      right: -250px;
-      bottom: -20px;
+      right: -220px;
+      bottom: -14px;
       background: rgba(113, 108, 108, 0.4);
-      transform: rotate(-9deg) skew(75deg);
+      transform: rotate(-7deg) skew(70deg);
       filter: blur(20px);
       z-index: -1;
       height: 10%;
       width: 90%;
+      border-radius: 40px;
     }
   }
   &__content{
@@ -746,7 +760,8 @@ body{
       margin-bottom: 50px;
       .item_title_wrapper{
         display: flex;
-        padding-bottom: 4px;
+        align-items: center;
+        margin-bottom: 21px;
         .services_icon{
           img{
             width: 55px;
@@ -756,6 +771,7 @@ body{
           font-size: 18px;
           line-height: 18px;
           padding-right: 15px;
+          margin-bottom: 0;
           a{
             color: $text_color;
           }
@@ -777,9 +793,11 @@ body{
       .item_content{
         position: relative;
         padding-bottom: 23px;
+        min-height: 300px;
         p{
           margin-bottom: 0 !important;
           color: $text_color !important;
+          line-height: 34px;
         }
         .read_more{
           position: absolute;
@@ -809,9 +827,8 @@ body{
 
 /*----------- Portfolio -------------*/
 .portfolio{
-  //margin-bottom: 40px;
+  margin-bottom: 10px;
   //padding-bottom: 300px;
-  padding-bottom: 75px;
   padding-top: 30px;
   position: relative;
   &__background{
@@ -819,7 +836,7 @@ body{
     //right: -95%;
     //top: 72%;
     right: -60%;
-    top: 60%;
+    top: 50%;
     transform: translateY( -50% );
     z-index: 1;
     &::before{
@@ -1194,7 +1211,7 @@ body{
     width: 100%;
     background-color: #f9f9f9;
     top: 14%;
-    height: 90%;
+    height: 95%;
   }
   &__wrapper{
     &::after{
@@ -1231,6 +1248,9 @@ body{
       font-weight: 700;
       margin-bottom: 0 !important;
       color: $text_color !important;
+      display: flex;
+      align-items: center;
+      min-height: 56px;
     }
     a{
       display: inline-block;
@@ -1552,6 +1572,7 @@ body{
   &__content{
     padding-right: 100px;
     position: relative;
+    height: 200px;
     &::after{
       content: '';
       position: absolute;
@@ -1566,9 +1587,29 @@ body{
       bottom: 0;
       z-index: -6;
     }
+      &:hover{
+        .simplebar-track{
+          background-color: #c8c9cf;
+        }
+      }
+    .simplebar-scrollbar::before{
+      background-color: $accent_color;
+      opacity: 1;
+      border-radius: 2px;
+      width: 5px;
+      transition: 0.3s;
+      right: 1px;
+    }
+    .simplebar-track{
+      background-color: #f0f1f7;
+      opacity: 1;
+      margin-right: 100px;
+      border-radius: 3px;
+      width: 5px;
+      transition: 0.3s;
+    }
     ul{
-      height: 200px;
-      overflow-y: scroll;
+      //overflow-y: scroll;
       direction: ltr;
       li{
         margin-right: 15px;
@@ -1597,7 +1638,7 @@ body{
           flex: 0 0 auto;
           font-size: 20px;
           //line-height: 68px;
-          padding-top: 17px;
+          padding-top: 13px;
           margin-left: 24px;
           width: 50px;
           height: 50px;
@@ -1674,9 +1715,7 @@ body{
   }
   /*portfolio*/
   .portfolio{
-    margin-bottom: 20px;
     padding-top: 0;
-    padding-bottom: 0;
     &__background{
       display: none;
     }

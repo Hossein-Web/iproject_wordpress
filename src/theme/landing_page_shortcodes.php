@@ -107,10 +107,7 @@ if ( class_exists( 'ACF' ) ) {
                                         <p><?php the_field('web_design_sec_title_en'); ?></p>
                                     <?php } ?>
                                 </div><!-- .title -->
-
-                                <?php if (get_field('web_design_sec_description')) { ?>
-                                    <p><?php the_field('web_design_sec_description'); ?></p>
-                                <?php } ?>
+                                    <?php the_field('web_design_sec_description'); ?>
                             </div><!-- .web_design_sec__content -->
                             <div class="text-center">
                                 <?php
@@ -881,7 +878,7 @@ if ( class_exists( 'ACF' ) ) {
                     </div><!-- .col-xl-10 -->
                     <div class="col-xl-14 col-md-14">
                         <div class="order__content">
-                            <ul>
+                            <ul class="simplebar">
                                 <?php
                                 if (have_rows('order_items')) {
                                     while (have_rows('order_items')) {
