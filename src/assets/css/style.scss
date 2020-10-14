@@ -476,24 +476,13 @@ body{
     position: relative;
     padding-right: 8px;
     &::before{
-      //content: "";
-      //position: absolute;
-      //right: -250px;
-      //bottom: -20px;
-      //background: rgba(113, 108, 108, 0.4);
-      //transform: rotate(-9deg) skew(75deg);
-      //filter: blur(20px);
-      //z-index: -1;
-      //height: 10%;
-      //width: 90%;
-
       content: "";
       position: absolute;
-      right: -220px;
+      right: -115px;
       bottom: -14px;
-      background: rgba(113, 108, 108, 0.4);
-      transform: rotate(-7deg) skew(70deg);
-      filter: blur(20px);
+      background: rgba(164, 162, 162, 0.3);
+      transform: skew(-65deg);
+      filter: blur(10px);
       z-index: -1;
       height: 10%;
       width: 90%;
@@ -1713,6 +1702,11 @@ body{
   .your_position{
     .categories_title_list{
       margin-bottom: 10px !important;
+      .slide_info{
+        span{
+          font-size: 15px;
+        }
+      }
     }
   }
   /*portfolio*/
@@ -1756,7 +1750,6 @@ body{
     .slide_info{
       span{
         padding: 10px !important;
-        font-size: 16px;
       }
     }
   }
@@ -1993,6 +1986,9 @@ body{
   .order{
     &__content{
       padding-right: 0;
+      .simplebar-track{
+        margin-right: 0;
+      }
       &::after{
         display: none;
       }
