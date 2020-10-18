@@ -511,8 +511,13 @@ body{
     }
   }
   .outer_text_wrapper{
+    //display: none;
+    display: block;
+  }
+  .inner_text_wrapper{
     display: none;
   }
+
   .text{
     color: $text_color;
     margin-bottom: 64px;
