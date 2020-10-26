@@ -850,6 +850,41 @@ if ( class_exists( 'ACF' ) ) {
                                 <p><?php the_field('order_title_en'); ?></p>
                             <?php } ?>
                         </div><!-- .title -->
+                        <?php
+                        $order_contact_text = get_field( 'order_contact_text' );
+                        if ( $order_contact_text ){
+                         ?>
+                            <div class="order__contact">
+                                <div class="contact_text">
+                                   <?php echo esc_html( $order_contact_text ); ?>
+                                </div>
+                                <?php
+                                $order_contact_btn = get_field( 'order_contact_btn' );
+                                $order_btn_title = $order_contact_btn['title'];
+                                $order_btn_url = $order_contact_btn['url'];
+                                ?>
+                                <div class="contact_info">
+                                    <?php if ( $order_contact_btn ){
+                                        ?>
+                                        <div class="contact_button">
+                                            <a href="<?php echo esc_url( $order_btn_url ); ?>">
+                                                <?php echo esc_html( $order_btn_title ); ?>
+                                            </a>
+                                        </div>
+                                <?php
+                                    } ?>
+                                    <?php $order_tel = get_field( 'order_contact_tel' );
+                                    if ( $order_tel ){
+                                        ?>
+                                        <div class="contact_tel"> <?php echo esc_html( $order_tel ); ?> </div>
+                                        <?php
+                                    }
+                                    ?>
+                                </div>
+                            </div><!-- .order__contact -->
+                            <?php
+                        }
+                        ?>
                     </div><!-- .col-xl-10 -->
                     <div class="col-xl-14 col-md-14">
                         <div class="order__content">
