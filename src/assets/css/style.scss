@@ -1644,6 +1644,45 @@ body{
       }
     }
   }
+  &__contact{
+    font-size: 17px;
+    color: #333333;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+    margin-bottom: 20px;
+    .contact_text{
+    margin-bottom: 20px;
+  }
+    .contact_info{
+      display: flex;
+      align-items: flex-end;
+      flex-direction: column;
+      .contact_button{
+        margin-bottom: 30px;
+        a{
+          color: white;
+          background-color: #2ec5c0;
+          padding: 15px 13px 13px;
+          border-radius: 4px;
+          box-shadow: 0 15px 70px rgba(46, 197, 192, 0.3);
+          display: block;
+          transition: 0.3s;
+          &:hover{
+            box-shadow: none;
+          }
+        }
+      }
+      .contact_tel{
+        letter-spacing: 2px;
+        span{
+          font-weight: 500;
+        }
+      }
+    }
+  }
 }
 
 /*-------------------- Media queries ----------------------*/
@@ -1719,6 +1758,15 @@ body{
     padding-top: 0;
     &__background{
       display: none;
+    }
+  }
+  .order{
+    &__contact{
+      flex-direction: column;
+      align-items: flex-start;
+      .contact_info{
+        align-items: flex-start;
+      }
     }
   }
 }
