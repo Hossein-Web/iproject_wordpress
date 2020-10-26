@@ -850,14 +850,15 @@ if ( class_exists( 'ACF' ) ) {
                                 <p><?php the_field('order_title_en'); ?></p>
                             <?php } ?>
                         </div><!-- .title -->
-                        <?php
-                        $order_contact_text = get_field( 'order_contact_text' );
-                        if ( $order_contact_text ){
-                         ?>
                             <div class="order__contact">
+                                <?php
+                                $order_contact_text = get_field( 'order_contact_text' );
+                                if ( $order_contact_text ){
+                                ?>
                                 <div class="contact_text">
                                    <?php echo esc_html( $order_contact_text ); ?>
                                 </div>
+                                <?php } ?>
                                 <?php
                                 $order_contact_btn = get_field( 'order_contact_btn' );
                                 $order_btn_title = $order_contact_btn['title'];
@@ -882,9 +883,6 @@ if ( class_exists( 'ACF' ) ) {
                                     ?>
                                 </div>
                             </div><!-- .order__contact -->
-                            <?php
-                        }
-                        ?>
                     </div><!-- .col-xl-10 -->
                     <div class="col-xl-14 col-md-14">
                         <div class="order__content">
