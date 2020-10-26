@@ -178,10 +178,7 @@ if ( class_exists( 'ACF' ) ) {
                             <?php } ?>
 
                         </div><!-- .title -->
-
-                        <?php if (get_field('your_position_description')) { ?>
-                            <p><?php the_field('your_position_description'); ?></p>
-                        <?php } ?>
+                        <?php the_field('your_position_description'); ?>
                     </div><!-- .text -->
                 </div><!-- .container -->
             </div><!-- .outer_text_wrapper -->
@@ -204,10 +201,7 @@ if ( class_exists( 'ACF' ) ) {
                                     <?php } ?>
 
                                 </div><!-- .title -->
-
-                                <?php if (get_field('your_position_description')) { ?>
-                                    <p><?php the_field('your_position_description'); ?></p>
-                                <?php } ?>
+                            <?php the_field('your_position_description'); ?>
                             </div><!-- .text -->
                         </div><!-- .inner_text_wrapper -->
                     </div><!-- .col-lg-21 -->
@@ -914,6 +908,7 @@ if ( class_exists( 'ACF' ) ) {
                                         while (have_rows('videos')) {
                                             the_row();
                                             $item_img = get_sub_field('item_img');
+                                            $medium_size = $item_img['sizes']['medium'];
                                             ?>
                                             <div class="swiper-slide">
                                                 <div class="item">
@@ -925,7 +920,7 @@ if ( class_exists( 'ACF' ) ) {
                                                         <?php
                                                         if (!empty($item_img)) {
                                                             ?>
-                                                            <img src="<?php echo esc_url($item_img['url']); ?>"
+                                                            <img src="<?php echo esc_url( $medium_size ); ?>"
                                                                  alt="<?php echo esc_attr($item_img['alt']); ?>">
                                                             <?php
                                                         }
@@ -997,7 +992,7 @@ if ( class_exists( 'ACF' ) ) {
                                         <div class="post_wrapper">
                                             <div class="post_img_wrapper">
                                                 <a href="<?php the_permalink(); ?>">
-                                                    <?php echo get_the_post_thumbnail(); ?>
+                                                    <?php echo get_the_post_thumbnail( get_the_ID(), 'medium' ); ?>
                                                 </a>
                                             </div><!-- .post_img_wrapper -->
                                             <a class="post_title"
