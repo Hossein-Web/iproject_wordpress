@@ -1,3 +1,4 @@
+(function ($) {
 $(window).on('load', () => {
 	console.log('Loaded!');
 });
@@ -357,3 +358,4 @@ if ( $('.order__content').length ) {
 	let scrollbar = new SimpleBar($('.order__content')[0],{
 	});
 }
+})(jQuery);

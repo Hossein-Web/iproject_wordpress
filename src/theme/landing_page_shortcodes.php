@@ -124,7 +124,7 @@ if ( class_exists( 'ACF' ) ) {
                                 <img src="<?php echo get_template_directory_uri() . '/img/web_design_sec.png' ?>"
                                      alt="web design">
                                 <div class="web_design_sec_video_wrapper">
-                                    <video id="web_design_sec_video"
+                                    <video id="web_design_sec_video" preload="none"
                                         <?php $video_poster_link = get_field( 'web_design_sec_video_poster' ); ?>
                                         <?php if ( $video_poster_link ){ ?>
                                             poster="<?php echo esc_url( $video_poster_link ); ?>"
@@ -305,8 +305,13 @@ if ( class_exists( 'ACF' ) ) {
                                     <div class="services__item">
                                         <div class="item_title_wrapper">
                                             <div class="services_icon">
-                                                <img src="<?php echo get_template_directory_uri() . '/img/wordpress-Logo.png' ?>"
-                                                     alt="wordpress logo">
+                                                <?php
+                                                $item_image = get_sub_field( 'service_image' );
+                                                if ( $item_image ) {
+                                                    ?>
+                                                    <img src="<?php echo esc_url( $item_image['url'] ); ?>"
+                                                         alt="<?php echo esc_attr( $item_image['alt'] ); ?>">
+                                                <?php } ?>
                                             </div>
                                             <div class="title">
                                                 <?php
