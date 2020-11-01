@@ -621,15 +621,21 @@ if ( class_exists( 'ACF' ) ) {
                                 the_row();
                                 ?>
                                 <div class="col-lg-6 col-md-12 col-24">
-                                    <div class="item">
-                                        <div class="img_wrapper">
-                                            <?php echo get_sub_field('services_card_svg'); ?>
-                                        </div><!-- .img_wrapper -->
-                                        <div class="text_wrapper">
-                                            <h4><?php echo get_sub_field('services_card_title_fa'); ?></h4>
-                                            <span><?php echo get_sub_field('services_card_title_en'); ?></span>
-                                        </div><!-- .text_wrapper -->
-                                    </div><!-- .item -->
+                                    <?php if ( get_sub_field( 'services_card_link' ) ) { ?>
+                                        <a href="<?php echo get_sub_field( 'services_card_link' ); ?>">
+                                    <?php } ?>
+                                        <div class="item">
+                                            <div class="img_wrapper">
+                                                <?php echo get_sub_field('services_card_svg'); ?>
+                                            </div><!-- .img_wrapper -->
+                                            <div class="text_wrapper">
+                                                <h4><?php echo get_sub_field('services_card_title_fa'); ?></h4>
+                                                <span><?php echo get_sub_field('services_card_title_en'); ?></span>
+                                            </div><!-- .text_wrapper -->
+                                        </div><!-- .item -->
+                                        <?php if ( get_sub_field( 'services_card_link' ) ) { ?>
+                                            </a><!-- .services_card_link -->
+                                        <?php } ?>
                                 </div><!-- .col-lg-6 -->
                                 <?php
                             }
